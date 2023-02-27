@@ -1,0 +1,58 @@
+---
+title: \textbf{Disciplina CE003 – Estatística II}
+subtitle: \textbf{Amostragem}
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+```{r, include = FALSE}
+source("./config/setup.R")
+```
+
+## Amostras
+
+ - Uma amostra é um subconjunto da população. 
+  
+ - Na prática é inviável trabalhar com a população toda. 
+ 
+ - A alternativa então é trabalhar com uma amostra e inferir os resultados para a população. 
+ 
+ - A seleção da amostra pode ser feita de diversas maneiras. 
+ 
+## Amostras
+ 
+ - Os métodos de amostragem servem para selecionar subconjuntos da população de forma mais representativa possível.
+
+ - A forma adequada de amostragem conduz a um menor tamanho amostral para obtenção de uma precisão satisfatória.
+
+ - São características desejáveis de uma amostra:
+   - Capacidade de generalização.
+   - Imparcialidade e representatividade.
+   - Capacidade de medir a precisão das estimativas.
+	
+## Métodos de amostragem
+
+ - Existem diversos métodos de amostragem
+
+ - Podemos dividir em dois subconjuntos: 
+   - Probabilística.
+   - Não probabilística.
+   
+# Amostragem probabilística

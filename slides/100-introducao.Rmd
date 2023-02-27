@@ -1,0 +1,190 @@
+---
+title: \textbf{Disciplina CE003 – Estatística II}
+subtitle: \textbf{Introdução}
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+```{r, include = FALSE}
+source("./config/setup.R")
+```
+
+## Estatística
+
+::: {.block}
+### 
+Conjunto de métodos e técnicas usados para organizar, descrever, analisar e interpretar dados.
+:::
+
+
+ - Envolve
+   - Planejamento (delineamento) de estudos e coleta de dados.
+   - Descrição, análise e interpretação dos dados.
+
+ - Permite
+   - Extrair informações importantes para tomada de decisões.
+   - Avaliar evidências empíricas sob hipóteses de interesse.
+ 
+## Conceitos fundamentais
+
+ - **População**: conjunto de seres, itens ou eventos com uma característica comum. 
+   - **TODOS** aqueles que possuem a característica de interesse pertencem à população.
+ - **Amostra**: subconjunto da população.
+ - **Variáveis**: características observadas em cada elemento.
+
+Em Estatística tentamos entender o que acontece na população com base no que observamos em uma amostra. 
+
+## População x Amostra
+
+ - O objetivo de qualquer estudo é estudar a população. 
+
+ - Nem sempre é possível coletar dados de toda a população.
+ 
+ - A alternativa é trabalhar com uma amostra.
+ 
+ - Caso toda a população seja acessível no estudo, fazemos um estudo censitário (censo).
+ 
+
+## Etapas da análise estatística
+
+De forma geral, as etapas para análise de um conjunto de dados são:
+
+1. Definição do problema (objetivos, população e variáveis de interesse).
+2. Planejamento do estudo.
+3. Coleta, limpeza e validação de dados.
+4. Análise dos dados
+   - Análise exploratória.
+   - Aplicação de métodos mais sofisticados que permitam generalizar os resultados para a população.
+5. Interpretação dos resultados.
+
+## Alguns exemplos de aplicações de Estatística 
+
+TODO
+
+## Temas da estatística
+
+1. Estatística descritiva ou exploratória.
+2. Probabilidade.
+3. Inferência estatística.
+
+## Estatística descritiva ou exploratória
+
+ - Técnicas destinadas a descrever e resumir dados a fim de tirar conclusões a respeito de características de interesse.
+
+ - Compreende a etapa de consistência dos dados, isto é, verificar se os dados coletados são condizentes com a realidade.
+
+ - Fornece técnicas para resumos numéricos, medidas descritivas e visualizações gráficas. 
+
+ - Permite compreender preliminarmente o comportamento das variáveis individualmente e as interações entre elas.
+
+	
+## Probabilidade
+
+ - A palavra probabilidade deriva da palavra em Latim "probare".
+ - A teoria das probabilidades tenta quantificar a noção de provável.
+ - Fornece ferramentas para lidar/quantificar incerteza.
+ - Teoria matemática utilizada para se estudar a incerteza natural de fenômenos de caráter aleatório.
+	
+## Inferência estatística
+
+ - Métodos para estimação de quantidades populacionais por meio da amostra.
+ - Métodos para formular e testar hipóteses (avaliar se existe evidência nos dados a favor de uma hipótese).
+ - Métodos para extrapolar para a população resultados obtidos na amostra. 
+
+## Resultados de uma análise estatística
+
+ - O que os dados mostram?
+ - A pergunta de pesquisa foi respondida?
+ - Existe evidência suficiente nos dados a favor da hipótese inicial?
+ - Que novas perguntas surgem?
+
+## Estatística e o desenvolvimento científico
+
+ - A Estatística está diretamente associada com o método científico.
+   - Definimos uma hipótese.
+   - Confrontamos esta hipótese com evidências (dados).
+   - Com base nas evidências rejeitamos ou não rejeitamos as hipóteses iniciais.
+   - Os resultados conduzem a novas hipóteses e o ciclo se reinicia.
+  
+ - Praticamente todas as áreas do conhecimento humano requerem instrumentos para análise de dados.
+ 
+ - Muitas áreas do conhecimento requerem métodos estatísticos para avaliar hipóteses de interesse.
+
+## Estatística e o desenvolvimento científico
+
+ - Pense no uso de medicamentos um medicamento não é aprovado se não houver um estudo que envolva um procedimento de amostragem coerente, uma análise estatística robusta que mostre evidência de eficácia do medicamento na população de interesse.
+
+ - Outro exemplo é o uso da Estatística nas políticas públicas: praticamente todos os governos possuem órgãos especializados em Estatística.
+
+ 
+## Estatística e o desenvolvimento computacional
+
+ - A popularização da Estatística se dá graças ao desenvolvimento computacional.
+
+ - Os computadores pessoais tornaram os métodos estatísticos mais acessíveis ao público geral por meio de softwares que implementam as metodologias.
+
+ - Devido ao avanço computacional, houve um aumento considerável na capacidade de produzir e armazenar dados provenientes das mais diversas fontes.
+
+## Estatística e o desenvolvimento computacional
+
+ - Graças ao avanço computacional podemos lidar com a manipulação de grandes conjuntos de dados.
+
+ - Este grande volume de dados também força o desenvolvimento dos métodos estatísticos e softwares para análise de dados.
+
+ - A capacidade computacional atual também desperta o interesse por métodos estatísticos computacionalmente intensivos.
+ 
+## Estatística e ética
+
+ - Cuidados devem ser tomados na escolha do tipo análise a ser realizada.
+
+ - O uso e divulgação ética e criteriosa de dados e resultados de análises devem ser pré-requisitos indispensáveis e inegociáveis à qualquer analista. 
+
+ - Por exemplo, no contexto de gráficos, devemos evitar que o gráfico fique desproporcional ou privilegiando determinados valores a fim de induzir conclusões àqueles que utilizam o gráfico como forma de visualização.
+ 
+## A importância de resultados não significativos
+
+ - Muitos pesquisadores deixam de tornar públicos resultados não significativos.
+ 
+ - Contudo resultados não significativos são tão importantes quanto os significativos.
+ 
+ - A hipótese de interesse, rejeitada ou não rejeitada, fornece conhecimento a respeito do problema sob análise.
+ 
+## Considerações finais
+
+ - Onde há incerteza, a Estatística pode ser usada.
+
+ - A Estatística vai muito além do senso comum: tabelas e gráficos em revistas esportivas e jornais ou pesquisas de intenção de voto em épocas de eleição.
+
+ - A Estatística está por trás de boa parte do desenvolvimento científico moderno.
+
+ - Atualmente recursos computacionais são indispensáveis para trabalhar com métodos estatísticos.
+ 
+ - O foco desta disciplina está no letramento estatístico, isto é, apresentar o básico de Estatística que permita compreender e avaliar criticamente análises de dados.
+ 
+## Algumas leituras recomendadas
+
+Uma senhora toma chá
+
+O andar do bêbado
+
+Como mentir com Estatística
+
+Algoritmos de destruição em massa
+
