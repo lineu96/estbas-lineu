@@ -1,9 +1,11 @@
 ---
-title: \textbf{Disciplina CE003 – Estatística II}
-subtitle: \textbf{Introdução}
+title: \textbf{Introdução}
+subtitle: Ideias iniciais, conceitos e motivações
 author: Prof. Me. Lineu Alberto Cavazani de Freitas
 date: ""
 institute: |
+ | \textbf{CE003 – Estatística II}
+ |
  | Departamento de Estatística
  | Laboratório de Estatística e Geoinformação
 graphics: yes
@@ -60,7 +62,8 @@ Em Estatística tentamos entender o que acontece na população com base no que 
  - A alternativa é trabalhar com uma amostra.
  
  - Caso toda a população seja acessível no estudo, fazemos um estudo censitário (censo).
- 
+
+## Exemplos
 
 ## Etapas da análise estatística
 
@@ -78,35 +81,42 @@ De forma geral, as etapas para análise de um conjunto de dados são:
 
 TODO
 
-## Temas da estatística
+## Temas da Estatística
 
 1. Estatística descritiva ou exploratória.
+    - Coleta, organização, tratamento, análise e apresentação de dados.
+
 2. Probabilidade.
+    - Modelagem de fenômenos aleatórios para estudar a chance de ocorrência de desfechos.
+
 3. Inferência estatística.
+    - Estudo da população por meio de evidência fornecida pela amostra.
 
-## Estatística descritiva ou exploratória
 
- - Técnicas destinadas a descrever e resumir dados a fim de tirar conclusões a respeito de características de interesse.
+## Temas da Estatística
 
- - Compreende a etapa de consistência dos dados, isto é, verificar se os dados coletados são condizentes com a realidade.
+\beginAHalfColumn
 
- - Fornece técnicas para resumos numéricos, medidas descritivas e visualizações gráficas. 
+1. Estatística descritiva ou exploratória.
+    - Métodos de amostragem.
+    - Representação tabular.
+    - Análise gráfica.
+    - Medidas resumo.
 
- - Permite compreender preliminarmente o comportamento das variáveis individualmente e as interações entre elas.
+2. Probabilidade.
+    - Teoria das probabilidades.
+    - Variáveis aleatórias.
+    - Distribuições de probabilidade.
 
-	
-## Probabilidade
+\endColumns
+\beginAHalfColumn
 
- - A palavra probabilidade deriva da palavra em Latim "probare".
- - A teoria das probabilidades tenta quantificar a noção de provável.
- - Fornece ferramentas para lidar/quantificar incerteza.
- - Teoria matemática utilizada para se estudar a incerteza natural de fenômenos de caráter aleatório.
-	
-## Inferência estatística
+3. Inferência estatística.
+    - Estimação pontual.
+    - Estimação intervalar.
+    - Testes de hipóteses
 
- - Métodos para estimação de quantidades populacionais por meio da amostra.
- - Métodos para formular e testar hipóteses (avaliar se existe evidência nos dados a favor de uma hipótese).
- - Métodos para extrapolar para a população resultados obtidos na amostra. 
+\endColumns
 
 ## Resultados de uma análise estatística
 
@@ -114,6 +124,18 @@ TODO
  - A pergunta de pesquisa foi respondida?
  - Existe evidência suficiente nos dados a favor da hipótese inicial?
  - Que novas perguntas surgem?
+
+## Estatística e ética
+
+ - Cuidados devem ser tomados na escolha do tipo análise a ser realizada.
+
+ - O uso e divulgação ética e criteriosa de dados e resultados de análises devem ser pré-requisitos indispensáveis e inegociáveis à qualquer analista. 
+
+ - Por exemplo, no contexto de gráficos, devemos evitar que o gráfico fique desproporcional ou privilegiando determinados valores a fim de induzir conclusões àqueles que utilizam o gráfico como forma de visualização.
+
+## Estatística e ética
+
+EXEMPLO DE GRÁFICO DESPROPORCIONAL
 
 ## Estatística e o desenvolvimento científico
 
@@ -129,10 +151,19 @@ TODO
 
 ## Estatística e o desenvolvimento científico
 
- - Pense no uso de medicamentos um medicamento não é aprovado se não houver um estudo que envolva um procedimento de amostragem coerente, uma análise estatística robusta que mostre evidência de eficácia do medicamento na população de interesse.
+EXEMPLOS
 
- - Outro exemplo é o uso da Estatística nas políticas públicas: praticamente todos os governos possuem órgãos especializados em Estatística.
+Medicamentos.
 
+Políticas públicas.
+
+## A importância de resultados não significativos
+
+ - Muitos pesquisadores deixam de tornar públicos resultados não significativos.
+ 
+ - Contudo resultados não significativos são tão importantes quanto os significativos.
+ 
+ - A hipótese de interesse, rejeitada ou não rejeitada, fornece conhecimento a respeito do problema sob análise.
  
 ## Estatística e o desenvolvimento computacional
 
@@ -150,21 +181,7 @@ TODO
 
  - A capacidade computacional atual também desperta o interesse por métodos estatísticos computacionalmente intensivos.
  
-## Estatística e ética
 
- - Cuidados devem ser tomados na escolha do tipo análise a ser realizada.
-
- - O uso e divulgação ética e criteriosa de dados e resultados de análises devem ser pré-requisitos indispensáveis e inegociáveis à qualquer analista. 
-
- - Por exemplo, no contexto de gráficos, devemos evitar que o gráfico fique desproporcional ou privilegiando determinados valores a fim de induzir conclusões àqueles que utilizam o gráfico como forma de visualização.
- 
-## A importância de resultados não significativos
-
- - Muitos pesquisadores deixam de tornar públicos resultados não significativos.
- 
- - Contudo resultados não significativos são tão importantes quanto os significativos.
- 
- - A hipótese de interesse, rejeitada ou não rejeitada, fornece conhecimento a respeito do problema sob análise.
  
 ## Considerações finais
 

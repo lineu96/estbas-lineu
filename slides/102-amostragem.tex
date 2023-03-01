@@ -606,11 +606,13 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{Disciplina CE003 – Estatística II}}
-\subtitle{\textbf{Amostragem}}
+\title{\textbf{Métodos de Amostragem}}
+\subtitle{Motivação, amostragem probabilística e não probabilística}
 \author{Prof.~Me. Lineu Alberto Cavazani de Freitas}
 \date{}
-\institute{Departamento de Estatística\\
+\institute{\textbf{CE003 – Estatística II}\\
+\strut \\
+Departamento de Estatística\\
 Laboratório de Estatística e Geoinformação}
 
 \begin{document}
@@ -629,6 +631,8 @@ Laboratório de Estatística e Geoinformação}
 \item
   A seleção da amostra pode ser feita de diversas maneiras.
 \end{itemize}
+
+ILUSTRAÇÃO AMOSTRAGEM
 \end{frame}
 
 \begin{frame}{Amostras}
@@ -675,5 +679,315 @@ Laboratório de Estatística e Geoinformação}
 
 \hypertarget{amostragem-probabiluxedstica}{%
 \section{Amostragem probabilística}\label{amostragem-probabiluxedstica}}
+
+\begin{frame}{Amostragem probabilística}
+\protect\hypertarget{amostragem-probabiluxedstica-1}{}
+\begin{itemize}
+\item
+  Amostragem probabilística deve ser usada sempre que possível.
+\item
+  O objetivo é dimensionar amostras que sejam capazes de estimar as
+  quantidades de interesse com uma certa precisão desejada.
+\item
+  Existem diversos métodos disponíveis.
+\end{itemize}
+
+Alguns métodos são:
+
+\begin{itemize}
+\tightlist
+\item
+  Amostragem aleatória simples (com ou sem reposição).
+\item
+  Amostragem sistemática.
+\item
+  Amostragem estratificada.
+\item
+  Amostragem por conglomerados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem aleatória simples (com ou sem reposição)}
+\protect\hypertarget{amostragem-aleatuxf3ria-simples-com-ou-sem-reposiuxe7uxe3o}{}
+\begin{itemize}
+\item
+  Selecionar um conjunto de elementos da população em que todos os
+  elementos tenham a mesma probabilidade de serem sorteados.
+\item
+  Os sorteios de cada elemento são independentes.
+\item
+  Pode ser com ou sem reposição.
+\item
+  Com reposição: um elemento sorteado pode ser sorteado novamente.
+\item
+  Sem reposição: um elemento sorteado não pode ser sorteado novamente.
+\item
+  A diferença entre com e sem reposição só é relevante se o tamanho da
+  população for pequeno.
+\item
+  Muitos métodos estatísticos foram desenvolvidos pensando no plano de
+  amostragem aleatória simples.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\protect\hypertarget{exemplo}{}
+\begin{itemize}
+\item
+  Suponha que uma empresa deseja avaliar se os produtos de determinado
+  lote estão dentro das especificações de qualidade.
+\item
+  Avaliar todos os produtos é inviável, mas podemos observar uma
+  amostra.
+\item
+  Retira-se aleatoriamente produtos deste lote para inspeção.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem sistemática}
+\protect\hypertarget{amostragem-sistemuxe1tica}{}
+\begin{itemize}
+\item
+  Sorteia um elemento a cada número de unidades definido inicialmente (1
+  a cada 10, 1 a cada 20, etc).
+\item
+  É necessário definir um tamanho de intervalo inicial e selecionar uma
+  unidade de partida.
+\item
+  Todos os elementos dentro do intervalo apresentam a mesma
+  probabilidade de serem sorteados.
+\item
+  A partir da unidade de partida a próxima sorteada é a da posição
+  correspondente à inicial mais o tamanho do intervalo e assim
+  sucessivamente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\protect\hypertarget{exemplo-1}{}
+\begin{itemize}
+\item
+  Suponha que desejamos selecionar uma amostra sistemática de 500 alunos
+  em uma população de 10.000 e que haja um cadastro desses alunos.
+\item
+  Podemos selecionar 1 a cada 20.
+\item
+  Primeiro seleciona-se a unidade de partida, um número aleatório entre
+  1 e 20. Este é o primeiro elemento da amostra. Suponhamos que tenha
+  sido o aluno número 5.
+\item
+  O próxumo elemento é o da posição 5+20, e assim por diante.
+\item
+  Serão selecionados os alunos 5, 25, 45, 65,\ldots{}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem estratificada}
+\protect\hypertarget{amostragem-estratificada}{}
+\begin{itemize}
+\item
+  Usada quando a população de interesse possui algum tipo de
+  estratificação natural (por exemplo, cidades possuem bairros).
+\item
+  Dentro de cada estrato podemos coletar uma amostra.
+\item
+  A amostra final é composta pela união das amostras obtidas em cada
+  estrato.
+\item
+  O tipo de amostragem dentro de cada estrato pode variar.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\protect\hypertarget{exemplo-2}{}
+\begin{itemize}
+\item
+  Suponha que existe interesse em avaliar a proporção de crianças em
+  situações de risco em determinada região.
+\item
+  Esta região possui 3 bairros: A, B e C.
+\item
+  Considere que o bairro A possui 60\% das crianças, o bairro B possui
+  30\% e o bairro C possui 10\%.
+\item
+  Considerando uma amostra aleatória estratificada de 500 indivíduos,
+  poderiam ser selecionados
+
+  \begin{itemize}
+  \tightlist
+  \item
+    300 crianças do bairro A (60\% da amostra).
+  \item
+    150 do bairro B (30\% da amostra).
+  \item
+    50 do bairro C (10\% da amostra).
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem por conglomerados}
+\protect\hypertarget{amostragem-por-conglomerados}{}
+\begin{itemize}
+\item
+  Parecida com a ideia de amostragem estratificada.
+\item
+  Os conglomerados são conjuntos de observações.
+\item
+  Inicialmente sorteamos os conglomerados (diferente do que acontece na
+  amostragem estratificada).
+\item
+  A amostra pode ser composta por todos os elementos de todos os
+  conglomerados sorteados.
+\item
+  Outra alternativa é sortear dentro dos conglomerados amostrados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\protect\hypertarget{exemplo-3}{}
+\begin{itemize}
+\item
+  Suponha que o interesse reside em avaliar as notas médias de alunos de
+  uma escola.
+\item
+  O interesse é obter uma amostra por conglomerados.
+\item
+  Cada turma é um conglomorado.
+\item
+  Primeiro sorteiam-se as turmas (conglomerados).
+\item
+  Dentro de cada conglomerado sorteiam-se as unidades que vão compor a
+  amostra.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Diferença amostragem estratificada e por conglomerados}
+\protect\hypertarget{diferenuxe7a-amostragem-estratificada-e-por-conglomerados}{}
+\begin{itemize}
+\item
+  No caso da amostragem estratificada todos os estratos fornecem
+  elementos para a amostra.
+\item
+  No caso da amostragem por conglomerados não são todos os conglomerados
+  que cedem elementos para a amostra.
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    Primeiro selecionam-se conglomerados.
+  \item
+    Depois selecionam-se as unidades.
+  \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\hypertarget{amostragem-nuxe3o-probabiluxedstica}{%
+\section{Amostragem não
+probabilística}\label{amostragem-nuxe3o-probabiluxedstica}}
+
+\begin{frame}{Amostragem não probabilística}
+\protect\hypertarget{amostragem-nuxe3o-probabiluxedstica-1}{}
+\begin{itemize}
+\item
+  Em muitos casos não é possível fazer uso de métodos de amostragem
+  probabilística.
+\item
+  Surgem então os métodos de amostragem não probabilística.
+\item
+  Uma avaliação da ``representatividade'' dos métodos de amostragem não
+  probabilística não pode ser feita.
+\item
+  Devemos tomar muito cuidado ao interpretar resultados baseados em
+  métodos de amostragem não probabilísticos.
+\item
+  Em geral, estas amostras carregarem um alto risco de não serem
+  representativas.
+\item
+  Não há métodos para análise probabilística ou inferencial dos
+  resultados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem não probabilística}
+\protect\hypertarget{amostragem-nuxe3o-probabiluxedstica-2}{}
+Alguns métodos são:
+
+\begin{itemize}
+\tightlist
+\item
+  Amostragem por conveniência.
+\item
+  Amostragem intencional ou julgamento.
+\item
+  Amostragem bola de neve.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem por conveniência}
+\protect\hypertarget{amostragem-por-conveniuxeancia}{}
+\begin{itemize}
+\tightlist
+\item
+  Os elementos da amostra não são obtidos por meio de sorteio, mas sim
+  de acordo com sua disponibilidade.
+\end{itemize}
+
+Exemplo
+
+\begin{itemize}
+\item
+  Suponha que um pesquisador trabalha com animais criados em cativeiro.
+\item
+  Não existe qualquer cadastro da população alvo.
+\item
+  Por isso, o pesquisador avalia os animais disponíveis na universidade.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem intencional ou julgamento}
+\protect\hypertarget{amostragem-intencional-ou-julgamento}{}
+\begin{itemize}
+\tightlist
+\item
+  Um especialista (expert) no problema escolhe os elementos que julga
+  representativos para compor a amostra.
+\end{itemize}
+
+Exemplo
+
+\begin{itemize}
+\item
+  Suponha um problema congenito que só pode ser identificado por um
+  especialista altamente treinado.
+\item
+  Para isso um conjunto de indivíduos é selecionado e deste conjunto o
+  especialista seleciona para a amostra aqueles em que ele identifica o
+  problema congenito.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Amostragem bola de neve}
+\protect\hypertarget{amostragem-bola-de-neve}{}
+\begin{itemize}
+\tightlist
+\item
+  Identifica-se algumas unidades e estas unidades indicam novas unidades
+  para compor a amostra.
+\end{itemize}
+
+Exemplo
+
+\begin{itemize}
+\item
+  Suponha que um aluno criou um formulário para obter dados para seu
+  trabalho de conclusão de curso.
+\item
+  Não existe um cadastro para a população alvo.
+\item
+  Por isso, o aluno repassa o formulário para indivíduos que ele sabe
+  que fazem parte da população alvo e pede que estes indivíduos indiquem
+  outros possíveis respondentes.
+\end{itemize}
+\end{frame}
 
 \end{document}

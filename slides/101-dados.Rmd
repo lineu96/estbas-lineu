@@ -1,11 +1,14 @@
 ---
-title: \textbf{Disciplina CE003 – Estatística II}
-subtitle: \textbf{Dados}
+title: \textbf{Dados}
+subtitle: Conjunto de dados, tipos de variáveis, fontes de dados
 author: Prof. Me. Lineu Alberto Cavazani de Freitas
 date: ""
 institute: |
+ | \textbf{CE003 – Estatística II}
+ |
  | Departamento de Estatística
  | Laboratório de Estatística e Geoinformação
+
 graphics: yes
 classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
 # bibliography: references.bib
@@ -36,23 +39,21 @@ source("./config/setup.R")
 ## Conjunto de dados
 
  - Em Estatística, em geral, lidamos com dados estruturados em um formato tabular.
- 
- - Variáveis são as características observadas em cada um dos elementos que pertencem à amostra.
- 
- - Na prática precisamos de uma forma para representar indivíduos e variáveis.
 
-## Conjunto de dados
-
+ - O conjunto de dados completo e sem tratamentos é denominado conjunto de dados brutos.
+ 
  - Um conjunto de dados considerado arrumado é aquele em que: 
    - Cada coluna representa uma variável.
    - Cada linha representa uma observação.
    - Cada célula representa o valor observado.
 
- - O conjunto de dados completo e sem tratamentos é denominado conjunto de dados brutos.
-
 ## Conjunto de dados
 
 FIGURA TIDY DATA
+
+## Conjunto de dados
+
+Exemplo
 
 ## Tipos de variáveis
 
@@ -64,17 +65,27 @@ FIGURA TIDY DATA
 
  - Cada uma das classes tem suas ramificações.
 
+FIGURA TIPO DE VARIÁVEIS
+
 ## Variáveis quantitativas
 
  - Variáveis Quantitativas: assumem valores numéricos.
-   - Discretas: características mensuráveis que podem assumir apenas um número finito ou infinito contável de valores e, assim, somente fazem sentido valores inteiros.
+   - Discretas: características mensuráveis que podem assumir apenas um número finito ou infinito contável de valores.
    - Contínuas: características mensuráveis que assumem valores em uma escala contínua, isto é, na reta real.
 
-## Variáveis Qualitativas
+## Variáveis quantitativas
 
- - Variáveis Qualitativas: são as características definidas categorias, ou seja, representam uma classificação dos indivíduos e não uma característica numérica.
+Exemplos
+
+## Variáveis qualitativas
+
+ - Variáveis Qualitativas: são as características definidas por categorias, ou seja, representam uma classificação dos indivíduos e não uma característica numérica.
    - Nominais: não existe ordenação nem peso entre as categorias.
    - Ordinais: existe uma ordenação entre as categorias.
+
+## Variáveis qualitativas
+
+Exemplos
 
 ## Cuidados com variáveis
 
@@ -101,17 +112,24 @@ Alguns exemplos:
  
 ## Dados observacionais x dados experimentais
 
+\beginAHalfColumn
+
 Dados observacionais
 
  - Observação passiva da realidade. 
  - Sem modificação das condições.
+
+\endColumns
+\beginAHalfColumn
 
 Dados experimentais
 
  - Intervenção na realidade.
  - Condições controladas.
  - Observação dos efeitos das intervenções.
- 
+
+\endColumns
+
 ## No que devemos pensar antes de analisar nossos dados?
 
  - O que estamos interessados em avaliar?

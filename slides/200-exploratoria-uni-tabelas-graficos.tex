@@ -606,8 +606,9 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{Dados}}
-\subtitle{Conjunto de dados, tipos de variáveis, fontes de dados}
+\title{\textbf{Análise exploratória I}}
+\subtitle{Motivação e análise descritiva univariada para variáveis
+qualitativas e quantitativas.}
 \author{Prof.~Me. Lineu Alberto Cavazani de Freitas}
 \date{}
 \institute{\textbf{CE003 – Estatística II}\\
@@ -618,227 +619,452 @@ Laboratório de Estatística e Geoinformação}
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}{O que são dados?}
-\protect\hypertarget{o-que-suxe3o-dados}{}
+\begin{frame}{Análise exploratória}
+\protect\hypertarget{anuxe1lise-exploratuxf3ria}{}
 \begin{itemize}
-\tightlist
 \item
-  Dados são conjuntos de valores.
+  Parte primordial de qualquer análise estatística é chamada análise
+  descritiva ou exploratória.
 \item
-  Podem ser de diferentes fontes, tais como estudos e experimentos.
+  Consiste basicamente de tabelas, resumos numéricos e análises gráficas
+  das variáveis disponíveis em um conjunto de dados.
 \item
-  Podem conter variáveis de diferentes tipos.
+  Trata-se de uma etapa de extrema importância e deve preceder qualquer
+  análise mais sofisticada.
 \item
-  Podem surgir em formatos estruturados e não estruturados.
+  As técnicas de análise exploratória visam resumir e apresentar as
+  informações de um conjunto de dados brutos.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados}{}
+\begin{frame}{Análise exploratória}
+\protect\hypertarget{anuxe1lise-exploratuxf3ria-1}{}
 \begin{itemize}
 \item
-  Em Estatística, em geral, lidamos com dados estruturados em um formato
-  tabular.
+  Tentar compreender um conjunto de dados sem algum método que permita
+  resumir as informações é inviável.
 \item
-  O conjunto de dados completo e sem tratamentos é denominado conjunto
-  de dados brutos.
+  A análise exploratória é a primeira forma de tentarmos enteder o que
+  acontece nos nossos dados.
 \item
-  Um conjunto de dados considerado arrumado é aquele em que:
+  Compreende também a etapa de consistência dos dados, isto é, verificar
+  se os dados coletados são condizentes com a realidade.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Análise exploratória}
+\protect\hypertarget{anuxe1lise-exploratuxf3ria-2}{}
+\begin{itemize}
+\item
+  O conjunto de técnicas aplicáveis está diretamente associado ao tipo
+  das variáveis de interesse (quantitativas x qualitativas) e suas
+  ramificações.
+\item
+  Podemos conduzir análises focadas nas variáveis uma a uma (análises
+  univariadas).
+\item
+  Bem como conduzir análises focadas em avaliar a relação entre as
+  variáveis (análises multivariadas).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Análise exploratória}
+\protect\hypertarget{anuxe1lise-exploratuxf3ria-3}{}
+Podemos fazer uso diversas técnicas, tais como
+
+\begin{itemize}
+\item
+  Medidas de posição central.
+\item
+  Medidas de posição relativa.
+\item
+  Medidas de forma.
+\item
+  Medidas de dispersão.
+\item
+  Medidas de associação.
+\item
+  Tabelas de frequência absolutas.
+\item
+  Tabelas de frequência relativas.
+\item
+  Tabelas de frequência acumuladas.
+\item
+  Tabelas para múltiplas variáveis.
+\item
+  Gráficos (para análise uni e multivariada).
+\end{itemize}
+\end{frame}
+
+\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitativas}{%
+\section{Análise descritiva univariada para variáveis
+qualitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitativas}}
+
+\begin{frame}{Análise descritiva univariada para variáveis qualitativas}
+\protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitativas-1}{}
+\begin{itemize}
+\item
+  Uma variável qualitativa representa um atributo que pode ser expresso
+  por meio de rótulos ou categorias.
+\item
+  Podem ser classificadas em nominais (sem ordenação natural entre os
+  níveis) ou ordinais (com ordenação natural entre os níveis).
+\item
+  As categorias também são chamadas de classes ou níveis.
+\item
+  Na análise descritiva de uma variável qualitativa estamos interessados
+  em avaliar as frequências das classes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tipos de frequência}
+\protect\hypertarget{tipos-de-frequuxeancia}{}
+\begin{itemize}
+\item
+  Frequência absoluta: número de observações no conjunto de dados que
+  pertence a uma determinada classe.
+\item
+  Frequência relativa: frequência de classe dividida pelo número total
+  de observações no conjunto de dados.
 
   \begin{itemize}
   \tightlist
   \item
-    Cada coluna representa uma variável.
-  \item
-    Cada linha representa uma observação.
-  \item
-    Cada célula representa o valor observado.
+    Pode ser apresentada em forma de percentual, quando multiplicada por
+    100.
   \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-1}{}
-FIGURA TIDY DATA
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-2}{}
-Exemplo
-\end{frame}
-
-\begin{frame}{Tipos de variáveis}
-\protect\hypertarget{tipos-de-variuxe1veis}{}
-\begin{itemize}
 \item
-  Na prática, podemos coletar variáveis de diferentes tipos e naturezas.
-\item
-  Existem dois tipos (básicos) de variáveis:
+  Frequência acumulada: frequência absoluta ou relativa acumulada
+  conforme disposição das classes.
 
   \begin{itemize}
   \tightlist
   \item
-    Numéricas (quantitativas).
-  \item
-    Não numéricas (qualitativas).
-  \end{itemize}
-\item
-  Cada uma das classes tem suas ramificações.
-\end{itemize}
-
-FIGURA TIPO DE VARIÁVEIS
-\end{frame}
-
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas}{}
-\begin{itemize}
-\tightlist
-\item
-  Variáveis Quantitativas: assumem valores numéricos.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Discretas: características mensuráveis que podem assumir apenas um
-    número finito ou infinito contável de valores.
-  \item
-    Contínuas: características mensuráveis que assumem valores em uma
-    escala contínua, isto é, na reta real.
+    Não faz muito sentido para variáveis qualitativas nominais.
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas-1}{}
-Exemplos
+\begin{frame}{Exemplos}
+\protect\hypertarget{exemplos}{}
 \end{frame}
 
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas}{}
+\begin{frame}{Tabelas de frequência para uma variável qualitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa}{}
 \begin{itemize}
-\tightlist
 \item
-  Variáveis Qualitativas: são as características definidas por
-  categorias, ou seja, representam uma classificação dos indivíduos e
-  não uma característica numérica.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Nominais: não existe ordenação nem peso entre as categorias.
-  \item
-    Ordinais: existe uma ordenação entre as categorias.
-  \end{itemize}
+  Utlizando apenas os dados brutos é difícil responder questões de
+  interesse.
+\item
+  Para reduzir os dados originais de forma que fique mais claro o
+  entendimento dos mesmos são utilizadas as tabelas de frequência.
+\item
+  No caso de variáveis qualitativas consiste em listar os possíveis
+  níveis da variável e fazer a contagem de quantas vezes cada nível
+  aparece nos dados brutos.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas-1}{}
-Exemplos
-\end{frame}
-
-\begin{frame}{Cuidados com variáveis}
-\protect\hypertarget{cuidados-com-variuxe1veis}{}
+\begin{frame}{Tabelas de frequência para uma variável qualitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-1}{}
 \begin{itemize}
 \item
-  Existem particularidades na classificação de variáveis devido a
-  situações como:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Discretização de variáveis contínuas.
-  \item
-    Limitações em instrumentos de mensuração.
-  \item
-    Utilização de quantidades numéricas para representação de variáveis
-    categóricas
-  \item
-    Dentre outras.
-  \end{itemize}
+  Cada linha da tabela diz respeito a um nível da variável categórica.
 \item
-  Deve-se sempre estar atento a este tipo de situação pois podem levar a
-  implicações nas análises e consequentemente nos resultados.
+  As colunas podem apresentar diferentes tipos de frequência (absoluta,
+  relativa, acumulada).
 \item
-  Existem outros tipos de variáveis que ocorrem em situações
-  particulares que requerem técnicas específicas de análise.
+  Alguns cuidados para a apresentação dos resultados dizem respeito ao
+  tipo de variável categórica em questão: nominal ou ordinal.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{De onde vêm os dados?}
-\protect\hypertarget{de-onde-vuxeam-os-dados}{}
-Alguns exemplos:
-
+\begin{frame}{Tabelas de frequência para uma variável qualitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-2}{}
 \begin{itemize}
-\tightlist
 \item
-  Estudo de caso.
+  Os níveis de variáveis nominais não apresentam uma ordenação natural,
+  portanto, na apresentação dos resultados pode ser interessante ordenar
+  os níveis por frequência ou por ordem alfabética.
 \item
-  Experimentos.
-\item
-  Pesquisas.
-\item
-  Registros administrativos.
-\item
-  Dados em repositórios online.
-\item
-  Bancos de dados corporativos.
+  Esta estratégia não é recomendada para variáveis ordinais, pois estas
+  apresentam uma ordenação natural e esta ordenação deve ser
+  preferencialmente mantida na exposição dos resultados.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados observacionais x dados experimentais}
-\protect\hypertarget{dados-observacionais-x-dados-experimentais}{}
-\beginAHalfColumn
+\begin{frame}{Tabelas de frequência para uma variável qualitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-3}{}
+EXEMPLO QUALITATIVA NOMINAL
+\end{frame}
 
-Dados observacionais
+\begin{frame}{Tabelas de frequência para uma variável qualitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-4}{}
+EXEMPLO QUALITATIVA ORDINAL
+\end{frame}
+
+\begin{frame}{Gráficos para representação de frequências de uma variável
+qualitativa}
+\protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-qualitativa}{}
+\begin{itemize}
+\item
+  A representação por meio de tabelas é útil mas nem sempre eficiente.
+\item
+  Em diversos casos pode ser mais conveniente utilizar um gráfico.
+\item
+  ``Uma imagem vale mais que mil palavras''.
+\item
+  Os cuidados com a ordenação dos níveis de acordo com o tipo da
+  variável se mantém.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gráficos para representação de frequências de uma variável
+qualitativa}
+\protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-qualitativa-1}{}
+Algumas possibilidades são:
 
 \begin{itemize}
 \tightlist
 \item
-  Observação passiva da realidade.
+  Gráfico de barras verticais.
 \item
-  Sem modificação das condições.
+  Gráfico de barras horizontais.
+\item
+  Gráfico de barras empilhadas.
+\item
+  Gráfico de setores.
+\item
+  Gráfico de rosca.
 \end{itemize}
-
-\endColumns
-\beginAHalfColumn
-
-Dados experimentais
-
-\begin{itemize}
-\tightlist
-\item
-  Intervenção na realidade.
-\item
-  Condições controladas.
-\item
-  Observação dos efeitos das intervenções.
-\end{itemize}
-
-\endColumns
 \end{frame}
 
-\begin{frame}{No que devemos pensar antes de analisar nossos dados?}
-\protect\hypertarget{no-que-devemos-pensar-antes-de-analisar-nossos-dados}{}
+\begin{frame}{Gráfico de barras verticais ou horizontais}
+\protect\hypertarget{gruxe1fico-de-barras-verticais-ou-horizontais}{}
 \begin{itemize}
 \tightlist
 \item
-  O que estamos interessados em avaliar?
+  Utiliza os possíveis níveis das variáveis em um eixo.
 \item
-  Quais são as variáveis de interesse?
+  As frequências ou porcentagens ficam no outro eixo.
 \item
-  Quais são as variáveis que queremos avaliar se influenciam a variável
-  de interesse?
-\item
-  Quais são os métodos disponíveis para análise de variáveis deste tipo?
-\item
-  Quais os métodos disponíveis que permitem responder nossa pergunta de
-  pesquisa?
-\item
-  Como coletar os dados?
-\item
-  Os dados são válidos?
+  O tamanho da barra correspondente à frequência.
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Gráfico de barras verticais}
+\protect\hypertarget{gruxe1fico-de-barras-verticais}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Gráfico de barras horizontais}
+\protect\hypertarget{gruxe1fico-de-barras-horizontais}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Gráfico de barras empilhadas}
+\protect\hypertarget{gruxe1fico-de-barras-empilhadas}{}
+\begin{itemize}
+\tightlist
+\item
+  No caso de uma barra empilhada representa-se a frequência relativa ou
+  o percentual.
+\item
+  Existe uma única barra que representa 100\%.
+\item
+  Esta barra é dividida de acordo com a contribuição relativa de cada
+  nível da variável.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gráfico de barras empilhadas}
+\protect\hypertarget{gruxe1fico-de-barras-empilhadas-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Gráfico de setores}
+\protect\hypertarget{gruxe1fico-de-setores}{}
+\begin{itemize}
+\tightlist
+\item
+  Consiste em repartir um círculo em setores de tamanhos proporcionais
+  às frequências relativas ou às porcentagens de cada valor.
+\item
+  Podem ser usados para representar variáveis com poucos níveis.
+\item
+  Para variáveis com muitos níveis, o gráfico tende a ficar visualmente
+  poluído e pouco informativo.
+\item
+  Além disso, o cérebro humano tem dificuldade em relacionar frequências
+  com áreas relativas.
+\item
+  Apesar de muito usado e preferido em diversas áreas, deve ser evitado.
+\item
+  Uma variação do gráfico de setores é o gráfico de rosca.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gráfico de setores}
+\protect\hypertarget{gruxe1fico-de-setores-1}{}
+EXEMPLO
+\end{frame}
+
+\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas}{%
+\section{Análise descritiva univariada para variáveis
+quantitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas}}
+
+\begin{frame}{Análise descritiva univariada para variáveis
+quantitativas}
+\protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-1}{}
+\begin{itemize}
+\item
+  Uma variável quantitativa é uma característica que pode ser
+  representada numericamente.
+\item
+  Podem ser classificadas em discretas (finitos valores em um dado
+  intervalo) ou contínuas (infinitos valores em um dado intervalo).
+\item
+  Quando estamos lidando com variáveis quantitativas discretas com
+  poucos possíveis valores, as técnicas apresentadas para variáveis
+  qualitativas se aplicam.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência}
+\protect\hypertarget{tabelas-de-frequuxeancia}{}
+EXEMPLO TABELA PARA QUANTITATIVA DISCRETA COM POUCOS NÍVEIS
+\end{frame}
+
+\begin{frame}{Gráficos de frequência}
+\protect\hypertarget{gruxe1ficos-de-frequuxeancia}{}
+EXEMPLOS GRÁFICOS PARA QUANTITATIVA DISCRETA COM POUCOS NIVEIS
+\end{frame}
+
+\begin{frame}{Análise descritiva univariada para variáveis
+quantitativas}
+\protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-2}{}
+\begin{itemize}
+\item
+  Para variáveis quantitativas contínuas ou discretas com muitos
+  possíveis valores, precisamos de técnicas específicas.
+\item
+  Uma estratégia comum é o agrupamento em faixas de valores, e avaliação
+  das frequências nestas faixas.
+\item
+  Cuidados devem ser tomados quanto às notações e tipos de faixas
+  (aberto e fechado à esquerda ou direita).
+\item
+  Podem ser usadas tabelas de frequências absolutas, relativas e
+  acumuladas para as faixas de valores.
+\item
+  Utilizando a razão entre frequência relativa e a amplitude das faixas
+  de valores, geramos a densidade.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Análise descritiva univariada para variáveis
+quantitativas}
+\protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-3}{}
+\begin{itemize}
+\item
+  Como agrupar em classes?
+\item
+  Qual o tamanho ideal das faixas de valores?
+\item
+  Classes definidas com a mesma amplitude é o procedimento mais usual.
+\item
+  Existem procedimentos que podem ser usados para obter a amplitude,
+  como Sturges.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência para uma variável quantitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-quantitativa}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Gráficos para representação de frequências de uma variável
+quantitativa}
+\protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-quantitativa}{}
+\begin{itemize}
+\tightlist
+\item
+  Assim como no caso de variáveis qualitativas ou quantitativas
+  discretas com poucos possíveis valores, a representação por meio de
+  gráficos pode ser bastante benéfica para análise de variáveis
+  quantitativas.
+\end{itemize}
+
+Algumas possibilidades são
+
+\begin{itemize}
+\tightlist
+\item
+  Histograma da frequência absoluta (afetado pelo número de classes).
+\item
+  Histograma com amplitude de classe variável.
+\item
+  Histograma da densidade.
+\item
+  Histograma da densidade para amplitude de classe variável.
+\item
+  Gráfico de frequências acumuladas.
+\item
+  Gráfico de densidade empírica.
+\item
+  Box-plot
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Histograma}
+\protect\hypertarget{histograma}{}
+\begin{itemize}
+\tightlist
+\item
+  Consiste em retângulos contíguos de base dada pelas faixas de valores
+  definindas para uma variável.
+\item
+  A área igual é igual à frequência da rescpectiva faixa.
+\item
+  Em uma possível representação a altura pode representar a frequência
+  absoluta na faixa de valores.
+\item
+  Outra possibilidade é a altura de cada retângulo representar o
+  quociente da área pela amplitude da faixa: a densidade.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Histograma}
+\protect\hypertarget{histograma-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Gráfico de densidade empírica}
+\protect\hypertarget{gruxe1fico-de-densidade-empuxedrica}{}
+\end{frame}
+
+\begin{frame}{Assimetria}
+\protect\hypertarget{assimetria}{}
+\end{frame}
+
+\begin{frame}{Gráfico de frequências acumuladas}
+\protect\hypertarget{gruxe1fico-de-frequuxeancias-acumuladas}{}
+\end{frame}
+
+\begin{frame}{Box-plot}
+\protect\hypertarget{box-plot}{}
+\begin{itemize}
+\item
+  Outra importante visualização é o box-plot.
+\item
+  É possível analisar a distribuição dos dados, aspectos quanto a
+  posição, variabilidade, assimetria e também a presença de valores
+  atípicos.
+\item
+  Retomaremos o box-plot após estudar quartis, em medidas descritivas.
+\end{itemize}
+
+EXEMPLO BOX-PLOT
 \end{frame}
 
 \end{document}

@@ -606,8 +606,8 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{Dados}}
-\subtitle{Conjunto de dados, tipos de variáveis, fontes de dados}
+\title{\textbf{Análise exploratória II}}
+\subtitle{Resumos numéricos - medidas de posição, dispersão e forma.}
 \author{Prof.~Me. Lineu Alberto Cavazani de Freitas}
 \date{}
 \institute{\textbf{CE003 – Estatística II}\\
@@ -618,227 +618,417 @@ Laboratório de Estatística e Geoinformação}
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}{O que são dados?}
-\protect\hypertarget{o-que-suxe3o-dados}{}
+\begin{frame}{Resumos numéricos}
+\protect\hypertarget{resumos-numuxe9ricos}{}
 \begin{itemize}
-\tightlist
 \item
-  Dados são conjuntos de valores.
+  Uma forma de resumir a informação contida em um conjunto de dados é
+  por meio dos resumos numéricos.
 \item
-  Podem ser de diferentes fontes, tais como estudos e experimentos.
+  Resumos numéricos são basicamente números que resumem números.
 \item
-  Podem conter variáveis de diferentes tipos.
+  Os dois principais grupos são as medidas de posição (central e
+  relativa) e dispersão.
 \item
-  Podem surgir em formatos estruturados e não estruturados.
+  Existem outros conjuntos de medidas, como as medidas de forma e também
+  as de relação.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados}{}
+\begin{frame}{Medidas de posição central}
+\protect\hypertarget{medidas-de-posiuxe7uxe3o-central}{}
 \begin{itemize}
+\tightlist
 \item
-  Em Estatística, em geral, lidamos com dados estruturados em um formato
-  tabular.
-\item
-  O conjunto de dados completo e sem tratamentos é denominado conjunto
-  de dados brutos.
-\item
-  Um conjunto de dados considerado arrumado é aquele em que:
+  As medidas de posição central buscam expressar o centro de uma
+  variável por meio de ideias como:
 
   \begin{itemize}
   \tightlist
   \item
-    Cada coluna representa uma variável.
+    Centro de massa.
   \item
-    Cada linha representa uma observação.
+    Valor que divide a amostra em partes iguais.
   \item
-    Cada célula representa o valor observado.
+    Valores de maior frequência ou densidade.
   \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-1}{}
-FIGURA TIDY DATA
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-2}{}
-Exemplo
-\end{frame}
-
-\begin{frame}{Tipos de variáveis}
-\protect\hypertarget{tipos-de-variuxe1veis}{}
-\begin{itemize}
 \item
-  Na prática, podemos coletar variáveis de diferentes tipos e naturezas.
-\item
-  Existem dois tipos (básicos) de variáveis:
+  Algumas possiblidades são
 
   \begin{itemize}
   \tightlist
   \item
-    Numéricas (quantitativas).
+    Média.
   \item
-    Não numéricas (qualitativas).
+    Mediana.
+  \item
+    Moda.
+  \item
+    Média geométrica.
+  \item
+    Média harmônica.
+  \item
+    Média aparada.
   \end{itemize}
-\item
-  Cada uma das classes tem suas ramificações.
 \end{itemize}
-
-FIGURA TIPO DE VARIÁVEIS
 \end{frame}
 
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas}{}
+\begin{frame}{Medidas de posição central}
+\protect\hypertarget{medidas-de-posiuxe7uxe3o-central-1}{}
 \begin{itemize}
-\tightlist
 \item
-  Variáveis Quantitativas: assumem valores numéricos.
+  As medidas de posição relativa buscam representar pontos do domínio em
+  que a variável apresenta porções com frequências conhecidas.
+\item
+  Algumas possiblidades são
 
   \begin{itemize}
   \tightlist
   \item
-    Discretas: características mensuráveis que podem assumir apenas um
-    número finito ou infinito contável de valores.
+    Quartis.
   \item
-    Contínuas: características mensuráveis que assumem valores em uma
-    escala contínua, isto é, na reta real.
+    Decis.
+  \item
+    Percentis.
+  \item
+    Máximo.
+  \item
+    Mínimo.
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas-1}{}
-Exemplos
-\end{frame}
-
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas}{}
+\begin{frame}{Medidas de dispersão}
+\protect\hypertarget{medidas-de-dispersuxe3o}{}
 \begin{itemize}
-\tightlist
 \item
-  Variáveis Qualitativas: são as características definidas por
-  categorias, ou seja, representam uma classificação dos indivíduos e
-  não uma característica numérica.
+  As medidas de dispersão são utilizadas para expressar informações como
+  o domínio da variável, grau de dispersão ao redor do centro
+  (variabilidade), e também distanciamento dos valores com relação ao
+  centro.
+\item
+  Algumas medidas possíveis são
 
   \begin{itemize}
   \tightlist
   \item
-    Nominais: não existe ordenação nem peso entre as categorias.
+    Amplitude.
   \item
-    Ordinais: existe uma ordenação entre as categorias.
+    Variância.
+  \item
+    Desvio padrão.
+  \item
+    Desvio absluto (médio ou mediano).
+  \item
+    Coeficiente de variação.
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas-1}{}
-Exemplos
-\end{frame}
-
-\begin{frame}{Cuidados com variáveis}
-\protect\hypertarget{cuidados-com-variuxe1veis}{}
+\begin{frame}{Medidas de forma e associação}
+\protect\hypertarget{medidas-de-forma-e-associauxe7uxe3o}{}
 \begin{itemize}
 \item
-  Existem particularidades na classificação de variáveis devido a
-  situações como:
+  As medidas de forma expressam informações como assimetria e curtose da
+  distribuição de valores por meio de coeficientes.
+\item
+  As medidas de relação visam veririficar se existe algum tipo de
+  relação entre pares de variáveis.
+\end{itemize}
+\end{frame}
+
+\hypertarget{medidas-de-posiuxe7uxe3o-central-2}{%
+\section{Medidas de posição
+central}\label{medidas-de-posiuxe7uxe3o-central-2}}
+
+\begin{frame}{Média aritmética}
+\protect\hypertarget{muxe9dia-aritmuxe9tica}{}
+\begin{itemize}
+\tightlist
+\item
+  Soma de todos os valores dividida pela quantidade de elementos.
+\item
+  Interpretação física de centro de gravidade.
+\item
+  Medida influenciada por valores extremos.
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Média aritmética}
+\protect\hypertarget{muxe9dia-aritmuxe9tica-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Média aritmética ponderada}
+\protect\hypertarget{muxe9dia-aritmuxe9tica-ponderada}{}
+\begin{itemize}
+\tightlist
+\item
+  Indicada para dados agrupados ou situações em que existe motivo para
+  unidades receberem um peso maior.
+\item
+  Obtêm-se os produtos entre frequências relativas ou os pesos e os
+  valores que a variável assume.
+\item
+  Somam-se os produtos e divide-se pela soma das frequências (quantidade
+  de elementos).
+\item
+  No caso de faixas de valores, usa-se o centro da faixa.
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Média aritmética ponderada}
+\protect\hypertarget{muxe9dia-aritmuxe9tica-ponderada-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Outros tipos de média}
+\protect\hypertarget{outros-tipos-de-muxe9dia}{}
+\begin{itemize}
+\tightlist
+\item
+  Média aritmética e ponderada são os tipos de média mais comuns.
+\item
+  Contudo existem outras possibilidades como
 
   \begin{itemize}
   \tightlist
   \item
-    Discretização de variáveis contínuas.
+    Média geométrica.
   \item
-    Limitações em instrumentos de mensuração.
+    Média harmônica.
   \item
-    Utilização de quantidades numéricas para representação de variáveis
-    categóricas
-  \item
-    Dentre outras.
+    Média aparada.
   \end{itemize}
-\item
-  Deve-se sempre estar atento a este tipo de situação pois podem levar a
-  implicações nas análises e consequentemente nos resultados.
-\item
-  Existem outros tipos de variáveis que ocorrem em situações
-  particulares que requerem técnicas específicas de análise.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{De onde vêm os dados?}
-\protect\hypertarget{de-onde-vuxeam-os-dados}{}
-Alguns exemplos:
-
+\begin{frame}{Mediana}
+\protect\hypertarget{mediana}{}
 \begin{itemize}
 \tightlist
 \item
-  Estudo de caso.
+  Valor que ocupa a posição intermediária dos valores ordenados.
 \item
-  Experimentos.
+  Divide o vetor de valores em 2 partes de mesmo tamanho.
 \item
-  Pesquisas.
+  Metade dos valores é menor que a mediana e a outra metade maior que a
+  mediana.
 \item
-  Registros administrativos.
+  Basta ordenar o conjunto de valores e verificar qual é o valor
+  central.
 \item
-  Dados em repositórios online.
+  Se o número de observações for ímpar, a mediana é o valor central.
 \item
-  Bancos de dados corporativos.
+  Se o número de observações for par, a mediana é a média dos dois
+  valores centrais.
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Mediana}
+\protect\hypertarget{mediana-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Moda}
+\protect\hypertarget{moda}{}
+\begin{itemize}
+\tightlist
+\item
+  Valor ou classe que apresenta maior frequência ou densidade.
+\item
+  Valor mais típico, aquele que mais se repete.
+\item
+  Quando todos os valores são distintos, não existe moda.
+\item
+  Quando a maior frequência está associada a mais de um valor, existe
+  mais de uma moda.
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Moda}
+\protect\hypertarget{moda-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Média, mediana e moda}
+\protect\hypertarget{muxe9dia-mediana-e-moda}{}
+\begin{itemize}
+\item
+  Na prática, estas medidas possuem vantagens e desvantagens.
+\item
+  Caso haja valores discrepantes a média é uma medida altamente
+  influenciada, o que não acontece com a moda e a mediana.
+\item
+  Já a mediana é difícil de ser obtida quando existem muitos dados, dado
+  que o processo de ordenação é custoso.
+\item
+  A dificuldade com a moda surge quando trabalha-se com distribuições
+  multimodais, isto é diversos valores tem a mesma frequência de
+  ocorrência.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados observacionais x dados experimentais}
-\protect\hypertarget{dados-observacionais-x-dados-experimentais}{}
-\beginAHalfColumn
-
-Dados observacionais
-
+\begin{frame}{Média, mediana e moda}
+\protect\hypertarget{muxe9dia-mediana-e-moda-1}{}
 \begin{itemize}
-\tightlist
 \item
-  Observação passiva da realidade.
+  As três medidas perdem significado em distribuições multimodais.
 \item
-  Sem modificação das condições.
+  A média tende a ser uma boa alternativa quando a distribuição é
+  unimodal, simétrica e sem valores extremos.
+\item
+  A mediana tende a ser uma boa alternativa para distribuições
+  assimétricas ou com presença de valores extremos.
+\item
+  A moda tende a ser uma boa alternativa quando valores se repetem,
+  estão agrupados em classe ou trata-se de uma variável qualitativa.
+\item
+  Média, moda e mediana aproximam-se em distribuições unimodais
+  simétricas.
 \end{itemize}
-
-\endColumns
-\beginAHalfColumn
-
-Dados experimentais
-
-\begin{itemize}
-\tightlist
-\item
-  Intervenção na realidade.
-\item
-  Condições controladas.
-\item
-  Observação dos efeitos das intervenções.
-\end{itemize}
-
-\endColumns
 \end{frame}
 
-\begin{frame}{No que devemos pensar antes de analisar nossos dados?}
-\protect\hypertarget{no-que-devemos-pensar-antes-de-analisar-nossos-dados}{}
+\hypertarget{medidas-de-dispersuxe3o-1}{%
+\section{Medidas de dispersão}\label{medidas-de-dispersuxe3o-1}}
+
+\begin{frame}{Medidas de dispersão}
+\protect\hypertarget{medidas-de-dispersuxe3o-2}{}
+\begin{itemize}
+\item
+  Medidas de posição por si só não são de grande valia para tirarmos
+  conclusões preliminares a respeito de um conjunto de dados.
+\item
+  Há a necessidade de aliar as medidas de posição a quantidades que
+  mensurem a variabilidade.
+\item
+  Em geral usamos uma medida de posição central, que nos dá uma ideia de
+  centro dos dados.
+\item
+  Aliamos esta informação com uma medida de dispersão, que nos dá uma
+  noção de quão dispersos são os dados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Medidas de dispersão}
+\protect\hypertarget{medidas-de-dispersuxe3o-3}{}
+\begin{itemize}
+\item
+  Lembre-se que conjuntos de dados com diferentes valores podem gerar as
+  mesmas medidas de posição.
+\item
+  Contudo um pode ser mais disperso que o outro.
+\item
+  Outra utilidade das medidas de dispersão é expressar o domínio da
+  variável.
+\item
+  Já as medidas de forma expressam informações como assimetria e curtose
+  da distribuição de valores.
+\end{itemize}
+
+Amplitude total - Diferença entre o maior e o menor valor da variável. -
+Sensível a valores extremos. - Usa apenas duas medidas.
+\end{frame}
+
+\begin{frame}{Desvio}
+\protect\hypertarget{desvio}{}
 \begin{itemize}
 \tightlist
 \item
-  O que estamos interessados em avaliar?
+  Um desvio é uma medida de distância da observação para uma medida de
+  posição central.
 \item
-  Quais são as variáveis de interesse?
+  Podemos usar como referência a média ou a mediana.
 \item
-  Quais são as variáveis que queremos avaliar se influenciam a variável
-  de interesse?
+  Tomamos todos os desvios absolutos.
 \item
-  Quais são os métodos disponíveis para análise de variáveis deste tipo?
-\item
-  Quais os métodos disponíveis que permitem responder nossa pergunta de
-  pesquisa?
-\item
-  Como coletar os dados?
-\item
-  Os dados são válidos?
+  Calculamos a média.
 \end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Desvio}
+\protect\hypertarget{desvio-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Variância}
+\protect\hypertarget{variuxe2ncia}{}
+\begin{itemize}
+\tightlist
+\item
+  Uma alternativa melhor do que os desvios é usar a soma dos quadrados
+  dos desvios.
+\item
+  Esta ideia dá origem à variância de um conjunto de dados.
+\item
+  O problema da variância é a unidade de medida (ao quadrado).
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Variância}
+\protect\hypertarget{variuxe2ncia-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Desvio-padrão}
+\protect\hypertarget{desvio-padruxe3o}{}
+\begin{itemize}
+\tightlist
+\item
+  Para ter uma medida de dispersão com a mesma unidade de medida dos
+  dados originais definiu-se o desvio-padrão como a raiz quadrada da
+  variância.
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Desvio-padrão}
+\protect\hypertarget{desvio-padruxe3o-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Coeficiente de variação}
+\protect\hypertarget{coeficiente-de-variauxe7uxe3o}{}
+\begin{itemize}
+\tightlist
+\item
+  Medida de variabilidade relativa à média.
+\item
+  Quociente do desvio-padrão pela média·
+\item
+  Medida adimensional, geralmente apresentada na forma de porcentagem.
+\item
+  Permite comparar a variabilidade de variáveis de diferentes naturezas
+\end{itemize}
+
+EXPRESSÃO
+\end{frame}
+
+\begin{frame}{Coeficiente de variação}
+\protect\hypertarget{coeficiente-de-variauxe7uxe3o-1}{}
+EXEMPLO
+\end{frame}
+
+\begin{frame}{Desvio, variância, desvio padrão, coeficiente de
+variação{]}}
+\protect\hypertarget{desvio-variuxe2ncia-desvio-padruxe3o-coeficiente-de-variauxe7uxe3o}{}
+DISCUSSÃO MEDIDAS
+
+Para variáveis qualitativas existem medidas que avaliam a dispersão são
+funções das frequências das classes.
 \end{frame}
 
 \end{document}

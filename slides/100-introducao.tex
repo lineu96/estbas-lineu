@@ -606,8 +606,8 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{Dados}}
-\subtitle{Conjunto de dados, tipos de variáveis, fontes de dados}
+\title{\textbf{Introdução}}
+\subtitle{Ideias iniciais, conceitos e motivações}
 \author{Prof.~Me. Lineu Alberto Cavazani de Freitas}
 \date{}
 \institute{\textbf{CE003 – Estatística II}\\
@@ -618,227 +618,355 @@ Laboratório de Estatística e Geoinformação}
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}{O que são dados?}
-\protect\hypertarget{o-que-suxe3o-dados}{}
-\begin{itemize}
-\tightlist
-\item
-  Dados são conjuntos de valores.
-\item
-  Podem ser de diferentes fontes, tais como estudos e experimentos.
-\item
-  Podem conter variáveis de diferentes tipos.
-\item
-  Podem surgir em formatos estruturados e não estruturados.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados}{}
-\begin{itemize}
-\item
-  Em Estatística, em geral, lidamos com dados estruturados em um formato
-  tabular.
-\item
-  O conjunto de dados completo e sem tratamentos é denominado conjunto
-  de dados brutos.
-\item
-  Um conjunto de dados considerado arrumado é aquele em que:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Cada coluna representa uma variável.
-  \item
-    Cada linha representa uma observação.
-  \item
-    Cada célula representa o valor observado.
-  \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-1}{}
-FIGURA TIDY DATA
-\end{frame}
-
-\begin{frame}{Conjunto de dados}
-\protect\hypertarget{conjunto-de-dados-2}{}
-Exemplo
-\end{frame}
-
-\begin{frame}{Tipos de variáveis}
-\protect\hypertarget{tipos-de-variuxe1veis}{}
-\begin{itemize}
-\item
-  Na prática, podemos coletar variáveis de diferentes tipos e naturezas.
-\item
-  Existem dois tipos (básicos) de variáveis:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Numéricas (quantitativas).
-  \item
-    Não numéricas (qualitativas).
-  \end{itemize}
-\item
-  Cada uma das classes tem suas ramificações.
-\end{itemize}
-
-FIGURA TIPO DE VARIÁVEIS
-\end{frame}
-
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas}{}
-\begin{itemize}
-\tightlist
-\item
-  Variáveis Quantitativas: assumem valores numéricos.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Discretas: características mensuráveis que podem assumir apenas um
-    número finito ou infinito contável de valores.
-  \item
-    Contínuas: características mensuráveis que assumem valores em uma
-    escala contínua, isto é, na reta real.
-  \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas-1}{}
-Exemplos
-\end{frame}
-
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas}{}
-\begin{itemize}
-\tightlist
-\item
-  Variáveis Qualitativas: são as características definidas por
-  categorias, ou seja, representam uma classificação dos indivíduos e
-  não uma característica numérica.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Nominais: não existe ordenação nem peso entre as categorias.
-  \item
-    Ordinais: existe uma ordenação entre as categorias.
-  \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas-1}{}
-Exemplos
-\end{frame}
-
-\begin{frame}{Cuidados com variáveis}
-\protect\hypertarget{cuidados-com-variuxe1veis}{}
-\begin{itemize}
-\item
-  Existem particularidades na classificação de variáveis devido a
-  situações como:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Discretização de variáveis contínuas.
-  \item
-    Limitações em instrumentos de mensuração.
-  \item
-    Utilização de quantidades numéricas para representação de variáveis
-    categóricas
-  \item
-    Dentre outras.
-  \end{itemize}
-\item
-  Deve-se sempre estar atento a este tipo de situação pois podem levar a
-  implicações nas análises e consequentemente nos resultados.
-\item
-  Existem outros tipos de variáveis que ocorrem em situações
-  particulares que requerem técnicas específicas de análise.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{De onde vêm os dados?}
-\protect\hypertarget{de-onde-vuxeam-os-dados}{}
-Alguns exemplos:
+\begin{frame}{Estatística}
+\protect\hypertarget{estatuxedstica}{}
+\begin{block}{}
+\protect\hypertarget{section}{}
+Conjunto de métodos e técnicas usados para organizar, descrever,
+analisar e interpretar dados.
+\end{block}
 
 \begin{itemize}
 \tightlist
 \item
-  Estudo de caso.
+  Envolve
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Planejamento (delineamento) de estudos e coleta de dados.
+  \item
+    Descrição, análise e interpretação dos dados.
+  \end{itemize}
 \item
-  Experimentos.
-\item
-  Pesquisas.
-\item
-  Registros administrativos.
-\item
-  Dados em repositórios online.
-\item
-  Bancos de dados corporativos.
+  Permite
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Extrair informações importantes para tomada de decisões.
+  \item
+    Avaliar evidências empíricas sob hipóteses de interesse.
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados observacionais x dados experimentais}
-\protect\hypertarget{dados-observacionais-x-dados-experimentais}{}
+\begin{frame}{Conceitos fundamentais}
+\protect\hypertarget{conceitos-fundamentais}{}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{População}: conjunto de seres, itens ou eventos com uma
+  característica comum.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{TODOS} aqueles que possuem a característica de interesse
+    pertencem à população.
+  \end{itemize}
+\item
+  \textbf{Amostra}: subconjunto da população.
+\item
+  \textbf{Variáveis}: características observadas em cada elemento.
+\end{itemize}
+
+Em Estatística tentamos entender o que acontece na população com base no
+que observamos em uma amostra.
+\end{frame}
+
+\begin{frame}{População x Amostra}
+\protect\hypertarget{populauxe7uxe3o-x-amostra}{}
+\begin{itemize}
+\item
+  O objetivo de qualquer estudo é estudar a população.
+\item
+  Nem sempre é possível coletar dados de toda a população.
+\item
+  A alternativa é trabalhar com uma amostra.
+\item
+  Caso toda a população seja acessível no estudo, fazemos um estudo
+  censitário (censo).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplos}
+\protect\hypertarget{exemplos}{}
+\end{frame}
+
+\begin{frame}{Etapas da análise estatística}
+\protect\hypertarget{etapas-da-anuxe1lise-estatuxedstica}{}
+De forma geral, as etapas para análise de um conjunto de dados são:
+
+\begin{enumerate}
+\tightlist
+\item
+  Definição do problema (objetivos, população e variáveis de interesse).
+\item
+  Planejamento do estudo.
+\item
+  Coleta, limpeza e validação de dados.
+\item
+  Análise dos dados
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Análise exploratória.
+  \item
+    Aplicação de métodos mais sofisticados que permitam generalizar os
+    resultados para a população.
+  \end{itemize}
+\item
+  Interpretação dos resultados.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Alguns exemplos de aplicações de Estatística}
+\protect\hypertarget{alguns-exemplos-de-aplicauxe7uxf5es-de-estatuxedstica}{}
+TODO
+\end{frame}
+
+\begin{frame}{Temas da Estatística}
+\protect\hypertarget{temas-da-estatuxedstica}{}
+\begin{enumerate}
+\tightlist
+\item
+  Estatística descritiva ou exploratória.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Coleta, organização, tratamento, análise e apresentação de dados.
+  \end{itemize}
+\item
+  Probabilidade.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Modelagem de fenômenos aleatórios para estudar a chance de
+    ocorrência de desfechos.
+  \end{itemize}
+\item
+  Inferência estatística.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Estudo da população por meio de evidência fornecida pela amostra.
+  \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Temas da Estatística}
+\protect\hypertarget{temas-da-estatuxedstica-1}{}
 \beginAHalfColumn
 
-Dados observacionais
-
-\begin{itemize}
+\begin{enumerate}
 \tightlist
 \item
-  Observação passiva da realidade.
+  Estatística descritiva ou exploratória.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Métodos de amostragem.
+  \item
+    Representação tabular.
+  \item
+    Análise gráfica.
+  \item
+    Medidas resumo.
+  \end{itemize}
 \item
-  Sem modificação das condições.
-\end{itemize}
+  Probabilidade.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Teoria das probabilidades.
+  \item
+    Variáveis aleatórias.
+  \item
+    Distribuições de probabilidade.
+  \end{itemize}
+\end{enumerate}
 
 \endColumns
 \beginAHalfColumn
 
-Dados experimentais
-
-\begin{itemize}
+\begin{enumerate}
+\setcounter{enumi}{2}
 \tightlist
 \item
-  Intervenção na realidade.
-\item
-  Condições controladas.
-\item
-  Observação dos efeitos das intervenções.
-\end{itemize}
+  Inferência estatística.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Estimação pontual.
+  \item
+    Estimação intervalar.
+  \item
+    Testes de hipóteses
+  \end{itemize}
+\end{enumerate}
 
 \endColumns
 \end{frame}
 
-\begin{frame}{No que devemos pensar antes de analisar nossos dados?}
-\protect\hypertarget{no-que-devemos-pensar-antes-de-analisar-nossos-dados}{}
+\begin{frame}{Resultados de uma análise estatística}
+\protect\hypertarget{resultados-de-uma-anuxe1lise-estatuxedstica}{}
 \begin{itemize}
 \tightlist
 \item
-  O que estamos interessados em avaliar?
+  O que os dados mostram?
 \item
-  Quais são as variáveis de interesse?
+  A pergunta de pesquisa foi respondida?
 \item
-  Quais são as variáveis que queremos avaliar se influenciam a variável
-  de interesse?
+  Existe evidência suficiente nos dados a favor da hipótese inicial?
 \item
-  Quais são os métodos disponíveis para análise de variáveis deste tipo?
-\item
-  Quais os métodos disponíveis que permitem responder nossa pergunta de
-  pesquisa?
-\item
-  Como coletar os dados?
-\item
-  Os dados são válidos?
+  Que novas perguntas surgem?
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Estatística e ética}
+\protect\hypertarget{estatuxedstica-e-uxe9tica}{}
+\begin{itemize}
+\item
+  Cuidados devem ser tomados na escolha do tipo análise a ser realizada.
+\item
+  O uso e divulgação ética e criteriosa de dados e resultados de
+  análises devem ser pré-requisitos indispensáveis e inegociáveis à
+  qualquer analista.
+\item
+  Por exemplo, no contexto de gráficos, devemos evitar que o gráfico
+  fique desproporcional ou privilegiando determinados valores a fim de
+  induzir conclusões àqueles que utilizam o gráfico como forma de
+  visualização.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estatística e ética}
+\protect\hypertarget{estatuxedstica-e-uxe9tica-1}{}
+EXEMPLO DE GRÁFICO DESPROPORCIONAL
+\end{frame}
+
+\begin{frame}{Estatística e o desenvolvimento científico}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-cientuxedfico}{}
+\begin{itemize}
+\item
+  A Estatística está diretamente associada com o método científico.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Definimos uma hipótese.
+  \item
+    Confrontamos esta hipótese com evidências (dados).
+  \item
+    Com base nas evidências rejeitamos ou não rejeitamos as hipóteses
+    iniciais.
+  \item
+    Os resultados conduzem a novas hipóteses e o ciclo se reinicia.
+  \end{itemize}
+\item
+  Praticamente todas as áreas do conhecimento humano requerem
+  instrumentos para análise de dados.
+\item
+  Muitas áreas do conhecimento requerem métodos estatísticos para
+  avaliar hipóteses de interesse.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estatística e o desenvolvimento científico}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-cientuxedfico-1}{}
+EXEMPLOS
+
+Medicamentos.
+
+Políticas públicas.
+\end{frame}
+
+\begin{frame}{A importância de resultados não significativos}
+\protect\hypertarget{a-importuxe2ncia-de-resultados-nuxe3o-significativos}{}
+\begin{itemize}
+\item
+  Muitos pesquisadores deixam de tornar públicos resultados não
+  significativos.
+\item
+  Contudo resultados não significativos são tão importantes quanto os
+  significativos.
+\item
+  A hipótese de interesse, rejeitada ou não rejeitada, fornece
+  conhecimento a respeito do problema sob análise.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estatística e o desenvolvimento computacional}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-computacional}{}
+\begin{itemize}
+\item
+  A popularização da Estatística se dá graças ao desenvolvimento
+  computacional.
+\item
+  Os computadores pessoais tornaram os métodos estatísticos mais
+  acessíveis ao público geral por meio de softwares que implementam as
+  metodologias.
+\item
+  Devido ao avanço computacional, houve um aumento considerável na
+  capacidade de produzir e armazenar dados provenientes das mais
+  diversas fontes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estatística e o desenvolvimento computacional}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-computacional-1}{}
+\begin{itemize}
+\item
+  Graças ao avanço computacional podemos lidar com a manipulação de
+  grandes conjuntos de dados.
+\item
+  Este grande volume de dados também força o desenvolvimento dos métodos
+  estatísticos e softwares para análise de dados.
+\item
+  A capacidade computacional atual também desperta o interesse por
+  métodos estatísticos computacionalmente intensivos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Considerações finais}
+\protect\hypertarget{considerauxe7uxf5es-finais}{}
+\begin{itemize}
+\item
+  Onde há incerteza, a Estatística pode ser usada.
+\item
+  A Estatística vai muito além do senso comum: tabelas e gráficos em
+  revistas esportivas e jornais ou pesquisas de intenção de voto em
+  épocas de eleição.
+\item
+  A Estatística está por trás de boa parte do desenvolvimento científico
+  moderno.
+\item
+  Atualmente recursos computacionais são indispensáveis para trabalhar
+  com métodos estatísticos.
+\item
+  O foco desta disciplina está no letramento estatístico, isto é,
+  apresentar o básico de Estatística que permita compreender e avaliar
+  criticamente análises de dados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Algumas leituras recomendadas}
+\protect\hypertarget{algumas-leituras-recomendadas}{}
+Uma senhora toma chá
+
+O andar do bêbado
+
+Como mentir com Estatística
+
+Algoritmos de destruição em massa
 \end{frame}
 
 \end{document}
