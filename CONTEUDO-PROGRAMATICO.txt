@@ -1,0 +1,154 @@
+
+---------------------------
+CONTEÚDO PROGRAMÁTICO
+---------------------------
+
+SEMANA 1
+
+ATAV 1: Quiz conceitos e amostragem
+
+Aula 1: Orientações iniciais e Introdução
+Aula 2: Dados e Amostragem
+
+---------------------------
+
+SEMANA 2
+
+ATAV 2: Quiz tabelas e gráficos
+
+Aula 3: Análise exploratória univariada: tabelas e gráficos para variáveis qualitativas
+Aula 4: Análise exploratória univariada: tabelas e gráficos para variáveis quantitativas
+
+---------------------------
+
+SEMANA 3
+
+ATAV 3: Quiz medidas descritivas
+
+Aula 5: Análise exploratória univariada: medidas descritivas (posição)
+Aula 6: Análise exploratória univariada: medidas descritivas (dispersão)
+
+---------------------------
+
+SEMANA 4
+
+ATAV 4: Quiz análises bivariadas.
+
+Aula 7: Análise exploratória bivariada.
+Aula 8: PROVA 1
+
+---------------------------
+
+SEMANA 5
+
+ATAV 5: Quiz
+
+Aula 10: Prob 
+Aula 11: Prob 
+
+---------------------------
+
+SEMANA 6
+
+ATAV 6: Quiz
+
+Aula 12: Prob
+Aula 13: Prob
+
+---------------------------
+
+SEMANA 7
+
+ATAV 7: Quiz
+
+Aula 14: Prob
+Aula 15: Prob
+
+---------------------------
+
+SEMANA 8
+
+ATAV 8: Quiz
+
+Aula 16: Prob
+Aula 17: PROVA 2
+
+---------------------------
+
+SEMANA 9
+
+ATAV 9: Quiz
+
+Aula 18: Inf
+Aula 19: Inf
+
+---------------------------
+
+SEMANA 10
+
+ATAV 10: Quiz
+
+Aula 20: Inf
+Aula 21: Inf
+
+---------------------------
+
+SEMANA 11
+
+ATAV 11: Quiz
+
+Aula 22: Inf
+Aula 23: Inf
+
+---------------------------
+
+SEMANA 12
+
+ATAV 12: Quiz
+
+Aula 24: Inf
+Aula 25: PROVA 3
+
+---------------------------
+
+
+Orientações
+
+Introdução
+Dados
+Amostragem
+Amostragem probabilística
+Amostragem não probabilística
+
+Introdução análise descritiva
+Análise descritiva variáveis qualitativas
+Análise descritiva variáveis quantitativas
+Introdução aos resumos numéricos
+Medidas de posição
+Medidas de dispersão
+Medidas de forma
+Análise descritiva para mais de uma variável
+Outros tipos de gráfico
+
+Introdução probabilidades
+Regras de probabilidade
+Variáveis aleatórias
+Variáveis aleatórias bidimensionais
+Distribuições de probabilidade
+Principais modelos discretos
+Principais modelos contínuos
+Outros modelos
+
+Introdução inferência estatística
+Estimação pontual e intervalar
+Tamanho amostral
+Propriedades estimadores
+Métodos de estimação
+Introdução aos testes de hipóteses
+Testes para média, proporção e variância
+Testes para diferença de médias, proporções e variâncias
+Testes qui-quadrado e de correlação
+
+Métodos estatísticos
+Anova
+Modelos de regressão

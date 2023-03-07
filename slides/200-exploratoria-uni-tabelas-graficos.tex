@@ -77,6 +77,13 @@
 \makeatother
 \usepackage{xcolor}
 \newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -623,22 +630,25 @@ Laboratório de Estatística e Geoinformação}
 \protect\hypertarget{anuxe1lise-exploratuxf3ria}{}
 \begin{itemize}
 \item
-  Parte primordial de qualquer análise estatística é chamada análise
-  descritiva ou exploratória.
+  Parte primordial de qualquer análise estatística é chamada
+  \textbf{análise descritiva} ou \textbf{exploratória}.
 \item
-  Consiste basicamente de tabelas, resumos numéricos e análises gráficas
-  das variáveis disponíveis em um conjunto de dados.
+  Consiste basicamente de \textbf{tabelas}, \textbf{resumos numéricos} e
+  \textbf{análises gráficas} das variáveis disponíveis em um conjunto de
+  dados.
 \item
   Trata-se de uma etapa de extrema importância e deve preceder qualquer
   análise mais sofisticada.
 \item
-  As técnicas de análise exploratória visam resumir e apresentar as
-  informações de um conjunto de dados brutos.
+  As técnicas de análise exploratória visam \textbf{resumir} e
+  \textbf{apresentar} as informações de um conjunto de dados brutos.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Análise exploratória}
 \protect\hypertarget{anuxe1lise-exploratuxf3ria-1}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
   Tentar compreender um conjunto de dados sem algum método que permita
@@ -647,42 +657,64 @@ Laboratório de Estatística e Geoinformação}
   A análise exploratória é a primeira forma de tentarmos enteder o que
   acontece nos nossos dados.
 \item
-  Compreende também a etapa de consistência dos dados, isto é, verificar
+  Uma das tarefas é a etapa de consistência dos dados, isto é, verificar
   se os dados coletados são condizentes com a realidade.
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/dados} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2018/01/26/18/21/matrix-3109378_1280.jpg}{pixabay.com.}}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Análise exploratória}
 \protect\hypertarget{anuxe1lise-exploratuxf3ria-2}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
-  O conjunto de técnicas aplicáveis está diretamente associado ao tipo
-  das variáveis de interesse (quantitativas x qualitativas) e suas
-  ramificações.
+  O conjunto de técnicas aplicáveis está diretamente associado ao
+  \textbf{tipo das variáveis de interesse} (quantitativas x
+  qualitativas) e suas ramificações.
 \item
-  Podemos conduzir análises focadas nas variáveis uma a uma (análises
-  univariadas).
+  Podemos conduzir análises focadas nas variáveis uma a uma
+  (\textbf{análises univariadas}).
 \item
   Bem como conduzir análises focadas em avaliar a relação entre as
-  variáveis (análises multivariadas).
+  variáveis (\textbf{análises multivariadas}).
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/exploratoria} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2020/08/03/10/00/graph-5459708_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Análise exploratória}
 \protect\hypertarget{anuxe1lise-exploratuxf3ria-3}{}
 Podemos fazer uso diversas técnicas, tais como
 
+\beginAHalfColumn
+
 \begin{itemize}
-\item
-  Medidas de posição central.
-\item
-  Medidas de posição relativa.
-\item
-  Medidas de forma.
-\item
-  Medidas de dispersão.
-\item
-  Medidas de associação.
 \item
   Tabelas de frequência absolutas.
 \item
@@ -694,6 +726,25 @@ Podemos fazer uso diversas técnicas, tais como
 \item
   Gráficos (para análise uni e multivariada).
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Medidas de posição central.
+\item
+  Medidas de posição relativa.
+\item
+  Medidas de forma.
+\item
+  Medidas de dispersão.
+\item
+  Medidas de associação.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitativas}{%
@@ -705,15 +756,17 @@ qualitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitati
 \begin{itemize}
 \item
   Uma variável qualitativa representa um atributo que pode ser expresso
-  por meio de rótulos ou categorias.
+  por meio de \textbf{rótulos} ou \textbf{categorias}.
 \item
-  Podem ser classificadas em nominais (sem ordenação natural entre os
-  níveis) ou ordinais (com ordenação natural entre os níveis).
+  Podem ser classificadas em \textbf{nominais} (sem ordenação natural
+  entre os níveis) ou \textbf{ordinais} (com ordenação natural entre os
+  níveis).
 \item
-  As categorias também são chamadas de classes ou níveis.
+  As categorias também são chamadas de \textbf{classes} ou
+  \textbf{níveis}.
 \item
   Na análise descritiva de uma variável qualitativa estamos interessados
-  em avaliar as frequências das classes.
+  em avaliar as \textbf{frequências} das classes.
 \end{itemize}
 \end{frame}
 
@@ -721,11 +774,11 @@ qualitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitati
 \protect\hypertarget{tipos-de-frequuxeancia}{}
 \begin{itemize}
 \item
-  Frequência absoluta: número de observações no conjunto de dados que
-  pertence a uma determinada classe.
+  \textbf{Frequência absoluta} (\(f_a\)): número de observações no
+  conjunto de dados que pertence a uma determinada classe.
 \item
-  Frequência relativa: frequência de classe dividida pelo número total
-  de observações no conjunto de dados.
+  \textbf{Frequência relativa} (\(f_r\)): frequência de classe dividida
+  pelo número total de observações no conjunto de dados.
 
   \begin{itemize}
   \tightlist
@@ -734,8 +787,8 @@ qualitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitati
     100.
   \end{itemize}
 \item
-  Frequência acumulada: frequência absoluta ou relativa acumulada
-  conforme disposição das classes.
+  \textbf{Frequência acumulada} (\(F_a\) ou \(F_r\)): frequência
+  absoluta ou relativa acumulada conforme disposição das classes.
 
   \begin{itemize}
   \tightlist
@@ -745,83 +798,302 @@ qualitativas}\label{anuxe1lise-descritiva-univariada-para-variuxe1veis-qualitati
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Exemplos}
-\protect\hypertarget{exemplos}{}
+\begin{frame}{Tipos de frequência}
+\protect\hypertarget{tipos-de-frequuxeancia-1}{}
+\textbf{Exemplos}
+
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Frequência absoluta e relativa dos alunos por gênero.
+
+  \begin{itemize}
+  \item
+    XX do sexo masculino.
+  \item
+    XX do sexo feminino.
+  \item
+    \(XX/n = 0,XX\) do sexo masculino (\(XX\%\)).
+  \item
+    \(XX/n = 0,XX\) do sexo feminino (\(XX\%\)).
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/generos2} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2014/04/03/11/52/gender-312411_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Tabelas de frequência para uma variável qualitativa}
 \protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
   Utlizando apenas os dados brutos é difícil responder questões de
   interesse.
 \item
   Para reduzir os dados originais de forma que fique mais claro o
-  entendimento dos mesmos são utilizadas as tabelas de frequência.
+  entendimento dos mesmos são utilizadas as
+  \textbf{tabelas de frequência}.
 \item
   No caso de variáveis qualitativas consiste em listar os possíveis
   níveis da variável e fazer a contagem de quantas vezes cada nível
   aparece nos dados brutos.
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.4\linewidth]{./img/tabela} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2016/12/11/01/28/spreadsheet-icon-1898557_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Tabelas de frequência para uma variável qualitativa}
 \protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-1}{}
 \begin{itemize}
 \item
-  Cada linha da tabela diz respeito a um nível da variável categórica.
+  Cada \textbf{linha} da tabela diz respeito a um \textbf{nível} da
+  variável categórica.
 \item
-  As colunas podem apresentar diferentes tipos de frequência (absoluta,
-  relativa, acumulada).
+  As \textbf{colunas} podem apresentar diferentes tipos de
+  \textbf{frequência} (absoluta, relativa, acumulada).
 \item
   Alguns cuidados para a apresentação dos resultados dizem respeito ao
   tipo de variável categórica em questão: nominal ou ordinal.
+\item
+  Os níveis de variáveis
+  \textbf{nominais não apresentam uma ordenação natural}, portanto, na
+  apresentação dos resultados pode ser interessante ordenar os níveis
+  por frequência ou por ordem alfabética.
+\item
+  Esta estratégia não é recomendada para variáveis \textbf{ordinais},
+  pois estas \textbf{apresentam uma ordenação natural} e esta ordenação
+  deve ser preferencialmente mantida na exposição dos resultados.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Tabelas de frequência para uma variável qualitativa}
-\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-2}{}
-\begin{itemize}
-\item
-  Os níveis de variáveis nominais não apresentam uma ordenação natural,
-  portanto, na apresentação dos resultados pode ser interessante ordenar
-  os níveis por frequência ou por ordem alfabética.
-\item
-  Esta estratégia não é recomendada para variáveis ordinais, pois estas
-  apresentam uma ordenação natural e esta ordenação deve ser
-  preferencialmente mantida na exposição dos resultados.
-\end{itemize}
+\begin{frame}{Tabelas de frequência para uma variável qualitativa
+nominal}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-nominal}{}
+\begin{longtable}[]{@{}ccc@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+Níveis & Frequência & Freq. Relativa \\
+\midrule()
+\endfirsthead
+\toprule()
+Níveis & Frequência & Freq. Relativa \\
+\midrule()
+\endhead
+A & 55 & 0.110 \\
+B & 55 & 0.110 \\
+C & 52 & 0.104 \\
+D & 46 & 0.092 \\
+E & 40 & 0.080 \\
+F & 50 & 0.100 \\
+G & 54 & 0.108 \\
+H & 46 & 0.092 \\
+I & 49 & 0.098 \\
+J & 53 & 0.106 \\
+Total & 500 & 1.000 \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
-\begin{frame}{Tabelas de frequência para uma variável qualitativa}
-\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-3}{}
-EXEMPLO QUALITATIVA NOMINAL
+\begin{frame}{Tabelas de frequência para uma variável qualitativa
+nominal}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-nominal-1}{}
+\begin{longtable}[]{@{}ccc@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+Níveis & Frequência & Freq. Relativa \\
+\midrule()
+\endfirsthead
+\toprule()
+Níveis & Frequência & Freq. Relativa \\
+\midrule()
+\endhead
+A & 55 & 0.110 \\
+B & 55 & 0.110 \\
+G & 54 & 0.108 \\
+J & 53 & 0.106 \\
+C & 52 & 0.104 \\
+F & 50 & 0.100 \\
+I & 49 & 0.098 \\
+D & 46 & 0.092 \\
+H & 46 & 0.092 \\
+E & 40 & 0.080 \\
+Total & 500 & 1.000 \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
-\begin{frame}{Tabelas de frequência para uma variável qualitativa}
-\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-4}{}
-EXEMPLO QUALITATIVA ORDINAL
+\begin{frame}{Tabelas de frequência para uma variável qualitativa
+nominal}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-nominal-2}{}
+\begin{longtable}[]{@{}ccc@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+Níveis & Frequência & Percentual \\
+\midrule()
+\endfirsthead
+\toprule()
+Níveis & Frequência & Percentual \\
+\midrule()
+\endhead
+A & 55 & 11 \% \\
+B & 55 & 11 \% \\
+G & 54 & 10.8 \% \\
+J & 53 & 10.6 \% \\
+C & 52 & 10.4 \% \\
+F & 50 & 10 \% \\
+I & 49 & 9.8 \% \\
+D & 46 & 9.2 \% \\
+H & 46 & 9.2 \% \\
+E & 40 & 8 \% \\
+Total & 500 & 100 \% \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência para uma variável qualitativa
+ordinal}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-ordinal}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1625}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1500}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2125}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2750}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Níveis
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Relativa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Rel. Acumulada
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Níveis
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Relativa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Rel. Acumulada
+\end{minipage} \\
+\midrule()
+\endhead
+muito baixo & 109 & 0.218 & 109 & 0.218 \\
+baixo & 93 & 0.186 & 202 & 0.404 \\
+neutro & 91 & 0.182 & 293 & 0.586 \\
+alto & 106 & 0.212 & 399 & 0.798 \\
+muito alto & 101 & 0.202 & 500 & 1.000 \\
+Total & 500 & 1.000 & 500 & 1.000 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência para uma variável qualitativa
+ordinal}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-qualitativa-ordinal-1}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1711}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1579}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1579}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2237}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2895}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Níveis
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Níveis
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endhead
+muito baixo & 109 & 21.8 \% & 109 & 21.8 \% \\
+baixo & 93 & 18.6 \% & 202 & 40.4 \% \\
+neutro & 91 & 18.2 \% & 293 & 58.6 \% \\
+alto & 106 & 21.2 \% & 399 & 79.8 \% \\
+muito alto & 101 & 20.2 \% & 500 & 100 \% \\
+Total & 500 & 100 \% & 500 & 100 \% \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
 \begin{frame}{Gráficos para representação de frequências de uma variável
 qualitativa}
 \protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-qualitativa}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
   A representação por meio de tabelas é útil mas nem sempre eficiente.
 \item
-  Em diversos casos pode ser mais conveniente utilizar um gráfico.
+  Em diversos casos pode ser mais conveniente utilizar um
+  \textbf{gráfico}.
 \item
   ``Uma imagem vale mais que mil palavras''.
 \item
   Os cuidados com a ordenação dos níveis de acordo com o tipo da
   variável se mantém.
 \end{itemize}
-\end{frame}
 
-\begin{frame}{Gráficos para representação de frequências de uma variável
-qualitativa}
-\protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-qualitativa-1}{}
+\endColumns
+\beginAHalfColumn
+
 Algumas possibilidades são:
 
 \begin{itemize}
@@ -834,52 +1106,91 @@ Algumas possibilidades são:
   Gráfico de barras empilhadas.
 \item
   Gráfico de setores.
-\item
-  Gráfico de rosca.
 \end{itemize}
+
+\endColumns
 \end{frame}
 
-\begin{frame}{Gráfico de barras verticais ou horizontais}
-\protect\hypertarget{gruxe1fico-de-barras-verticais-ou-horizontais}{}
+\begin{frame}{Gráfico de barras}
+\protect\hypertarget{gruxe1fico-de-barras}{}
 \begin{itemize}
 \tightlist
 \item
-  Utiliza os possíveis níveis das variáveis em um eixo.
+  \textbf{Gráfico de barras verticais ou horizontais.}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Utiliza os possíveis \textbf{níveis} das variáveis
+    \textbf{em um eixo}.
+  \item
+    As \textbf{frequências ou porcentagens} ficam
+    \textbf{no outro eixo}.
+  \item
+    O tamanho da barra correspondente à frequência ou percentual.
+  \end{itemize}
 \item
-  As frequências ou porcentagens ficam no outro eixo.
-\item
-  O tamanho da barra correspondente à frequência.
+  \textbf{Gráfico de barras empilhadas}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Usa-se \textbf{uma única barra}.
+  \item
+    A barra é dividida de acordo com a \textbf{contribuição relativa} de
+    cada nível da variável.
+  \item
+    Representa-se a frequência relativa ou o percentual.
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Gráfico de barras verticais}
 \protect\hypertarget{gruxe1fico-de-barras-verticais}{}
-EXEMPLO
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-11-1} 
+
+}
+
+\caption{Gráfico de barras verticais para a variável...}\label{fig:unnamed-chunk-11}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Gráfico de barras verticais}
+\protect\hypertarget{gruxe1fico-de-barras-verticais-1}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-12-1} 
+
+}
+
+\caption{Gráfico de barras verticais para a variável...}\label{fig:unnamed-chunk-12}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Gráfico de barras horizontais}
 \protect\hypertarget{gruxe1fico-de-barras-horizontais}{}
-EXEMPLO
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-13-1} 
+
+}
+
+\caption{Gráfico de barras horizontais para a variável...}\label{fig:unnamed-chunk-13}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Gráfico de barras empilhadas}
 \protect\hypertarget{gruxe1fico-de-barras-empilhadas}{}
-\begin{itemize}
-\tightlist
-\item
-  No caso de uma barra empilhada representa-se a frequência relativa ou
-  o percentual.
-\item
-  Existe uma única barra que representa 100\%.
-\item
-  Esta barra é dividida de acordo com a contribuição relativa de cada
-  nível da variável.
-\end{itemize}
-\end{frame}
+\begin{figure}
 
-\begin{frame}{Gráfico de barras empilhadas}
-\protect\hypertarget{gruxe1fico-de-barras-empilhadas-1}{}
-EXEMPLO
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-14-1} 
+
+}
+
+\caption{Gráfico de barras empilhadas para a variável...}\label{fig:unnamed-chunk-14}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Gráfico de setores}
@@ -887,26 +1198,35 @@ EXEMPLO
 \begin{itemize}
 \tightlist
 \item
-  Consiste em repartir um círculo em setores de tamanhos proporcionais
-  às frequências relativas ou às porcentagens de cada valor.
+  Consiste em \textbf{repartir um círculo} em setores de tamanhos
+  proporcionais às \textbf{frequências relativas} ou às
+  \textbf{porcentagens} de cada valor.
 \item
-  Podem ser usados para representar variáveis com poucos níveis.
+  Pode ser usados para representar variáveis com \textbf{poucos níveis}.
+\item
+  Apesar de muito usado e preferido em diversas áreas, deve ser evitado.
+\item
+  O cérebro humano tem dificuldade em relacionar frequências com áreas
+  relativas.
 \item
   Para variáveis com muitos níveis, o gráfico tende a ficar visualmente
   poluído e pouco informativo.
 \item
-  Além disso, o cérebro humano tem dificuldade em relacionar frequências
-  com áreas relativas.
-\item
-  Apesar de muito usado e preferido em diversas áreas, deve ser evitado.
-\item
-  Uma variação do gráfico de setores é o gráfico de rosca.
+  Outro problema é que níveis com frequências iguais a 0 deixam de
+  aparecer no gráfico, diferente de um gráfico de barras.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Gráfico de setores}
 \protect\hypertarget{gruxe1fico-de-setores-1}{}
-EXEMPLO
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-15-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-15}
+\end{figure}
 \end{frame}
 
 \hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas}{%
@@ -918,26 +1238,80 @@ quantitativas}
 \protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-1}{}
 \begin{itemize}
 \item
-  Uma variável quantitativa é uma característica que pode ser
-  representada numericamente.
+  Uma variável quantitativa é uma \textbf{característica} que pode ser
+  \textbf{representada numericamente}.
 \item
-  Podem ser classificadas em discretas (finitos valores em um dado
-  intervalo) ou contínuas (infinitos valores em um dado intervalo).
+  Podem ser classificadas em \textbf{discretas} (finitos valores em um
+  dado intervalo) ou \textbf{contínuas} (infinitos valores em um dado
+  intervalo).
 \item
-  Quando estamos lidando com variáveis quantitativas discretas com
-  poucos possíveis valores, as técnicas apresentadas para variáveis
-  qualitativas se aplicam.
+  Quando estamos lidando com
+  \textbf{variáveis quantitativas discretas com poucos possíveis valores},
+  as técnicas apresentadas para variáveis qualitativas se aplicam.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Tabelas de frequência}
 \protect\hypertarget{tabelas-de-frequuxeancia}{}
-EXEMPLO TABELA PARA QUANTITATIVA DISCRETA COM POUCOS NÍVEIS
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2361}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3056}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Valores
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Valores
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endhead
+0 & 47 & 9.4 \% & 47 & 9.4 \% \\
+1 & 71 & 14.2 \% & 118 & 23.6 \% \\
+2 & 65 & 13 \% & 183 & 36.6 \% \\
+3 & 51 & 10.2 \% & 234 & 46.8 \% \\
+4 & 54 & 10.8 \% & 288 & 57.6 \% \\
+5 & 55 & 11 \% & 343 & 68.6 \% \\
+6 & 52 & 10.4 \% & 395 & 79 \% \\
+7 & 52 & 10.4 \% & 447 & 89.4 \% \\
+8 & 53 & 10.6 \% & 500 & 100 \% \\
+Total & 500 & 100 \% & 500 & 100 \% \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
-\begin{frame}{Gráficos de frequência}
-\protect\hypertarget{gruxe1ficos-de-frequuxeancia}{}
-EXEMPLOS GRÁFICOS PARA QUANTITATIVA DISCRETA COM POUCOS NIVEIS
+\begin{frame}{Gráfico de barras verticais}
+\protect\hypertarget{gruxe1fico-de-barras-verticais-2}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-17-1} 
+
+}
+
+\caption{Gráfico de barras verticais para a variável...}\label{fig:unnamed-chunk-17}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Análise descritiva univariada para variáveis
@@ -948,23 +1322,72 @@ quantitativas}
   Para variáveis quantitativas contínuas ou discretas com muitos
   possíveis valores, precisamos de técnicas específicas.
 \item
-  Uma estratégia comum é o agrupamento em faixas de valores, e avaliação
-  das frequências nestas faixas.
-\item
-  Cuidados devem ser tomados quanto às notações e tipos de faixas
-  (aberto e fechado à esquerda ou direita).
+  Uma estratégia comum é o \textbf{agrupamento em faixas de valores}, e
+  avaliação das frequências nestas faixas.
 \item
   Podem ser usadas tabelas de frequências absolutas, relativas e
   acumuladas para as faixas de valores.
 \item
-  Utilizando a razão entre frequência relativa e a amplitude das faixas
-  de valores, geramos a densidade.
+  Utilizando a
+  \textbf{razão entre frequência relativa e a amplitude das faixas} de
+  valores, geramos a \textbf{densidade}.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Análise descritiva univariada para variáveis
 quantitativas}
 \protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-3}{}
+\textbf{Faixas de valores}
+
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Cuidados devem ser tomados quanto às notações e tipos de faixas
+  (aberto e fechado à esquerda ou direita).
+\item
+  Em geral definimos intervalos \textbf{abertos à esquerda} e
+  \textbf{fechados à direita}.
+\item
+  Considerando dois valores \(a\) e \(b\), em que \(a < b\), os
+  intervalos consideram que \(a\) \textbf{não} está incluído na faixa,
+  \(b\) está.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Notações usuais:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(a < y \leq b\)
+  \item
+    \(a \vdash b\)
+  \item
+    \((a,b]\)
+  \end{itemize}
+\item
+  \(5 < y \leq 10\) ou \(5 \vdash 10\) ou \([5,10)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Valores maiores que 5 até valores menores ou iguais a 10. 5 não está
+    no intervalo.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Análise descritiva univariada para variáveis
+quantitativas}
+\protect\hypertarget{anuxe1lise-descritiva-univariada-para-variuxe1veis-quantitativas-4}{}
 \begin{itemize}
 \item
   Como agrupar em classes?
@@ -974,18 +1397,180 @@ quantitativas}
   Classes definidas com a mesma amplitude é o procedimento mais usual.
 \item
   Existem procedimentos que podem ser usados para obter a amplitude,
-  como Sturges.
+  como \textbf{Sturges}.
+\item
+  Em geral, 5 a 15 faixas são suficientes.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Tabelas de frequência para uma variável quantitativa}
 \protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-quantitativa}{}
-EXEMPLO
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1184}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1579}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2105}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2237}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2895}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Relativa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Rel. Acumulada
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Relativa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Rel. Acumulada
+\end{minipage} \\
+\midrule()
+\endhead
+{[}2,4{]} & 1 & 0.002 & 1 & 0.002 \\
+(4,6{]} & 46 & 0.092 & 47 & 0.094 \\
+(6,8{]} & 102 & 0.204 & 149 & 0.298 \\
+(8,10{]} & 111 & 0.222 & 260 & 0.520 \\
+(10,12{]} & 111 & 0.222 & 371 & 0.742 \\
+(12,14{]} & 82 & 0.164 & 453 & 0.906 \\
+(14,16{]} & 27 & 0.054 & 480 & 0.960 \\
+(16,18{]} & 15 & 0.030 & 495 & 0.990 \\
+(18,20{]} & 3 & 0.006 & 498 & 0.996 \\
+(20,22{]} & 2 & 0.004 & 500 & 1.000 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência para uma variável quantitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-quantitativa-1}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2361}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3056}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acumulada
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual Acumulado
+\end{minipage} \\
+\midrule()
+\endhead
+{[}2,4{]} & 1 & 0.2 \% & 1 & 0.2 \% \\
+(4,6{]} & 46 & 9.2 \% & 47 & 9.4 \% \\
+(6,8{]} & 102 & 20.4 \% & 149 & 29.8 \% \\
+(8,10{]} & 111 & 22.2 \% & 260 & 52 \% \\
+(10,12{]} & 111 & 22.2 \% & 371 & 74.2 \% \\
+(12,14{]} & 82 & 16.4 \% & 453 & 90.6 \% \\
+(14,16{]} & 27 & 5.4 \% & 480 & 96 \% \\
+(16,18{]} & 15 & 3 \% & 495 & 99 \% \\
+(18,20{]} & 3 & 0.6 \% & 498 & 99.6 \% \\
+(20,22{]} & 2 & 0.4 \% & 500 & 100 \% \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequência para uma variável quantitativa}
+\protect\hypertarget{tabelas-de-frequuxeancia-para-uma-variuxe1vel-quantitativa-2}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1481}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1481}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1605}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1605}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}@{}}
+\caption{Tabela de frequências para\ldots{}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acum.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Perc. Acum.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Amplitude
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Densidade
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Faixas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequência
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Percentual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Freq. Acum.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Perc. Acum.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Amplitude
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Densidade
+\end{minipage} \\
+\midrule()
+\endhead
+{[}2,4{]} & 1 & 0.2 \% & 1 & 0.2 \% & 2 & 0.001 \\
+(4,6{]} & 46 & 9.2 \% & 47 & 9.4 \% & 2 & 0.046 \\
+(6,8{]} & 102 & 20.4 \% & 149 & 29.8 \% & 2 & 0.102 \\
+(8,10{]} & 111 & 22.2 \% & 260 & 52 \% & 2 & 0.111 \\
+(10,12{]} & 111 & 22.2 \% & 371 & 74.2 \% & 2 & 0.111 \\
+(12,14{]} & 82 & 16.4 \% & 453 & 90.6 \% & 2 & 0.082 \\
+(14,16{]} & 27 & 5.4 \% & 480 & 96 \% & 2 & 0.027 \\
+(16,18{]} & 15 & 3 \% & 495 & 99 \% & 2 & 0.015 \\
+(18,20{]} & 3 & 0.6 \% & 498 & 99.6 \% & 2 & 0.003 \\
+(20,22{]} & 2 & 0.4 \% & 500 & 100 \% & 2 & 0.002 \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
 \begin{frame}{Gráficos para representação de frequências de uma variável
 quantitativa}
 \protect\hypertarget{gruxe1ficos-para-representauxe7uxe3o-de-frequuxeancias-de-uma-variuxe1vel-quantitativa}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \tightlist
 \item
@@ -995,60 +1580,118 @@ quantitativa}
   quantitativas.
 \end{itemize}
 
+\endColumns
+\beginAHalfColumn
+
 Algumas possibilidades são
 
 \begin{itemize}
 \tightlist
 \item
-  Histograma da frequência absoluta (afetado pelo número de classes).
-\item
-  Histograma com amplitude de classe variável.
-\item
-  Histograma da densidade.
-\item
-  Histograma da densidade para amplitude de classe variável.
-\item
-  Gráfico de frequências acumuladas.
+  Histograma.
 \item
   Gráfico de densidade empírica.
 \item
   Box-plot
 \end{itemize}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Histograma}
 \protect\hypertarget{histograma}{}
 \begin{itemize}
-\tightlist
 \item
-  Consiste em retângulos contíguos de base dada pelas faixas de valores
-  definindas para uma variável.
+  Consiste em \textbf{retângulos contíguos} de base dada pelas faixas de
+  valores definindas para uma variável.
 \item
-  A área igual é igual à frequência da rescpectiva faixa.
-\item
-  Em uma possível representação a altura pode representar a frequência
-  absoluta na faixa de valores.
-\item
-  Outra possibilidade é a altura de cada retângulo representar o
-  quociente da área pela amplitude da faixa: a densidade.
+  Algumas possibilidades são:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A área representar a frequência da rescpectiva faixa.
+  \item
+    A altura representar a frequência absoluta na faixa.
+  \item
+    A altura representar o quociente da área pela amplitude da faixa: a
+    densidade.
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Histograma}
 \protect\hypertarget{histograma-1}{}
-EXEMPLO
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-21-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-21}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Efeito do número de classes}
+\protect\hypertarget{efeito-do-nuxfamero-de-classes}{}
+\begin{itemize}
+\item
+  O número de classes pode afetar diretamente as tabelas e gráficos.
+\item
+  Com poucas classes, os dados ficam excessivamente resumidos e as
+  classes ficam muito heterogêneas.
+\item
+  Com muitas classes, os dados ficam segmentados em excesso e as
+  representações são comprometidas.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Efeito do número de classes}
+\protect\hypertarget{efeito-do-nuxfamero-de-classes-1}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-22-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-22}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Gráfico de densidade empírica}
 \protect\hypertarget{gruxe1fico-de-densidade-empuxedrica}{}
-\end{frame}
+\beginAHalfColumn
 
-\begin{frame}{Assimetria}
-\protect\hypertarget{assimetria}{}
-\end{frame}
+\textbf{Intuição}
 
-\begin{frame}{Gráfico de frequências acumuladas}
-\protect\hypertarget{gruxe1fico-de-frequuxeancias-acumuladas}{}
+\begin{itemize}
+\item
+  Imagine uma sequência de histogramas de densidade em que o número de
+  observações aumenta, juntamente com o número de faixas.
+\item
+  No limite, teremos uma curva.
+\item
+  Esta curva é chamada de gráfico de densidade empírica.
+\item
+  É um gráfico ``computacionalmente intensivo'', depende da definição de
+  uma função kernel e do tamanho da banda.
+\item
+  A área sob a curva é igual a 1.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-23-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-23}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Box-plot}
@@ -1064,7 +1707,86 @@ EXEMPLO
   Retomaremos o box-plot após estudar quartis, em medidas descritivas.
 \end{itemize}
 
-EXEMPLO BOX-PLOT
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-24-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-24}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Histograma, densidade e box-plot}
+\protect\hypertarget{histograma-densidade-e-box-plot}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-25-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-25}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Assimetria}
+\protect\hypertarget{assimetria}{}
+\begin{itemize}
+\item
+  Um conjunto pode ser aproximadamente \textbf{simétrico},
+  \textbf{assimétrico} à esquerda ou à direita.
+\item
+  Tais características são facilmente diagnosticadas por meio de análise
+  gráfica usando um histograma, gráfico de densidade ou box-plot.
+\item
+  Futuramente veremos como diagnosticar assimetria por meio de medidas
+  descritivas.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{200-exploratoria-uni-tabelas-graficos_files/figure-beamer/unnamed-chunk-26-1} 
+
+}
+
+\caption{Gráfico de setores para a variável...}\label{fig:unnamed-chunk-26}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+\begin{itemize}
+\tightlist
+\item
+  Introdução à análise exploratória.
+\item
+  Análise exploratória univariada para variáveis qualitativas.
+\item
+  Análise exploratória univariada para variáveis quantitativas.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Resumos numéricos.
+\item
+  Medidas de posição central.
+\item
+  Medidas de posição relativa.
+\item
+  Medidas de dispersão.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \end{document}

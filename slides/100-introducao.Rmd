@@ -36,18 +36,18 @@ Conjunto de métodos e técnicas usados para organizar, descrever, analisar e in
 :::
 
 
- - Envolve
-   - Planejamento (delineamento) de estudos e coleta de dados.
-   - Descrição, análise e interpretação dos dados.
+ - Compreende:
+   1. Planejamento (delineamento) de estudos e coleta de dados (amostragem).
+   2. Descrição, análise e interpretação dos dados.
 
- - Permite
-   - Extrair informações importantes para tomada de decisões.
-   - Avaliar evidências empíricas sob hipóteses de interesse.
+ - Permite:
+   1. Extrair informações importantes para tomada de decisões.
+   2. Avaliar evidências empíricas sob hipóteses de interesse.
  
 ## Conceitos fundamentais
 
  - **População**: conjunto de seres, itens ou eventos com uma característica comum. 
-   - **TODOS** aqueles que possuem a característica de interesse pertencem à população.
+   - TODOS aqueles que possuem a característica de interesse pertencem à população.
  - **Amostra**: subconjunto da população.
  - **Variáveis**: características observadas em cada elemento.
 
@@ -55,15 +55,35 @@ Em Estatística tentamos entender o que acontece na população com base no que 
 
 ## População x Amostra
 
- - O objetivo de qualquer estudo é estudar a população. 
+\beginAHalfColumn
+
+ - O objetivo de qualquer estudo é avaliar a \textbf{população}. 
 
  - Nem sempre é possível coletar dados de toda a população.
  
- - A alternativa é trabalhar com uma amostra.
+ - A alternativa é trabalhar com uma \textbf{amostra}.
  
- - Caso toda a população seja acessível no estudo, fazemos um estudo censitário (censo).
+ - Caso toda a população seja acessível no estudo, fazemos um estudo censitário (\textbf{censo}).
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='100%', fig.align='center', fig.cap="Representação população/amostra. Extraído de \\href{https://cdn.pixabay.com/photo/2017/10/25/18/18/rare-disease-2888820_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/populacao-amostra3.png")
+```
+
+\endColumns
 
 ## Exemplos
+
+ - Existe interesse em avaliar a opinião dos \textbf{alunos da UFPR} a respeito de determinada política.
+    - \textbf{População}: todos os alunos da UFPR.
+    - \textbf{Amostra}: parte dos alunos da UFPR.
+    
+ - Um pesquisador propôs uma nova droga que tem como objetivo reduzir \textbf{cólicas menstruais}.
+    - \textbf{População}: todas as mulheres que apresentam cólicas menstruais.
+    - \textbf{Amostra}: parte da população de mulheres que apresentam cólicas.
 
 ## Etapas da análise estatística
 
@@ -79,17 +99,40 @@ De forma geral, as etapas para análise de um conjunto de dados são:
 
 ## Alguns exemplos de aplicações de Estatística 
 
-TODO
+\beginAHalfColumn
+
+ - \textbf{Medicina}: eficácia de tratamentos propostos.
+
+ - \textbf{Indústria}: avaliação de qualidade de itens produzidos.
+ 
+ - \textbf{Negócios}: análise do perfil dos indíviduos para concessão de crédito.
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='15%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2018/04/06/19/39/symbol-3296654_1280.png}{pixabay.com.}"}
+knitr::include_graphics("./img/pilula.png")
+```
+
+```{r, echo = FALSE, out.width='15%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2012/04/26/18/16/factory-42708_1280.png}{pixabay.com.}"}
+knitr::include_graphics("./img/industria.png")
+```
+
+```{r, echo = FALSE, out.width='15%', fig.align='center', fig.cap="Extraído de \\href{https://pixabay.com/pt/vectors/dinheiro-saco-saco-de-dinheiro-1910761/}{pixabay.com.}"}
+knitr::include_graphics("./img/dinheiro.png")
+```
+
+\endColumns
 
 ## Temas da Estatística
 
-1. Estatística descritiva ou exploratória.
+1. \textbf{Estatística descritiva ou exploratória.}
     - Coleta, organização, tratamento, análise e apresentação de dados.
 
-2. Probabilidade.
+2. \textbf{Probabilidade.}
     - Modelagem de fenômenos aleatórios para estudar a chance de ocorrência de desfechos.
 
-3. Inferência estatística.
+3. \textbf{Inferência estatística.}
     - Estudo da população por meio de evidência fornecida pela amostra.
 
 
@@ -97,13 +140,13 @@ TODO
 
 \beginAHalfColumn
 
-1. Estatística descritiva ou exploratória.
+1. \textbf{Estatística descritiva ou exploratória.}
     - Métodos de amostragem.
     - Representação tabular.
     - Análise gráfica.
     - Medidas resumo.
 
-2. Probabilidade.
+2. \textbf{Probabilidade.}
     - Teoria das probabilidades.
     - Variáveis aleatórias.
     - Distribuições de probabilidade.
@@ -111,7 +154,7 @@ TODO
 \endColumns
 \beginAHalfColumn
 
-3. Inferência estatística.
+3. \textbf{Inferência estatística.}
     - Estimação pontual.
     - Estimação intervalar.
     - Testes de hipóteses
@@ -120,88 +163,201 @@ TODO
 
 ## Resultados de uma análise estatística
 
+\beginAHalfColumn
+
  - O que os dados mostram?
  - A pergunta de pesquisa foi respondida?
  - Existe evidência suficiente nos dados a favor da hipótese inicial?
  - Que novas perguntas surgem?
 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='35%', fig.align='center', fig.cap="Extraído de \\href{https://pixabay.com/pt/vectors/lupa-procurar-ampliar-encontrar-155170/}{pixabay.com.}"}
+knitr::include_graphics("./img/lupa.png")
+```
+
+\endColumns
+
 ## Estatística e ética
+
+
+\beginAHalfColumn
 
  - Cuidados devem ser tomados na escolha do tipo análise a ser realizada.
 
- - O uso e divulgação ética e criteriosa de dados e resultados de análises devem ser pré-requisitos indispensáveis e inegociáveis à qualquer analista. 
+ - O uso e divulgação \textbf{ética e criteriosa} de dados e resultados de análises devem ser pré-requisitos indispensáveis e inegociáveis à qualquer analista. 
 
  - Por exemplo, no contexto de gráficos, devemos evitar que o gráfico fique desproporcional ou privilegiando determinados valores a fim de induzir conclusões àqueles que utilizam o gráfico como forma de visualização.
 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='75%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2021/11/13/18/48/devil-6792088_1280.png}{pixabay.com.}"}
+knitr::include_graphics("./img/etica.png")
+```
+
+\endColumns
+
 ## Estatística e ética
 
-EXEMPLO DE GRÁFICO DESPROPORCIONAL
+```{r, echo = FALSE, out.width='100%', fig.align='center', fig.cap="Exemplo de gráfico desproporcional. Extraído de \\href{https://noticias.uol.com.br/politica/eleicoes/2018/noticias/2018/05/30/psdb-sp-divulga-grafico-desproporcional-de-doria-e-tira-do-ar-apos-criticas.htm}{Uol Notícias.}"}
+
+knitr::include_graphics("./img/grafico-desproporcional.png")
+```
+
+## Estatística e ética
+
+```{r, echo = FALSE, out.width='70%', fig.align='center', fig.cap="Exemplo de gráfico desproporcional. Extraído de \\href{https://oglobo.globo.com/politica/no-rio-candidatos-recorrem-pedalada-grafica-para-maquiar-desempenho-20198224}{O Globo.}"}
+
+knitr::include_graphics("./img/grafico-desproporcional2.jpg")
+```
+
 
 ## Estatística e o desenvolvimento científico
 
- - A Estatística está diretamente associada com o método científico.
-   - Definimos uma hipótese.
-   - Confrontamos esta hipótese com evidências (dados).
-   - Com base nas evidências rejeitamos ou não rejeitamos as hipóteses iniciais.
+ - A Estatística está diretamente associada com o \textbf{método científico}.
+   - Definimos uma \textbf{hipótese}.
+   - Confrontamos esta hipótese com \textbf{evidências} (dados).
+   - Com base nas evidências \textbf{rejeitamos} ou \textbf{não rejeitamos} as hipóteses iniciais.
    - Os resultados conduzem a novas hipóteses e o ciclo se reinicia.
   
- - Praticamente todas as áreas do conhecimento humano requerem instrumentos para análise de dados.
+ - Praticamente todas as áreas do conhecimento humano requerem instrumentos para \textbf{análise de dados}.
  
- - Muitas áreas do conhecimento requerem métodos estatísticos para avaliar hipóteses de interesse.
-
-## Estatística e o desenvolvimento científico
-
-EXEMPLOS
-
-Medicamentos.
-
-Políticas públicas.
+ - Muitas áreas do conhecimento requerem \textbf{métodos estatísticos} para avaliar hipóteses de interesse.
 
 ## A importância de resultados não significativos
 
+\beginAHalfColumn
  - Muitos pesquisadores deixam de tornar públicos resultados não significativos.
  
  - Contudo resultados não significativos são tão importantes quanto os significativos.
  
  - A hipótese de interesse, rejeitada ou não rejeitada, fornece conhecimento a respeito do problema sob análise.
- 
+
+\endColumns
+\beginAHalfColumn 
+
+```{r, echo = FALSE, out.width='40%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2021/11/04/14/36/doubt-6768418_1280.png}{pixabay.com.}"}
+knitr::include_graphics("./img/duvida.png")
+```
+
+\endColumns
+
 ## Estatística e o desenvolvimento computacional
 
- - A popularização da Estatística se dá graças ao desenvolvimento computacional.
+\beginAHalfColumn
 
- - Os computadores pessoais tornaram os métodos estatísticos mais acessíveis ao público geral por meio de softwares que implementam as metodologias.
+ - A popularização da Estatística se dá graças ao \textbf{desenvolvimento computacional}.
+
+ - Os computadores pessoais tornaram os métodos estatísticos mais acessíveis ao público geral por meio de \textbf{softwares} que implementam as metodologias.
 
  - Devido ao avanço computacional, houve um aumento considerável na capacidade de produzir e armazenar dados provenientes das mais diversas fontes.
 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='60%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2020/04/04/04/23/graph-5000784_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/desenvolvimento-computacional.png")
+```
+
+\endColumns
+
 ## Estatística e o desenvolvimento computacional
 
- - Graças ao avanço computacional podemos lidar com a manipulação de grandes conjuntos de dados.
+\beginAHalfColumn
+ - Graças ao avanço computacional podemos lidar com a manipulação de \textbf{grandes conjuntos de dados}.
 
  - Este grande volume de dados também força o desenvolvimento dos métodos estatísticos e softwares para análise de dados.
 
  - A capacidade computacional atual também desperta o interesse por métodos estatísticos computacionalmente intensivos.
- 
 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='60%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2015/04/14/23/17/it-business-722950_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/ti.png")
+```
+
+\endColumns
  
 ## Considerações finais
 
- - Onde há incerteza, a Estatística pode ser usada.
+ - Onde há \textbf{incerteza}, a Estatística pode ser usada.
 
  - A Estatística vai muito além do senso comum: tabelas e gráficos em revistas esportivas e jornais ou pesquisas de intenção de voto em épocas de eleição.
 
- - A Estatística está por trás de boa parte do desenvolvimento científico moderno.
+ - A Estatística está por trás de boa parte do \textbf{desenvolvimento científico} moderno.
 
  - Atualmente recursos computacionais são indispensáveis para trabalhar com métodos estatísticos.
  
- - O foco desta disciplina está no letramento estatístico, isto é, apresentar o básico de Estatística que permita compreender e avaliar criticamente análises de dados.
+ - O foco desta disciplina está no \textbf{letramento estatístico}, isto é, apresentar o básico de Estatística que permita \textbf{compreender e avaliar criticamente análises de dados}.
  
 ## Algumas leituras recomendadas
 
-Uma senhora toma chá
+\beginAHalfColumn
 
-O andar do bêbado
+```{r, echo = FALSE, out.width='50%', fig.align='center', fig.cap="Uma senhora toma chá."}
 
-Como mentir com Estatística
+knitr::include_graphics("./img/cha.jpg")
+```
 
-Algoritmos de destruição em massa
+\endColumns
+\beginAHalfColumn
 
+```{r, echo = FALSE, out.width='50%', fig.align='center', fig.cap="O andar do bêbado."}
+
+knitr::include_graphics("./img/bebado.jpg")
+```
+
+\endColumns
+
+
+## Algumas leituras recomendadas
+
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='50%', fig.align='center', fig.cap="Como mentir com Estatística."}
+
+knitr::include_graphics("./img/mentir.jpg")
+```
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='50%', fig.align='center', fig.cap="Algoritmos de destruição em massa."}
+
+knitr::include_graphics("./img/algoritmos.jpg")
+```
+
+\endColumns
+
+## 
+
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+ - O que é Estatística.
+ - Conceitos fundamentais.
+ - Etapas do trabalho estatístico.
+ - Temas da Estatística.
+ - Estatística e ética.
+ - Estatística e o desenvolvimento científico.
+ - Estatística e o desenvolvimento computacional.
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+ - Dados.
+ - O que são dados.
+ - Conjunto de dados.
+ - Tipos de variáveis.
+ - Fontes de dados.
+ - Estudos observacionais e experimentais.
+
+\endColumns

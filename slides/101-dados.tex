@@ -77,6 +77,13 @@
 \makeatother
 \usepackage{xcolor}
 \newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -620,51 +627,92 @@ Laboratório de Estatística e Geoinformação}
 
 \begin{frame}{O que são dados?}
 \protect\hypertarget{o-que-suxe3o-dados}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \tightlist
 \item
-  Dados são conjuntos de valores.
+  Dados são \textbf{conjuntos de valores}.
 \item
-  Podem ser de diferentes fontes, tais como estudos e experimentos.
+  Podem ser de diferentes fontes, tais como \textbf{estudos} e
+  \textbf{experimentos}.
 \item
   Podem conter variáveis de diferentes tipos.
 \item
-  Podem surgir em formatos estruturados e não estruturados.
+  Podem surgir em formatos \textbf{estruturados} e
+  \textbf{não estruturados}.
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/dados} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2018/01/26/18/21/matrix-3109378_1280.jpg}{pixabay.com.}}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Conjunto de dados}
 \protect\hypertarget{conjunto-de-dados}{}
 \begin{itemize}
 \item
-  Em Estatística, em geral, lidamos com dados estruturados em um formato
-  tabular.
+  Em Estatística, em geral, lidamos com
+  \textbf{dados estruturados em um formato tabular}.
 \item
   O conjunto de dados completo e sem tratamentos é denominado conjunto
-  de dados brutos.
+  de \textbf{dados brutos}.
 \item
-  Um conjunto de dados considerado arrumado é aquele em que:
+  Um conjunto de dados considerado \textbf{arrumado} é aquele em que:
 
   \begin{itemize}
   \tightlist
   \item
-    Cada coluna representa uma variável.
+    Cada \textbf{coluna} representa uma \textbf{variável}.
   \item
-    Cada linha representa uma observação.
+    Cada \textbf{linha} representa uma \textbf{observação}.
   \item
-    Cada célula representa o valor observado.
+    Cada \textbf{célula} representa o \textbf{valor} observado.
   \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Conjunto de dados}
 \protect\hypertarget{conjunto-de-dados-1}{}
-FIGURA TIDY DATA
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/tidy-data} 
+
+}
+
+\caption{Extraído de \href{https://r4ds.had.co.nz/tidy-data.html}{https://r4ds.had.co.nz}.}\label{fig:unnamed-chunk-3}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Conjunto de dados}
 \protect\hypertarget{conjunto-de-dados-2}{}
-Exemplo
+\begin{longtable}[]{@{}rrrrl@{}}
+\caption{Exemplo de conjunto de dados}\tabularnewline
+\toprule()
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\
+\midrule()
+\endfirsthead
+\toprule()
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\
+\midrule()
+\endhead
+5.1 & 3.5 & 1.4 & 0.2 & setosa \\
+4.9 & 3.0 & 1.4 & 0.2 & setosa \\
+4.7 & 3.2 & 1.3 & 0.2 & setosa \\
+4.6 & 3.1 & 1.5 & 0.2 & setosa \\
+5.0 & 3.6 & 1.4 & 0.2 & setosa \\
+\bottomrule()
+\end{longtable}
 \end{frame}
 
 \begin{frame}{Tipos de variáveis}
@@ -678,63 +726,119 @@ Exemplo
   \begin{itemize}
   \tightlist
   \item
-    Numéricas (quantitativas).
+    Numéricas (\textbf{quantitativas}).
   \item
-    Não numéricas (qualitativas).
+    Não numéricas (\textbf{qualitativas}).
   \end{itemize}
 \item
   Cada uma das classes tem suas ramificações.
 \end{itemize}
 
-FIGURA TIPO DE VARIÁVEIS
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/tipos-variaveis2} 
+
+}
+
+\caption{Tipos básicos de variáveis.}\label{fig:unnamed-chunk-5}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Variáveis quantitativas}
 \protect\hypertarget{variuxe1veis-quantitativas}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \tightlist
 \item
-  Variáveis Quantitativas: assumem valores numéricos.
+  \textbf{Variáveis Quantitativas}: assumem valores numéricos.
 
   \begin{itemize}
   \tightlist
   \item
-    Discretas: características mensuráveis que podem assumir apenas um
-    número finito ou infinito contável de valores.
+    \textbf{Discretas}: características mensuráveis que podem assumir
+    apenas um número finito ou infinito \textbf{contável} de valores.
   \item
-    Contínuas: características mensuráveis que assumem valores em uma
-    escala contínua, isto é, na reta real.
+    \textbf{Contínuas}: características mensuráveis que assumem valores
+    em uma \textbf{escala contínua}, isto é, na reta real.
   \end{itemize}
 \end{itemize}
-\end{frame}
 
-\begin{frame}{Variáveis quantitativas}
-\protect\hypertarget{variuxe1veis-quantitativas-1}{}
-Exemplos
+\endColumns
+\beginAHalfColumn
+
+\textbf{Exemplos}
+
+\begin{itemize}
+\tightlist
+\item
+  Altura.
+\item
+  Peso.
+\item
+  Idade.
+\item
+  Percentual de gordura corporal.
+\item
+  Número de filhos.
+\item
+  Número de fraturas.
+\item
+  Número de faltas.
+\item
+  Número de peças defeituosas em um lote.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Variáveis qualitativas}
 \protect\hypertarget{variuxe1veis-qualitativas}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \tightlist
 \item
-  Variáveis Qualitativas: são as características definidas por
+  \textbf{Variáveis Qualitativas}: são as características definidas por
   categorias, ou seja, representam uma classificação dos indivíduos e
   não uma característica numérica.
 
   \begin{itemize}
   \tightlist
   \item
-    Nominais: não existe ordenação nem peso entre as categorias.
+    \textbf{Nominais}: não existe ordenação nem peso entre as
+    categorias.
   \item
-    Ordinais: existe uma ordenação entre as categorias.
+    \textbf{Ordinais}: existe uma ordenação entre as categorias.
   \end{itemize}
 \end{itemize}
-\end{frame}
 
-\begin{frame}{Variáveis qualitativas}
-\protect\hypertarget{variuxe1veis-qualitativas-1}{}
-Exemplos
+\endColumns
+\beginAHalfColumn
+
+\textbf{Exemplos}
+
+\begin{itemize}
+\tightlist
+\item
+  Estado civil.
+\item
+  Orientação sexual.
+\item
+  Turma.
+\item
+  Posição em que joga em um time.
+\item
+  Severidade de uma lesão.
+\item
+  Escolaridade.
+\item
+  Grau de proficiência em língua inglesa.
+\item
+  Risco de infarto.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Cuidados com variáveis}
@@ -767,12 +871,14 @@ Exemplos
 
 \begin{frame}{De onde vêm os dados?}
 \protect\hypertarget{de-onde-vuxeam-os-dados}{}
-Alguns exemplos:
+\beginAHalfColumn
+
+\textbf{Alguns exemplos}:
 
 \begin{itemize}
 \tightlist
 \item
-  Estudo de caso.
+  Estudos de caso.
 \item
   Experimentos.
 \item
@@ -784,36 +890,59 @@ Alguns exemplos:
 \item
   Bancos de dados corporativos.
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/fontes-dados} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2022/03/02/09/37/data-7042739_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Dados observacionais x dados experimentais}
 \protect\hypertarget{dados-observacionais-x-dados-experimentais}{}
 \beginAHalfColumn
 
-Dados observacionais
+\textbf{Dados observacionais}
 
 \begin{itemize}
 \tightlist
 \item
-  Observação passiva da realidade.
+  \textbf{Observação passiva} da realidade.
 \item
   Sem modificação das condições.
 \end{itemize}
 
-\endColumns
-\beginAHalfColumn
-
-Dados experimentais
+\textbf{Dados experimentais}
 
 \begin{itemize}
 \tightlist
 \item
-  Intervenção na realidade.
+  \textbf{Intervenção} na realidade.
 \item
   Condições controladas.
 \item
   Observação dos efeitos das intervenções.
 \end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/observar} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2013/07/12/15/08/earth-149499_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-7}
+\end{figure}
 
 \endColumns
 \end{frame}
@@ -839,6 +968,48 @@ Dados experimentais
 \item
   Os dados são válidos?
 \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+\begin{itemize}
+\tightlist
+\item
+  Dados.
+\item
+  O que são dados.
+\item
+  Conjunto de dados.
+\item
+  Tipos de variáveis.
+\item
+  Fontes de dados.
+\item
+  Estudos observacionais e experimentais.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Amostras.
+\item
+  Métodos de amostragem.
+\item
+  Amostragem probabilística.
+\item
+  Amostragem não probabilística.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \end{document}

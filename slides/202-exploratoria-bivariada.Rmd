@@ -27,5 +27,626 @@ output:
 
 ```{r, include = FALSE}
 source("./config/setup.R")
+
+library(tidyverse)
+
+continua <- rgamma(500, 10)
+discreta <- sample(0:8, 500, replace = T)
+nominal <- sample(LETTERS[1:10], 500, replace = T)
+ordinal <- sample(factor(c("muito baixo", "baixo", "neutro", "alto", "muito alto"),
+                  levels = c("muito baixo", "baixo", "neutro", "alto", "muito alto"), ordered = T))
+
+
+ordinal <- sample(ordinal,500, replace = T)
+
+dados <- data.frame(continua,
+                    discreta,
+                    nominal,
+                    ordinal)
+
 ```
 
+
+## Análise exploratória bivariada
+
+\beginAHalfColumn
+
+ - Em alguns casos podemos estar interessados na análise de duas variáveis simultaneamente.
+
+ - O objetivo é investigar a relação de \textbf{associação} entre as variáveis.
+
+ - Tabelas, gráficos e coeficientes específicos para relação entre variáveis podem ser usados.
+
+\endColumns
+\beginAHalfColumn
+
+ - Tal como nas análises univariadas, as escolhas dependem dos tipos de variáveis.
+ 
+ - Considerando variáveis aos pares, as combinações podem ser:
+    - Qualitativa x qualitativa.
+    - Quantitativa x quantitativa.
+    - Quantitativa x qualitativa.
+
+\endColumns
+
+# Análise bivariada para variáveis qualitativas
+
+## Análise bivariada para variáveis qualitativas
+
+ - Neste tipo de situação avaliamos a \textbf{frequência} de observações para cada \textbf{combinação} de níveis das duas variáveis.
+
+ - Podem ser usadas \textbf{tabelas de frequências cruzadas}, também chamadas de \textbf{tabelas de dupla entrada}.
+
+ - Também é possível representar as frequências por meio de \textbf{recursos gráficos}.
+
+## Tabelas de frequências cruzadas
+
+ - As linhas dizem respeito aos níveis de uma variável.
+ - As colunas aos níveis da outra variável.
+ - As células mostram as frequências (absolutas ou relativas).
+ - As margens mostram as frequências marginais (de apenas uma das duas variáveis).
+ - No caso de frequências relativas podem ser usados os totais linha, coluna ou o total geral.
+
+## Tabelas de frequências cruzadas
+
+```{r, echo=FALSE}
+
+df <- data.frame(f1 = sample(letters[1:5], 500, replace = T),
+           f2 = sample(letters[6:10], 500, replace = T))
+
+
+tabela <- addmargins(table(df$f1, df$f2))
+
+colnames(tabela)[ncol(tabela)] <- "Total"
+row.names(tabela)[nrow(tabela)] <- "Total"
+
+knitr::kable(tabela, 
+             caption = "Tabela de dupla entrada para...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequências cruzadas
+
+```{r, echo=FALSE}
+
+tabela2 <- prop.table(tabela[-nrow(tabela), 
+                  -ncol(tabela)],
+           margin = 1)
+
+tabela2 <- addmargins(tabela2)
+
+colnames(tabela2)[ncol(tabela2)] <- "Total"
+row.names(tabela2)[nrow(tabela2)] <- "Total"
+
+knitr::kable(round(tabela2, 2), 
+             caption = "Tabela de dupla entrada total linha...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequências cruzadas
+
+```{r, echo=FALSE}
+tabela3 <- prop.table(tabela[-nrow(tabela), 
+                             -ncol(tabela)],
+                      margin = 2)
+
+tabela3 <- addmargins(tabela3)
+
+colnames(tabela3)[ncol(tabela3)] <- "Total"
+row.names(tabela3)[nrow(tabela3)] <- "Total"
+
+knitr::kable(round(tabela3, 2), 
+             caption = "Tabela de dupla entrada total coluna...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequências cruzadas
+
+```{r, echo=FALSE}
+tabela4 <- prop.table(tabela[-nrow(tabela), 
+                             -ncol(tabela)])
+
+tabela4 <- addmargins(tabela4)
+
+colnames(tabela4)[ncol(tabela4)] <- "Total"
+row.names(tabela4)[nrow(tabela4)] <- "Total"
+
+knitr::kable(round(tabela4, 2), 
+             caption = "Tabela de dupla entrada total geral...", 
+             align ="ccc" )
+```
+
+## Análise bivariada para variáveis qualitativas
+
+
+\beginAHalfColumn
+
+ - As frequências cruzadas podem ser representadas por meio de gráficos.
+ 
+ - Variações de gráficos de barras são as opções mais comuns.
+ 
+ - As possibilidades podem usar as frequências absolutas, relativas e permitem comparar a composição das variáveis.
+
+\endColumns
+\beginAHalfColumn
+
+ - Gráficos para frequência para duas variáveis qualitativas:
+    - Gráficos de barras lado a lado.
+    - Gráfico de barras empilhadas.
+    - Gráficos de barras empilhadas relativo.
+
+\endColumns
+
+## Gráficos de barras lado a lado
+
+```{r, echo=FALSE, fig.cap="Gráfico de barras lado a lado..."}
+
+tabela <- as.data.frame(table(dados$nominal,
+                dados$ordinal))
+
+ggplot(data = tabela, 
+       aes(x=Var1, y=Freq, fill=Var2)) + 
+  geom_bar(stat = 'identity',
+           col = 1,
+           lwd = 1, 
+           position = 'dodge') +  
+  ylim(c(0, 
+         (max(tabela$Freq)+ (max(tabela$Freq)*0.1))))+
+  geom_text(aes(label = Freq),
+            #hjust=-0.1, 
+            color=1, 
+            size=8, 
+            position=position_dodge(width=0.9),
+            vjust=-0.5
+  )+
+  xlab("x") +
+  ylab("y") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'top',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          #axis.text = element_blank(),
+                          #legend.title = element_blank(),
+                          text = element_text(size=15)) 
+```
+
+## Gráficos de barras empilhadas
+
+```{r, echo=FALSE, fig.cap="Gráfico de barras empilhadas..."}
+
+tabela <- as.data.frame(table(dados$nominal,
+                              dados$ordinal))
+
+ggplot(tabela, 
+       aes(x=Var1, y=Freq, fill=Var2)) + 
+  geom_bar(stat = 'identity',
+           col = 1,
+           lwd = 1)+ 
+  #  geom_text(aes(label = freq_r),
+  #            hjust=0.5, 
+  #            color=1, 
+  #            size=8, 
+  #            position=position_stack(), 
+  #            vjust=1)+
+  xlab("x") +
+  ylab("y") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'top',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          #axis.text = element_blank(),
+                          #legend.title = element_blank(),
+                          text = element_text(size=15)) 
+```
+
+## Gráficos de barras empilhadas relativo
+
+```{r, echo=FALSE, fig.cap="Gráfico de barras empilhadas relativo..."}
+table2 <- as.matrix(prop.table(table(dados$nominal,
+                                     dados$ordinal), 
+                               mar = 1))
+
+table2 <- as.data.frame(table2)
+
+
+ggplot(table2, 
+       aes(x=Var1, y=Freq, fill=Var2)) + 
+  geom_bar(stat = 'identity',
+           col = 1,
+           lwd = 1)+ 
+  #  geom_text(aes(label = freq_r),
+  #            hjust=0.5, 
+  #            color=1, 
+  #            size=8, 
+  #            position=position_stack(), 
+  #            vjust=1)+
+  xlab("x") +
+  ylab("y") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'top',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          #axis.text = element_blank(),
+                          #legend.title = element_blank(),
+                          text = element_text(size=15)) 
+
+```
+
+# Análise bivariada para variáveis quantitativas
+
+## Análise bivariada para variáveis quantitativas
+
+\beginAHalfColumn
+
+  - Buscamos identificar \textbf{padrões} e \textbf{tendências} na análise das duas variáveis.
+      - A medida que os valores de uma variável aumentam, a outra reduz?
+      - A medida que os valores de uma variável aumentam, a outra aumenta?
+      - A medida que os valores de uma variável aumentam, a outra se mantém estável?
+
+\endColumns
+\beginAHalfColumn
+
+ - As principais técnicas são o \textbf{coeficiente de correlação} e o \textbf{diagrama de dispersão}.  
+    - O coeficiente é uma métrica que avalia a associação linear entre um par de variáveis numéricas.
+    - O diagrama é um gráfico de pares ordenados.
+
+\endColumns
+
+
+## Coeficiente de correlação linear de Pearson
+
+
+\beginAHalfColumn
+
+- Usado para determinar se existe \textbf{relação linear} entre variáveis quantitativas.
+    - Assume valores entre -1 e 1. 
+    - Se o valor é maior 0, então existe uma associação linear \textbf{positiva}.
+    - Se o valor é menor que 0, então existe uma associação linear \textbf{negativa}.
+    - Se o valor é igual a 0, então \textbf{não existe} uma associação linear.
+
+\endColumns
+\beginAHalfColumn
+
+ - **CORRELAÇÃO NÃO IMPLICA EM CAUSALIDADE**.
+    - O fato de existir uma correlação linear, seja positiva ou negativa, não implica que uma variável possui real influência nos desfechos da outra.
+    - Causalidade causa correlação, mas correlação não implica em causalidade.
+
+\endColumns
+
+
+## Covariância e correlação
+
+ - A covariância entre duas variáveis $Y_1$ e $Y_2$ é dada por:
+
+$$
+\textrm{Cov}(y_1, y_2) = \frac{1}{n - 1}
+         \displaystyle\sum_{i = 1}^{n}
+         (y_{1i} - \overline{y}_1)\cdot
+         (y_{2i} - \overline{y}_2).
+$$
+
+ - A partir da covariância podemos obter a correlação, que padroniza a medida pelas variâncias, fazendo com que, independente das variáveis, sempre seja um valor entre -1 e 1.
+
+$$
+    r = \frac{\sum_{i = 1}^{n}
+      (y_{1i} - \overline{y}_1)\cdot (y_{2i} - \overline{y}_2)}{
+      \sqrt{\sum_{i = 1}^{n} (y_{1i} - \overline{y}_1)^2}\cdot
+      \sqrt{\sum_{i = 1}^{n} (y_{2i} - \overline{y}_2)}} =
+      \frac{\textrm{Cov}(y_1, y_2)}{
+        \sqrt{\textrm{V}(y_1)\cdot \textrm{V}(y_2)}}.
+$$
+
+## Outros tipos de correlação
+
+\beginAHalfColumn
+
+ - A correlação de Pearson não serve para descrever associações que não sejam lineares.
+
+ - Existem outros tipos de correlação que servem inclusive para variáveis de outros tipos.
+
+\endColumns
+\beginAHalfColumn
+
+ - Alguns exemplos são:
+   - Correlação de Spearman.
+   - Correlação de Kendall.
+   - Ponto-bisserial.
+
+\endColumns
+
+## Diagrama de dispersão
+
+ - O diagrama de dispersão é a ferramenta favorita para visualizar duas variáveis quantitativas.
+ 
+ - Em um eixo são representados os valores de uma variável.
+ 
+ - No outro eixo os valores de uma segunda variável.
+ 
+ - Os pares ordenados são representados por pontos.
+
+## Diagrama de dispersão
+
+```{r, echo=FALSE, fig.cap="Diagrama de dispersão...", message=FALSE, results='hide'}
+ggplot(data = dados, 
+       mapping = aes(x = continua,
+                     y = discreta)) +
+  geom_point()+
+  geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("X") +
+  ylab("Y") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15)) 
+```
+
+## Interpretação gráfica
+
+```{r, echo=FALSE, fig.cap="Diagrama de dispersão...", message=FALSE, results='hide', fig.width=12}
+
+set.seed(2)
+v1 = rnorm(1000)
+v2 = rnorm(1000)
+x = v1*2
+y = v1+v2
+z = v1-v2
+k = v1*(-2)
+df <- data.frame(x=x,y=y,z=z,k=k)
+
+
+g1 <- ggplot(data = df, 
+       mapping = aes(x = y,
+                     y = x)) +
+  geom_point()+
+  geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("X") +
+  ylab("Y") +
+  ggtitle("Correlação positiva")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15)) 
+
+g2 <- ggplot(data = df, 
+       mapping = aes(x = y,
+                     y = z)) +
+  geom_point()+
+  geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("X") +
+  ylab("Y") +
+  ggtitle("Ausência de correlação")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+g3 <- ggplot(data = df, 
+       mapping = aes(x = k,
+                     y = z)) +
+  geom_point()+
+  geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("X") +
+  ylab("Y") +
+  ggtitle("Correlação negativa")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+
+
+
+ggpubr::ggarrange(g1,g2,g3, nrow = 1)
+
+```
+
+## Covariância, correlação e diagrama de dispersão
+
+\textbf{Exemplo}
+
+ - Considere as variáveis peso ($Y_1$) e altura ($Y_2$) de um conjunto de 10 indivíduos.
+ 
+$$Y_1: 60,09; 57,97; 54,12; 70,76; 59,74; 50,41; 58,19; 65,35; 71,18; 54,76$$
+
+$$Y_2: 1,54; 1,62; 1,52; 1,76; 1,63; 1,52; 1,65; 1,67; 1,66; 1,57$$
+
+ - $\overline{Y_1} = 60,26$; $\overline{Y_2} = 1,61$.
+ 
+ - $Var(Y_1) = 47,8$; $Var(Y_2) = 0,006$.
+ 
+ - Obtenha a covariância, coeficiente de correlação e o diagrama de dispersão.
+
+## Covariância, correlação e diagrama de dispersão
+
+\textbf{Exemplo}
+
+$$
+\textrm{Cov}(y_1, y_2) = \frac{1}{10 - 1} \displaystyle \left \{ \left [ (60,09 - 60,26)\cdot (1,54 - 1,61) \right ] + ... + \left [ (57,76 - 60,26)\cdot (1,57 - 1,61)) \right ] \right \}
+$$
+
+$$
+\textrm{Cov}(y_1, y_2) = 0,44
+$$
+
+$$
+r  = \frac{0,44}{\sqrt{47,8\cdot 0,006}} = 0,82
+$$
+
+
+## Covariância, correlação e diagrama de dispersão
+
+\textbf{Exemplo - digrama de dispersão}
+
+```{r, echo=FALSE, fig.cap="Diagrama de dispersão para peso e altura.", out.width="65%"}
+set.seed(1)
+altura <- round(rnorm(10,1.6,0.1), 2)
+peso <- (altura-1)*100
+ruido <- runif(10,-7,7)
+peso <- round(peso + ruido, 2)
+
+ggplot(data = data.frame(peso, altura), 
+       mapping = aes(x = altura,
+                     y = peso)) +
+  geom_point()+
+  #geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("Altura") +
+  ylab("Peso") +
+  ggtitle("Peso em função de altura")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+```
+
+## Covariância, correlação e diagrama de dispersão
+
+\textbf{Exemplo - digrama de dispersão}
+
+```{r, echo=FALSE, fig.cap="Diagrama de dispersão para peso e altura com linha de tendência linear.", results='hide', message=FALSE, out.width="65%"}
+
+ggplot(data = data.frame(peso, altura), 
+       mapping = aes(x = altura,
+                     y = peso)) +
+  geom_point()+
+  geom_smooth(method = 'lm', se=F, col=2)+
+  #geom_smooth(se=F)+
+  xlab("Altura") +
+  ylab("Peso") +
+  ggtitle("Peso em função de altura")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+```
+
+# Análise bivariada para uma variável qualitativa e uma quantitativa
+
+## Análise bivariada para uma variável qualitativa e uma quantitativa
+
+ - Neste caso estamos interessados em avaliar se os valores da variável numérica estão associados com os níveis da variável categórica.
+
+ - Podemos usar medidas descritivas para os valores dentro de cada um dos níveis da variável categórica.
+
+ - Para representar graficamente esta situação podemos criar um boxplot da variável numérica para cada nível do fator de interesse.
+
+## Tabela de medidas descritivas para níveis de um fator
+
+```{r, echo=FALSE}
+knitr::kable(dados %>% 
+  group_by(nominal) %>% 
+  summarise(Média = round(mean(continua), 2),
+            Mediana = round(median(continua), 2),
+            `Desvio padrão` = round(sd(continua), 2)), 
+             caption = "Tabela...", 
+             align ="ccc" )
+
+
+```
+
+## Box-plot para níveis de um fator
+
+```{r, echo=FALSE, fig.cap="box-plot para"}
+ggplot(data = dados, 
+       mapping = aes(x = nominal,
+                     y=continua)) +
+  stat_boxplot(geom ='errorbar')+
+  geom_boxplot(alpha = 1,
+               fill = '#E0F8F7')+
+  xlab("x") +
+  ylab("y") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15)) 
+```
+
+# Outros tipos de gráficos e análises
+
+## Outros tipos de gráficos e análises
+
+
+\beginAHalfColumn
+
+ - Vimos as alternativas usuais para representação e análise de variáveis quantitativas e qualitativas.
+ 
+ - Contudo existem diversas situações particulares que exigem análises específicas.
+
+\endColumns
+\beginAHalfColumn
+
+ - Algumas casos são: mapas, séries temporais, gráficos de perfil, nuvens de palavras.
+
+  - Também é possível trabalhar com gráficos que representam mais de duas variáveis ao mesmo tempo.
+  
+  - Outra possibilidade é combinar gráficos.
+
+\endColumns
+
+## 
+
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+ - Análises bivariadas.
+    - Qualitativa x qualitativa.
+    - Quantitativa x quantitativa.
+    - Quantitativa x qualitativa.
+
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+ - Introdução à probabilidades.
+
+
+\endColumns

@@ -620,30 +620,54 @@ Laboratório de Estatística e Geoinformação}
 
 \begin{frame}{Amostras}
 \protect\hypertarget{amostras}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
-  Uma amostra é um subconjunto da população.
+  Uma amostra é um \textbf{subconjunto da população}.
 \item
   Na prática é inviável trabalhar com a população toda.
 \item
-  A alternativa então é trabalhar com uma amostra e inferir os
+  A alternativa então é trabalhar com uma amostra e \textbf{inferir} os
   resultados para a população.
 \item
   A seleção da amostra pode ser feita de diversas maneiras.
 \end{itemize}
 
-ILUSTRAÇÃO AMOSTRAGEM
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./img/populacao-amostra3} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2017/10/25/18/18/rare-disease-2888820_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Amostras}
 \protect\hypertarget{amostras-1}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
   Os métodos de amostragem servem para selecionar subconjuntos da
-  população de forma mais representativa possível.
+  população de forma mais \textbf{representativa} possível.
 \item
-  A forma adequada de amostragem conduz a um menor tamanho amostral para
-  obtenção de uma precisão satisfatória.
+  A forma adequada de amostragem conduz a um
+  \textbf{menor tamanho amostral} para obtenção de uma
+  \textbf{precisão satisfatória}.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
 \item
   São características desejáveis de uma amostra:
 
@@ -656,25 +680,19 @@ ILUSTRAÇÃO AMOSTRAGEM
   \item
     Capacidade de medir a precisão das estimativas.
   \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Métodos de amostragem}
-\protect\hypertarget{muxe9todos-de-amostragem}{}
-\begin{itemize}
 \item
-  Existem diversos métodos de amostragem
-\item
-  Podemos dividir em dois subconjuntos:
+  Podemos dividir os métodos em:
 
   \begin{itemize}
   \tightlist
   \item
-    Probabilística.
+    Amostragem probabilística.
   \item
-    Não probabilística.
+    Amostragem não probabilística.
   \end{itemize}
 \end{itemize}
+
+\endColumns
 \end{frame}
 
 \hypertarget{amostragem-probabiluxedstica}{%
@@ -682,17 +700,23 @@ ILUSTRAÇÃO AMOSTRAGEM
 
 \begin{frame}{Amostragem probabilística}
 \protect\hypertarget{amostragem-probabiluxedstica-1}{}
+\beginAHalfColumn
+
 \begin{itemize}
 \item
-  Amostragem probabilística deve ser usada sempre que possível.
+  Amostragem probabilística deve ser usada \textbf{sempre que possível}.
 \item
-  O objetivo é dimensionar amostras que sejam capazes de estimar as
-  quantidades de interesse com uma certa precisão desejada.
+  O objetivo é dimensionar amostras que sejam capazes de
+  \textbf{estimar} as quantidades de interesse com uma certa
+  \textbf{precisão} desejada.
 \item
   Existem diversos métodos disponíveis.
 \end{itemize}
 
-Alguns métodos são:
+\endColumns
+\beginAHalfColumn
+
+\textbf{Alguns métodos são:}
 
 \begin{itemize}
 \tightlist
@@ -705,33 +729,42 @@ Alguns métodos são:
 \item
   Amostragem por conglomerados.
 \end{itemize}
+
+\endColumns
 \end{frame}
 
 \begin{frame}{Amostragem aleatória simples (com ou sem reposição)}
 \protect\hypertarget{amostragem-aleatuxf3ria-simples-com-ou-sem-reposiuxe7uxe3o}{}
 \begin{itemize}
 \item
-  Selecionar um conjunto de elementos da população em que todos os
-  elementos tenham a mesma probabilidade de serem sorteados.
+  Selecionar um conjunto de elementos da população em que
+  \textbf{todos os elementos tenham a mesma probabilidade de serem sorteados}.
 \item
-  Os sorteios de cada elemento são independentes.
+  Os sorteios de cada elemento são \textbf{independentes}.
 \item
   Pode ser com ou sem reposição.
-\item
-  Com reposição: um elemento sorteado pode ser sorteado novamente.
-\item
-  Sem reposição: um elemento sorteado não pode ser sorteado novamente.
-\item
-  A diferença entre com e sem reposição só é relevante se o tamanho da
-  população for pequeno.
+
+  \begin{itemize}
+  \item
+    \textbf{Com reposição:} um elemento sorteado pode ser sorteado
+    novamente.
+  \item
+    \textbf{Sem reposição:} um elemento sorteado não pode ser sorteado
+    novamente.
+  \item
+    A diferença entre com e sem reposição só é relevante se o tamanho da
+    população for pequeno.
+  \end{itemize}
 \item
   Muitos métodos estatísticos foram desenvolvidos pensando no plano de
   amostragem aleatória simples.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Exemplo}
-\protect\hypertarget{exemplo}{}
+\begin{frame}{Amostragem aleatória simples (com ou sem reposição)}
+\protect\hypertarget{amostragem-aleatuxf3ria-simples-com-ou-sem-reposiuxe7uxe3o-1}{}
+\textbf{Exemplo}
+
 \begin{itemize}
 \item
   Suponha que uma empresa deseja avaliar se os produtos de determinado
@@ -748,23 +781,25 @@ Alguns métodos são:
 \protect\hypertarget{amostragem-sistemuxe1tica}{}
 \begin{itemize}
 \item
-  Sorteia um elemento a cada número de unidades definido inicialmente (1
-  a cada 10, 1 a cada 20, etc).
+  Sorteia \textbf{um elemento a cada número de unidades definido}
+  inicialmente (1 a cada 10, 1 a cada 20, etc).
 \item
-  É necessário definir um tamanho de intervalo inicial e selecionar uma
-  unidade de partida.
+  É necessário definir um \textbf{tamanho de intervalo inicial} e
+  selecionar uma \textbf{unidade de partida}.
 \item
   Todos os elementos dentro do intervalo apresentam a mesma
   probabilidade de serem sorteados.
 \item
   A partir da unidade de partida a próxima sorteada é a da posição
-  correspondente à inicial mais o tamanho do intervalo e assim
+  correspondente à \textbf{inicial mais o tamanho do intervalo} e assim
   sucessivamente.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Exemplo}
-\protect\hypertarget{exemplo-1}{}
+\begin{frame}{Amostragem sistemática}
+\protect\hypertarget{amostragem-sistemuxe1tica-1}{}
+\textbf{Exemplo}
+
 \begin{itemize}
 \item
   Suponha que desejamos selecionar uma amostra sistemática de 500 alunos
@@ -776,7 +811,7 @@ Alguns métodos são:
   1 e 20. Este é o primeiro elemento da amostra. Suponhamos que tenha
   sido o aluno número 5.
 \item
-  O próxumo elemento é o da posição 5+20, e assim por diante.
+  O próximo elemento é o da posição 5+20, e assim por diante.
 \item
   Serão selecionados os alunos 5, 25, 45, 65,\ldots{}
 \end{itemize}
@@ -787,19 +822,22 @@ Alguns métodos são:
 \begin{itemize}
 \item
   Usada quando a população de interesse possui algum tipo de
-  estratificação natural (por exemplo, cidades possuem bairros).
+  \textbf{estratificação natural} (por exemplo, cidades possuem
+  bairros).
 \item
   Dentro de cada estrato podemos coletar uma amostra.
 \item
-  A amostra final é composta pela união das amostras obtidas em cada
-  estrato.
+  A amostra final é composta pela \textbf{união das amostras} obtidas em
+  cada estrato.
 \item
   O tipo de amostragem dentro de cada estrato pode variar.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Exemplo}
-\protect\hypertarget{exemplo-2}{}
+\begin{frame}{Amostragem estratificada}
+\protect\hypertarget{amostragem-estratificada-1}{}
+\textbf{Exemplo}
+
 \begin{itemize}
 \item
   Suponha que existe interesse em avaliar a proporção de crianças em
@@ -831,10 +869,10 @@ Alguns métodos são:
 \item
   Parecida com a ideia de amostragem estratificada.
 \item
-  Os conglomerados são conjuntos de observações.
+  Os conglomerados são \textbf{conjuntos de observações}.
 \item
-  Inicialmente sorteamos os conglomerados (diferente do que acontece na
-  amostragem estratificada).
+  Inicialmente \textbf{sorteamos os conglomerados} (diferente do que
+  acontece na amostragem estratificada).
 \item
   A amostra pode ser composta por todos os elementos de todos os
   conglomerados sorteados.
@@ -843,8 +881,10 @@ Alguns métodos são:
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Exemplo}
-\protect\hypertarget{exemplo-3}{}
+\begin{frame}{Amostragem por conglomerados}
+\protect\hypertarget{amostragem-por-conglomerados-1}{}
+\textbf{Exemplo}
+
 \begin{itemize}
 \item
   Suponha que o interesse reside em avaliar as notas médias de alunos de
@@ -900,7 +940,7 @@ probabilística}\label{amostragem-nuxe3o-probabiluxedstica}}
   Devemos tomar muito cuidado ao interpretar resultados baseados em
   métodos de amostragem não probabilísticos.
 \item
-  Em geral, estas amostras carregarem um alto risco de não serem
+  Em geral, estas amostras carregam um alto risco de não serem
   representativas.
 \item
   Não há métodos para análise probabilística ou inferencial dos
@@ -929,10 +969,10 @@ Alguns métodos são:
 \tightlist
 \item
   Os elementos da amostra não são obtidos por meio de sorteio, mas sim
-  de acordo com sua disponibilidade.
+  de acordo com sua \textbf{disponibilidade}.
 \end{itemize}
 
-Exemplo
+\textbf{Exemplo}
 
 \begin{itemize}
 \item
@@ -940,7 +980,7 @@ Exemplo
 \item
   Não existe qualquer cadastro da população alvo.
 \item
-  Por isso, o pesquisador avalia os animais disponíveis na universidade.
+  Por isso, o pesquisador avalia os animais disponíveis.
 \end{itemize}
 \end{frame}
 
@@ -949,20 +989,20 @@ Exemplo
 \begin{itemize}
 \tightlist
 \item
-  Um especialista (expert) no problema escolhe os elementos que julga
-  representativos para compor a amostra.
+  Um especialista (expert) no problema \textbf{escolhe os elementos} que
+  julga representativos para compor a amostra.
 \end{itemize}
 
-Exemplo
+\textbf{Exemplo}
 
 \begin{itemize}
 \item
-  Suponha um problema congenito que só pode ser identificado por um
+  Suponha um problema congênito que só pode ser identificado por um
   especialista altamente treinado.
 \item
   Para isso um conjunto de indivíduos é selecionado e deste conjunto o
   especialista seleciona para a amostra aqueles em que ele identifica o
-  problema congenito.
+  problema congênito.
 \end{itemize}
 \end{frame}
 
@@ -971,11 +1011,11 @@ Exemplo
 \begin{itemize}
 \tightlist
 \item
-  Identifica-se algumas unidades e estas unidades indicam novas unidades
-  para compor a amostra.
+  Identifica-se algumas unidades e estas
+  \textbf{unidades indicam novas unidades} para compor a amostra.
 \end{itemize}
 
-Exemplo
+\textbf{Exemplo}
 
 \begin{itemize}
 \item
@@ -988,6 +1028,42 @@ Exemplo
   que fazem parte da população alvo e pede que estes indivíduos indiquem
   outros possíveis respondentes.
 \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+\begin{itemize}
+\tightlist
+\item
+  Amostras.
+\item
+  Métodos de amostragem.
+\item
+  Amostragem probabilística.
+\item
+  Amostragem não probabilística.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Introdução à análise exploratória.
+\item
+  Análise exploratória univariada para variáveis qualitativas.
+\item
+  Análise exploratória univariada para variáveis quantitativas.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \end{document}

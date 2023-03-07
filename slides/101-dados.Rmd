@@ -31,61 +31,110 @@ source("./config/setup.R")
 
 ## O que são dados?
 
- - Dados são conjuntos de valores.
- - Podem ser de diferentes fontes, tais como estudos e experimentos.
+\beginAHalfColumn
+
+ - Dados são \textbf{conjuntos de valores}.
+ - Podem ser de diferentes fontes, tais como \textbf{estudos} e \textbf{experimentos}.
  - Podem conter variáveis de diferentes tipos.
- - Podem surgir em formatos estruturados e não estruturados.
+ - Podem surgir em formatos \textbf{estruturados} e \textbf{não estruturados}.
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2018/01/26/18/21/matrix-3109378_1280.jpg}{pixabay.com.}"}
+
+knitr::include_graphics("./img/dados.jpg")
+```
+
+\endColumns
+
+## Conjunto de dados
+
+ - Em Estatística, em geral, lidamos com \textbf{dados estruturados em um formato tabular}.
+
+ - O conjunto de dados completo e sem tratamentos é denominado conjunto de \textbf{dados brutos}.
  
-## Conjunto de dados
-
- - Em Estatística, em geral, lidamos com dados estruturados em um formato tabular.
-
- - O conjunto de dados completo e sem tratamentos é denominado conjunto de dados brutos.
- 
- - Um conjunto de dados considerado arrumado é aquele em que: 
-   - Cada coluna representa uma variável.
-   - Cada linha representa uma observação.
-   - Cada célula representa o valor observado.
+ - Um conjunto de dados considerado \textbf{arrumado} é aquele em que: 
+   - Cada \textbf{coluna} representa uma \textbf{variável}.
+   - Cada \textbf{linha} representa uma \textbf{observação}.
+   - Cada \textbf{célula} representa o \textbf{valor} observado.
 
 ## Conjunto de dados
 
-FIGURA TIDY DATA
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Extraído de \\href{https://r4ds.had.co.nz/tidy-data.html}{https://r4ds.had.co.nz}."}
+
+knitr::include_graphics("./img/tidy-data.png")
+```
 
 ## Conjunto de dados
 
-Exemplo
+```{r, echo=FALSE}
+knitr::kable(iris[1:5,], caption = "Exemplo de conjunto de dados")
+
+```
 
 ## Tipos de variáveis
 
  - Na prática, podemos coletar variáveis de diferentes tipos e naturezas.
  
  - Existem dois tipos (básicos) de variáveis:
-   - Numéricas (quantitativas).
-   - Não numéricas (qualitativas).
+   - Numéricas (\textbf{quantitativas}).
+   - Não numéricas (\textbf{qualitativas}).
 
  - Cada uma das classes tem suas ramificações.
 
-FIGURA TIPO DE VARIÁVEIS
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Tipos básicos de variáveis."}
+
+knitr::include_graphics("./img/tipos-variaveis2.png")
+```
 
 ## Variáveis quantitativas
 
- - Variáveis Quantitativas: assumem valores numéricos.
-   - Discretas: características mensuráveis que podem assumir apenas um número finito ou infinito contável de valores.
-   - Contínuas: características mensuráveis que assumem valores em uma escala contínua, isto é, na reta real.
+\beginAHalfColumn
 
-## Variáveis quantitativas
+ - \textbf{Variáveis Quantitativas}: assumem valores numéricos.
+   - \textbf{Discretas}: características mensuráveis que podem assumir apenas um número finito ou infinito \textbf{contável} de valores.
+   - \textbf{Contínuas}: características mensuráveis que assumem valores em uma \textbf{escala contínua}, isto é, na reta real.
 
-Exemplos
+\endColumns
+\beginAHalfColumn
+
+\textbf{Exemplos}
+
+ - Altura.
+ - Peso.
+ - Idade.
+ - Percentual de gordura corporal.
+ - Número de filhos.
+ - Número de fraturas.
+ - Número de faltas.
+ - Número de peças defeituosas em um lote.
+ 
+\endColumns
 
 ## Variáveis qualitativas
 
- - Variáveis Qualitativas: são as características definidas por categorias, ou seja, representam uma classificação dos indivíduos e não uma característica numérica.
-   - Nominais: não existe ordenação nem peso entre as categorias.
-   - Ordinais: existe uma ordenação entre as categorias.
+\beginAHalfColumn
 
-## Variáveis qualitativas
+ - \textbf{Variáveis Qualitativas}: são as características definidas por categorias, ou seja, representam uma classificação dos indivíduos e não uma característica numérica.
+   - \textbf{Nominais}: não existe ordenação nem peso entre as categorias.
+   - \textbf{Ordinais}: existe uma ordenação entre as categorias.
 
-Exemplos
+\endColumns
+\beginAHalfColumn
+
+\textbf{Exemplos}
+ 
+ - Estado civil.
+ - Orientação sexual.
+ - Turma.
+ - Posição em que joga em um time.
+ - Severidade de uma lesão.
+ - Escolaridade.
+ - Grau de proficiência em língua inglesa.
+ - Risco de infarto.
+
+\endColumns
 
 ## Cuidados com variáveis
 
@@ -101,32 +150,50 @@ Exemplos
  
 ## De onde vêm os dados?
 
-Alguns exemplos:
 
- - Estudo de caso.
+\beginAHalfColumn
+
+\textbf{Alguns exemplos}:
+
+ - Estudos de caso.
  - Experimentos.
  - Pesquisas.
  - Registros administrativos.
  - Dados em repositórios online.
  - Bancos de dados corporativos.
- 
-## Dados observacionais x dados experimentais
-
-\beginAHalfColumn
-
-Dados observacionais
-
- - Observação passiva da realidade. 
- - Sem modificação das condições.
 
 \endColumns
 \beginAHalfColumn
 
-Dados experimentais
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2022/03/02/09/37/data-7042739_1280.png}{pixabay.com.}"}
 
- - Intervenção na realidade.
+knitr::include_graphics("./img/fontes-dados.png")
+```
+
+\endColumns
+
+## Dados observacionais x dados experimentais
+
+\beginAHalfColumn
+
+\textbf{Dados observacionais}
+
+ - \textbf{Observação passiva} da realidade. 
+ - Sem modificação das condições.
+
+\textbf{Dados experimentais}
+
+ - \textbf{Intervenção} na realidade.
  - Condições controladas.
  - Observação dos efeitos das intervenções.
+ 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2013/07/12/15/08/earth-149499_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/observar.png")
+```
 
 \endColumns
 
@@ -139,3 +206,29 @@ Dados experimentais
  - Quais os métodos disponíveis que permitem responder nossa pergunta de pesquisa?
  - Como coletar os dados?
  - Os dados são válidos?
+
+## 
+
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+ - Dados.
+ - O que são dados.
+ - Conjunto de dados.
+ - Tipos de variáveis.
+ - Fontes de dados.
+ - Estudos observacionais e experimentais.
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+ - Amostras.
+ - Métodos de amostragem.
+ - Amostragem probabilística.
+ - Amostragem não probabilística.
+
+\endColumns
+

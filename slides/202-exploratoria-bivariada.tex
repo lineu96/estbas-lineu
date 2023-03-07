@@ -77,6 +77,13 @@
 \makeatother
 \usepackage{xcolor}
 \newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -618,7 +625,645 @@ Laboratório de Estatística e Geoinformação}
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}
+\begin{frame}{Análise exploratória bivariada}
+\protect\hypertarget{anuxe1lise-exploratuxf3ria-bivariada}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Em alguns casos podemos estar interessados na análise de duas
+  variáveis simultaneamente.
+\item
+  O objetivo é investigar a relação de \textbf{associação} entre as
+  variáveis.
+\item
+  Tabelas, gráficos e coeficientes específicos para relação entre
+  variáveis podem ser usados.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Tal como nas análises univariadas, as escolhas dependem dos tipos de
+  variáveis.
+\item
+  Considerando variáveis aos pares, as combinações podem ser:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Qualitativa x qualitativa.
+  \item
+    Quantitativa x quantitativa.
+  \item
+    Quantitativa x qualitativa.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\hypertarget{anuxe1lise-bivariada-para-variuxe1veis-qualitativas}{%
+\section{Análise bivariada para variáveis
+qualitativas}\label{anuxe1lise-bivariada-para-variuxe1veis-qualitativas}}
+
+\begin{frame}{Análise bivariada para variáveis qualitativas}
+\protect\hypertarget{anuxe1lise-bivariada-para-variuxe1veis-qualitativas-1}{}
+\begin{itemize}
+\item
+  Neste tipo de situação avaliamos a \textbf{frequência} de observações
+  para cada \textbf{combinação} de níveis das duas variáveis.
+\item
+  Podem ser usadas \textbf{tabelas de frequências cruzadas}, também
+  chamadas de \textbf{tabelas de dupla entrada}.
+\item
+  Também é possível representar as frequências por meio de
+  \textbf{recursos gráficos}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tabelas de frequências cruzadas}
+\protect\hypertarget{tabelas-de-frequuxeancias-cruzadas}{}
+\begin{itemize}
+\tightlist
+\item
+  As linhas dizem respeito aos níveis de uma variável.
+\item
+  As colunas aos níveis da outra variável.
+\item
+  As células mostram as frequências (absolutas ou relativas).
+\item
+  As margens mostram as frequências marginais (de apenas uma das duas
+  variáveis).
+\item
+  No caso de frequências relativas podem ser usados os totais linha,
+  coluna ou o total geral.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tabelas de frequências cruzadas}
+\protect\hypertarget{tabelas-de-frequuxeancias-cruzadas-1}{}
+\begin{longtable}[]{@{}lcccccc@{}}
+\caption{Tabela de dupla entrada para\ldots{}}\tabularnewline
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endfirsthead
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endhead
+a & 21 & 12 & 19 & 15 & 22 & 89 \\
+b & 16 & 21 & 16 & 28 & 30 & 111 \\
+c & 15 & 15 & 22 & 19 & 24 & 95 \\
+d & 17 & 22 & 21 & 20 & 27 & 107 \\
+e & 20 & 31 & 18 & 17 & 12 & 98 \\
+Total & 89 & 101 & 96 & 99 & 115 & 500 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequências cruzadas}
+\protect\hypertarget{tabelas-de-frequuxeancias-cruzadas-2}{}
+\begin{longtable}[]{@{}lcccccc@{}}
+\caption{Tabela de dupla entrada total linha\ldots{}}\tabularnewline
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endfirsthead
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endhead
+a & 0.24 & 0.13 & 0.21 & 0.17 & 0.25 & 1 \\
+b & 0.14 & 0.19 & 0.14 & 0.25 & 0.27 & 1 \\
+c & 0.16 & 0.16 & 0.23 & 0.20 & 0.25 & 1 \\
+d & 0.16 & 0.21 & 0.20 & 0.19 & 0.25 & 1 \\
+e & 0.20 & 0.32 & 0.18 & 0.17 & 0.12 & 1 \\
+Total & 0.90 & 1.00 & 0.97 & 0.98 & 1.14 & 5 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequências cruzadas}
+\protect\hypertarget{tabelas-de-frequuxeancias-cruzadas-3}{}
+\begin{longtable}[]{@{}lcccccc@{}}
+\caption{Tabela de dupla entrada total coluna\ldots{}}\tabularnewline
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endfirsthead
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endhead
+a & 0.24 & 0.12 & 0.20 & 0.15 & 0.19 & 0.90 \\
+b & 0.18 & 0.21 & 0.17 & 0.28 & 0.26 & 1.10 \\
+c & 0.17 & 0.15 & 0.23 & 0.19 & 0.21 & 0.95 \\
+d & 0.19 & 0.22 & 0.22 & 0.20 & 0.23 & 1.06 \\
+e & 0.22 & 0.31 & 0.19 & 0.17 & 0.10 & 1.00 \\
+Total & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 5.00 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Tabelas de frequências cruzadas}
+\protect\hypertarget{tabelas-de-frequuxeancias-cruzadas-4}{}
+\begin{longtable}[]{@{}lcccccc@{}}
+\caption{Tabela de dupla entrada total geral\ldots{}}\tabularnewline
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endfirsthead
+\toprule()
+& f & g & h & i & j & Total \\
+\midrule()
+\endhead
+a & 0.04 & 0.02 & 0.04 & 0.03 & 0.04 & 0.18 \\
+b & 0.03 & 0.04 & 0.03 & 0.06 & 0.06 & 0.22 \\
+c & 0.03 & 0.03 & 0.04 & 0.04 & 0.05 & 0.19 \\
+d & 0.03 & 0.04 & 0.04 & 0.04 & 0.05 & 0.21 \\
+e & 0.04 & 0.06 & 0.04 & 0.03 & 0.02 & 0.20 \\
+Total & 0.18 & 0.20 & 0.19 & 0.20 & 0.23 & 1.00 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Análise bivariada para variáveis qualitativas}
+\protect\hypertarget{anuxe1lise-bivariada-para-variuxe1veis-qualitativas-2}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  As frequências cruzadas podem ser representadas por meio de gráficos.
+\item
+  Variações de gráficos de barras são as opções mais comuns.
+\item
+  As possibilidades podem usar as frequências absolutas, relativas e
+  permitem comparar a composição das variáveis.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Gráficos para frequência para duas variáveis qualitativas:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Gráficos de barras lado a lado.
+  \item
+    Gráfico de barras empilhadas.
+  \item
+    Gráficos de barras empilhadas relativo.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Gráficos de barras lado a lado}
+\protect\hypertarget{gruxe1ficos-de-barras-lado-a-lado}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-6-1} 
+
+}
+
+\caption{Gráfico de barras lado a lado...}\label{fig:unnamed-chunk-6}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Gráficos de barras empilhadas}
+\protect\hypertarget{gruxe1ficos-de-barras-empilhadas}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-7-1} 
+
+}
+
+\caption{Gráfico de barras empilhadas...}\label{fig:unnamed-chunk-7}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Gráficos de barras empilhadas relativo}
+\protect\hypertarget{gruxe1ficos-de-barras-empilhadas-relativo}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-8-1} 
+
+}
+
+\caption{Gráfico de barras empilhadas relativo...}\label{fig:unnamed-chunk-8}
+\end{figure}
+\end{frame}
+
+\hypertarget{anuxe1lise-bivariada-para-variuxe1veis-quantitativas}{%
+\section{Análise bivariada para variáveis
+quantitativas}\label{anuxe1lise-bivariada-para-variuxe1veis-quantitativas}}
+
+\begin{frame}{Análise bivariada para variáveis quantitativas}
+\protect\hypertarget{anuxe1lise-bivariada-para-variuxe1veis-quantitativas-1}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Buscamos identificar \textbf{padrões} e \textbf{tendências} na análise
+  das duas variáveis.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A medida que os valores de uma variável aumentam, a outra reduz?
+  \item
+    A medida que os valores de uma variável aumentam, a outra aumenta?
+  \item
+    A medida que os valores de uma variável aumentam, a outra se mantém
+    estável?
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  As principais técnicas são o \textbf{coeficiente de correlação} e o
+  \textbf{diagrama de dispersão}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    O coeficiente é uma métrica que avalia a associação linear entre um
+    par de variáveis numéricas.
+  \item
+    O diagrama é um gráfico de pares ordenados.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Coeficiente de correlação linear de Pearson}
+\protect\hypertarget{coeficiente-de-correlauxe7uxe3o-linear-de-pearson}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Usado para determinar se existe \textbf{relação linear} entre
+  variáveis quantitativas.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Assume valores entre -1 e 1.
+  \item
+    Se o valor é maior 0, então existe uma associação linear
+    \textbf{positiva}.
+  \item
+    Se o valor é menor que 0, então existe uma associação linear
+    \textbf{negativa}.
+  \item
+    Se o valor é igual a 0, então \textbf{não existe} uma associação
+    linear.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CORRELAÇÃO NÃO IMPLICA EM CAUSALIDADE}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    O fato de existir uma correlação linear, seja positiva ou negativa,
+    não implica que uma variável possui real influência nos desfechos da
+    outra.
+  \item
+    Causalidade causa correlação, mas correlação não implica em
+    causalidade.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Covariância e correlação}
+\protect\hypertarget{covariuxe2ncia-e-correlauxe7uxe3o}{}
+\begin{itemize}
+\tightlist
+\item
+  A covariância entre duas variáveis \(Y_1\) e \(Y_2\) é dada por:
+\end{itemize}
+
+\[
+\textrm{Cov}(y_1, y_2) = \frac{1}{n - 1}
+         \displaystyle\sum_{i = 1}^{n}
+         (y_{1i} - \overline{y}_1)\cdot
+         (y_{2i} - \overline{y}_2).
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  A partir da covariância podemos obter a correlação, que padroniza a
+  medida pelas variâncias, fazendo com que, independente das variáveis,
+  sempre seja um valor entre -1 e 1.
+\end{itemize}
+
+\[
+    r = \frac{\sum_{i = 1}^{n}
+      (y_{1i} - \overline{y}_1)\cdot (y_{2i} - \overline{y}_2)}{
+      \sqrt{\sum_{i = 1}^{n} (y_{1i} - \overline{y}_1)^2}\cdot
+      \sqrt{\sum_{i = 1}^{n} (y_{2i} - \overline{y}_2)}} =
+      \frac{\textrm{Cov}(y_1, y_2)}{
+        \sqrt{\textrm{V}(y_1)\cdot \textrm{V}(y_2)}}.
+\]
+\end{frame}
+
+\begin{frame}{Outros tipos de correlação}
+\protect\hypertarget{outros-tipos-de-correlauxe7uxe3o}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  A correlação de Pearson não serve para descrever associações que não
+  sejam lineares.
+\item
+  Existem outros tipos de correlação que servem inclusive para variáveis
+  de outros tipos.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Alguns exemplos são:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Correlação de Spearman.
+  \item
+    Correlação de Kendall.
+  \item
+    Ponto-bisserial.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Diagrama de dispersão}
+\protect\hypertarget{diagrama-de-dispersuxe3o}{}
+\begin{itemize}
+\item
+  O diagrama de dispersão é a ferramenta favorita para visualizar duas
+  variáveis quantitativas.
+\item
+  Em um eixo são representados os valores de uma variável.
+\item
+  No outro eixo os valores de uma segunda variável.
+\item
+  Os pares ordenados são representados por pontos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Diagrama de dispersão}
+\protect\hypertarget{diagrama-de-dispersuxe3o-1}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-9-1} 
+
+}
+
+\caption{Diagrama de dispersão...}\label{fig:unnamed-chunk-9}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Interpretação gráfica}
+\protect\hypertarget{interpretauxe7uxe3o-gruxe1fica}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-10-1} 
+
+}
+
+\caption{Diagrama de dispersão...}\label{fig:unnamed-chunk-10}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Covariância, correlação e diagrama de dispersão}
+\protect\hypertarget{covariuxe2ncia-correlauxe7uxe3o-e-diagrama-de-dispersuxe3o}{}
+\textbf{Exemplo}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere as variáveis peso (\(Y_1\)) e altura (\(Y_2\)) de um
+  conjunto de 10 indivíduos.
+\end{itemize}
+
+\[Y_1: 60,09; 57,97; 54,12; 70,76; 59,74; 50,41; 58,19; 65,35; 71,18; 54,76\]
+
+\[Y_2: 1,54; 1,62; 1,52; 1,76; 1,63; 1,52; 1,65; 1,67; 1,66; 1,57\]
+
+\begin{itemize}
+\item
+  \(\overline{Y_1} = 60,26\); \(\overline{Y_2} = 1,61\).
+\item
+  \(Var(Y_1) = 47,8\); \(Var(Y_2) = 0,006\).
+\item
+  Obtenha a covariância, coeficiente de correlação e o diagrama de
+  dispersão.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Covariância, correlação e diagrama de dispersão}
+\protect\hypertarget{covariuxe2ncia-correlauxe7uxe3o-e-diagrama-de-dispersuxe3o-1}{}
+\textbf{Exemplo}
+
+\[
+\textrm{Cov}(y_1, y_2) = \frac{1}{10 - 1} \displaystyle \left \{ \left [ (60,09 - 60,26)\cdot (1,54 - 1,61) \right ] + ... + \left [ (57,76 - 60,26)\cdot (1,57 - 1,61)) \right ] \right \}
+\]
+
+\[
+\textrm{Cov}(y_1, y_2) = 0,44
+\]
+
+\[
+r  = \frac{0,44}{\sqrt{47,8\cdot 0,006}} = 0,82
+\]
+\end{frame}
+
+\begin{frame}{Covariância, correlação e diagrama de dispersão}
+\protect\hypertarget{covariuxe2ncia-correlauxe7uxe3o-e-diagrama-de-dispersuxe3o-2}{}
+\textbf{Exemplo - digrama de dispersão}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-11-1} 
+
+}
+
+\caption{Diagrama de dispersão para peso e altura.}\label{fig:unnamed-chunk-11}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Covariância, correlação e diagrama de dispersão}
+\protect\hypertarget{covariuxe2ncia-correlauxe7uxe3o-e-diagrama-de-dispersuxe3o-3}{}
+\textbf{Exemplo - digrama de dispersão}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-12-1} 
+
+}
+
+\caption{Diagrama de dispersão para peso e altura com linha de tendência linear.}\label{fig:unnamed-chunk-12}
+\end{figure}
+\end{frame}
+
+\hypertarget{anuxe1lise-bivariada-para-uma-variuxe1vel-qualitativa-e-uma-quantitativa}{%
+\section{Análise bivariada para uma variável qualitativa e uma
+quantitativa}\label{anuxe1lise-bivariada-para-uma-variuxe1vel-qualitativa-e-uma-quantitativa}}
+
+\begin{frame}{Análise bivariada para uma variável qualitativa e uma
+quantitativa}
+\protect\hypertarget{anuxe1lise-bivariada-para-uma-variuxe1vel-qualitativa-e-uma-quantitativa-1}{}
+\begin{itemize}
+\item
+  Neste caso estamos interessados em avaliar se os valores da variável
+  numérica estão associados com os níveis da variável categórica.
+\item
+  Podemos usar medidas descritivas para os valores dentro de cada um dos
+  níveis da variável categórica.
+\item
+  Para representar graficamente esta situação podemos criar um boxplot
+  da variável numérica para cada nível do fator de interesse.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tabela de medidas descritivas para níveis de um fator}
+\protect\hypertarget{tabela-de-medidas-descritivas-para-nuxedveis-de-um-fator}{}
+\begin{longtable}[]{@{}cccc@{}}
+\caption{Tabela\ldots{}}\tabularnewline
+\toprule()
+nominal & Média & Mediana & Desvio padrão \\
+\midrule()
+\endfirsthead
+\toprule()
+nominal & Média & Mediana & Desvio padrão \\
+\midrule()
+\endhead
+A & 9.84 & 9.45 & 2.85 \\
+B & 9.53 & 9.37 & 3.28 \\
+C & 9.22 & 8.91 & 2.83 \\
+D & 9.65 & 9.64 & 2.48 \\
+E & 9.97 & 9.79 & 2.99 \\
+F & 10.05 & 9.20 & 3.48 \\
+G & 9.96 & 10.35 & 2.91 \\
+H & 10.44 & 10.44 & 3.71 \\
+I & 9.00 & 9.04 & 3.29 \\
+J & 9.97 & 9.32 & 3.41 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Box-plot para níveis de um fator}
+\protect\hypertarget{box-plot-para-nuxedveis-de-um-fator}{}
+\begin{figure}
+
+{\centering \includegraphics[width=11cm]{202-exploratoria-bivariada_files/figure-beamer/unnamed-chunk-14-1} 
+
+}
+
+\caption{box-plot para}\label{fig:unnamed-chunk-14}
+\end{figure}
+\end{frame}
+
+\hypertarget{outros-tipos-de-gruxe1ficos-e-anuxe1lises}{%
+\section{Outros tipos de gráficos e
+análises}\label{outros-tipos-de-gruxe1ficos-e-anuxe1lises}}
+
+\begin{frame}{Outros tipos de gráficos e análises}
+\protect\hypertarget{outros-tipos-de-gruxe1ficos-e-anuxe1lises-1}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Vimos as alternativas usuais para representação e análise de variáveis
+  quantitativas e qualitativas.
+\item
+  Contudo existem diversas situações particulares que exigem análises
+  específicas.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Algumas casos são: mapas, séries temporais, gráficos de perfil, nuvens
+  de palavras.
+\item
+  Também é possível trabalhar com gráficos que representam mais de duas
+  variáveis ao mesmo tempo.
+\item
+  Outra possibilidade é combinar gráficos.
+\end{itemize}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+\begin{itemize}
+\tightlist
+\item
+  Análises bivariadas.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Qualitativa x qualitativa.
+  \item
+    Quantitativa x quantitativa.
+  \item
+    Quantitativa x qualitativa.
+  \end{itemize}
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Introdução à probabilidades.
+\end{itemize}
+
+\endColumns
 \end{frame}
 
 \end{document}

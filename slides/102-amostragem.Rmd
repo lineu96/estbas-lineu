@@ -31,71 +31,94 @@ source("./config/setup.R")
 
 ## Amostras
 
- - Uma amostra é um subconjunto da população. 
+
+\beginAHalfColumn
+
+ - Uma amostra é um \textbf{subconjunto da população}. 
   
  - Na prática é inviável trabalhar com a população toda. 
  
- - A alternativa então é trabalhar com uma amostra e inferir os resultados para a população. 
+ - A alternativa então é trabalhar com uma amostra e \textbf{inferir} os resultados para a população. 
  
  - A seleção da amostra pode ser feita de diversas maneiras. 
- 
-ILUSTRAÇÃO AMOSTRAGEM
- 
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='100%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2017/10/25/18/18/rare-disease-2888820_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/populacao-amostra3.png")
+```
+
+\endColumns
+
+
 ## Amostras
  
- - Os métodos de amostragem servem para selecionar subconjuntos da população de forma mais representativa possível.
+\beginAHalfColumn 
 
- - A forma adequada de amostragem conduz a um menor tamanho amostral para obtenção de uma precisão satisfatória.
+ - Os métodos de amostragem servem para selecionar subconjuntos da população de forma mais \textbf{representativa} possível.
+
+ - A forma adequada de amostragem conduz a um \textbf{menor tamanho amostral} para obtenção de uma \textbf{precisão satisfatória}.
+
+\endColumns
+\beginAHalfColumn
 
  - São características desejáveis de uma amostra:
    - Capacidade de generalização.
    - Imparcialidade e representatividade.
    - Capacidade de medir a precisão das estimativas.
-	
-## Métodos de amostragem
 
- - Existem diversos métodos de amostragem
+ - Podemos dividir os métodos em: 
+   - Amostragem probabilística.
+   - Amostragem não probabilística.
 
- - Podemos dividir em dois subconjuntos: 
-   - Probabilística.
-   - Não probabilística.
-   
+\endColumns
+
 # Amostragem probabilística
 
 ## Amostragem probabilística
 
 
- - Amostragem probabilística deve ser usada sempre que possível.
+\beginAHalfColumn
 
- - O objetivo é dimensionar amostras que sejam capazes de estimar as quantidades de interesse com uma certa precisão desejada.
+ - Amostragem probabilística deve ser usada \textbf{sempre que possível}.
+
+ - O objetivo é dimensionar amostras que sejam capazes de \textbf{estimar} as quantidades de interesse com uma certa \textbf{precisão} desejada.
 
  - Existem diversos métodos disponíveis.
 
+\endColumns
+\beginAHalfColumn
 
-Alguns métodos são:
+\textbf{Alguns métodos são:}
 
  - Amostragem aleatória simples (com ou sem reposição).
  - Amostragem sistemática.
  - Amostragem estratificada.
  - Amostragem por conglomerados.
 
+\endColumns
+
 ## Amostragem aleatória simples (com ou sem reposição)
 
- - Selecionar um conjunto de elementos da população em que todos os elementos tenham a mesma probabilidade de serem sorteados.
+ - Selecionar um conjunto de elementos da população em que \textbf{todos os elementos tenham a mesma probabilidade de serem sorteados}.
  
- - Os sorteios de cada elemento são independentes. 
+ - Os sorteios de cada elemento são \textbf{independentes}. 
  
  - Pode ser com ou sem reposição. 
  
- - Com reposição: um elemento sorteado pode ser sorteado novamente.
+    - \textbf{Com reposição:} um elemento sorteado pode ser sorteado novamente.
  
- - Sem reposição: um elemento sorteado não pode ser sorteado novamente.
+    - \textbf{Sem reposição:} um elemento sorteado não pode ser sorteado novamente.
  
- - A diferença entre com e sem reposição só é relevante se o tamanho da população for pequeno.
+    - A diferença entre com e sem reposição só é relevante se o tamanho da população for pequeno.
 
  - Muitos métodos estatísticos foram desenvolvidos pensando no plano de amostragem aleatória simples.
  
-## Exemplo
+## Amostragem aleatória simples (com ou sem reposição)
+
+\textbf{Exemplo}
 
  - Suponha que uma empresa deseja avaliar se os produtos de determinado lote estão dentro das especificações de qualidade.
 
@@ -105,15 +128,17 @@ Alguns métodos são:
 
 ## Amostragem sistemática
 
- - Sorteia um elemento a cada número de unidades definido inicialmente (1 a cada 10, 1 a cada 20, etc).
+ - Sorteia \textbf{um elemento a cada número de unidades definido} inicialmente (1 a cada 10, 1 a cada 20, etc).
  
- - É necessário definir um tamanho de intervalo inicial e selecionar uma unidade de partida.
+ - É necessário definir um \textbf{tamanho de intervalo inicial} e selecionar uma \textbf{unidade de partida}.
 
  - Todos os elementos dentro do intervalo apresentam a mesma probabilidade de serem sorteados.
  
- - A partir da unidade de partida a próxima sorteada é a da posição correspondente à inicial mais o tamanho do intervalo e assim sucessivamente.
+ - A partir da unidade de partida a próxima sorteada é a da posição correspondente à \textbf{inicial mais o tamanho do intervalo} e assim sucessivamente.
  
-## Exemplo
+## Amostragem sistemática
+
+\textbf{Exemplo}
 
  - Suponha que desejamos selecionar uma amostra sistemática de 500 alunos em uma população de 10.000 e que haja um cadastro desses alunos.
 
@@ -121,22 +146,24 @@ Alguns métodos são:
 
  - Primeiro seleciona-se a unidade de partida, um número aleatório entre 1 e 20. Este é o primeiro elemento da amostra. Suponhamos que tenha sido o aluno número 5.
 
- - O próxumo elemento é o da posição 5+20, e assim por diante.
+ - O próximo elemento é o da posição 5+20, e assim por diante.
 
  - Serão selecionados os alunos 5, 25, 45, 65,...
 
 
 ## Amostragem estratificada
 
- - Usada quando a população de interesse possui algum tipo de estratificação natural (por exemplo, cidades possuem bairros).
+ - Usada quando a população de interesse possui algum tipo de \textbf{estratificação natural} (por exemplo, cidades possuem bairros).
  
  - Dentro de cada estrato podemos coletar uma amostra.
  
- - A amostra final é composta pela união das amostras obtidas em cada estrato.
+ - A amostra final é composta pela \textbf{união das amostras} obtidas em cada estrato.
  
  - O tipo de amostragem dentro de cada estrato pode variar.
  
-## Exemplo
+## Amostragem estratificada
+
+\textbf{Exemplo}
 
  - Suponha que existe interesse em avaliar a proporção de crianças em situações de risco em determinada região.
  
@@ -154,15 +181,17 @@ indivíduos, poderiam ser selecionados
 
  - Parecida com a ideia de amostragem estratificada.
  
- - Os conglomerados são conjuntos de observações.
+ - Os conglomerados são \textbf{conjuntos de observações}.
  
- - Inicialmente sorteamos os conglomerados (diferente do que acontece na amostragem estratificada).
+ - Inicialmente \textbf{sorteamos os conglomerados} (diferente do que acontece na amostragem estratificada).
  
  - A amostra pode ser composta por todos os elementos de todos os conglomerados sorteados.
  
  - Outra alternativa é sortear dentro dos conglomerados amostrados.
  
-## Exemplo
+## Amostragem por conglomerados
+
+\textbf{Exemplo}
 
  - Suponha que o interesse reside em avaliar as notas médias de alunos de uma escola.
 
@@ -194,7 +223,7 @@ indivíduos, poderiam ser selecionados
  
  - Devemos tomar muito cuidado ao interpretar resultados baseados em métodos de amostragem não probabilísticos.
  
- - Em geral, estas amostras carregarem um alto risco de não serem representativas. 
+ - Em geral, estas amostras carregam um alto risco de não serem representativas. 
  
  - Não há métodos para análise probabilística ou inferencial dos resultados.
 
@@ -209,31 +238,31 @@ Alguns métodos são:
 
 ## Amostragem por conveniência
 
- - Os elementos da amostra não são obtidos por meio de sorteio, mas sim de acordo com sua disponibilidade.
+ - Os elementos da amostra não são obtidos por meio de sorteio, mas sim de acordo com sua \textbf{disponibilidade}.
 
-Exemplo
+\textbf{Exemplo}
 
  - Suponha que um pesquisador trabalha com animais criados em cativeiro.
  
  - Não existe qualquer cadastro da população alvo.
  
- - Por isso, o pesquisador avalia os animais disponíveis na universidade.
+ - Por isso, o pesquisador avalia os animais disponíveis.
  
 ## Amostragem intencional ou julgamento
 
- - Um especialista (expert) no problema escolhe os elementos que julga representativos para compor a amostra. 
+ - Um especialista (expert) no problema \textbf{escolhe os elementos} que julga representativos para compor a amostra. 
  
-Exemplo
+\textbf{Exemplo}
 
- - Suponha um problema congenito que só pode ser identificado por um especialista altamente treinado.
+ - Suponha um problema congênito que só pode ser identificado por um especialista altamente treinado.
  
- - Para isso um conjunto de indivíduos é selecionado e deste conjunto o especialista seleciona para a amostra aqueles em que ele identifica o problema congenito.
+ - Para isso um conjunto de indivíduos é selecionado e deste conjunto o especialista seleciona para a amostra aqueles em que ele identifica o problema congênito.
  
 ## Amostragem bola de neve
 
- - Identifica-se algumas unidades e estas unidades indicam novas unidades para compor a amostra.
+ - Identifica-se algumas unidades e estas \textbf{unidades indicam novas unidades} para compor a amostra.
 
-Exemplo
+\textbf{Exemplo}
 
  - Suponha que um aluno criou um formulário para obter dados para seu trabalho de conclusão de curso.
 
@@ -241,3 +270,24 @@ Exemplo
  
  - Por isso, o aluno repassa o formulário para indivíduos que ele sabe que fazem parte da população alvo e pede que estes indivíduos indiquem outros possíveis respondentes.
  
+## 
+
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+ - Amostras.
+ - Métodos de amostragem.
+ - Amostragem probabilística.
+ - Amostragem não probabilística.
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+ - Introdução à análise exploratória.
+ - Análise exploratória univariada para variáveis qualitativas.
+ - Análise exploratória univariada para variáveis quantitativas.
+
+\endColumns

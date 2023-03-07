@@ -27,116 +27,318 @@ output:
 
 ```{r, include = FALSE}
 source("./config/setup.R")
+library(tidyverse)
+
+continua <- rgamma(500, 10)
+discreta <- sample(0:8, 500, replace = T)
+nominal <- sample(LETTERS[1:10], 500, replace = T)
+ordinal <- sample(factor(c("muito baixo", "baixo", "neutro", "alto", "muito alto"),
+                  levels = c("muito baixo", "baixo", "neutro", "alto", "muito alto"), ordered = T))
+
+
+ordinal <- sample(ordinal,500, replace = T)
+
+dados <- data.frame(continua,
+                    discreta,
+                    nominal,
+                    ordinal)
+
 ```
 
 ## Análise exploratória
 
- - Parte primordial de qualquer análise estatística é chamada análise descritiva ou exploratória.
+ - Parte primordial de qualquer análise estatística é chamada \textbf{análise descritiva} ou \textbf{exploratória}.
  
- - Consiste basicamente de tabelas, resumos numéricos e análises gráficas das variáveis disponíveis em um conjunto de dados.
+ - Consiste basicamente de \textbf{tabelas}, \textbf{resumos numéricos} e \textbf{análises gráficas} das variáveis disponíveis em um conjunto de dados.
  
  - Trata-se de uma etapa de extrema importância e deve preceder qualquer análise mais sofisticada.
 
- - As técnicas de análise exploratória visam resumir e apresentar as informações de um conjunto de dados brutos.
+ - As técnicas de análise exploratória visam \textbf{resumir} e \textbf{apresentar} as informações de um conjunto de dados brutos.
 
 ## Análise exploratória
+
+\beginAHalfColumn
 
  - Tentar compreender um conjunto de dados sem algum método que permita resumir as informações é inviável.
 
  - A análise exploratória é a primeira forma de tentarmos enteder o que acontece nos nossos dados.
 
- - Compreende também a etapa de consistência dos dados, isto é, verificar se os dados coletados são condizentes com a realidade.
+ - Uma das tarefas é a etapa de consistência dos dados, isto é, verificar se os dados coletados são condizentes com a realidade.
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='90%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2018/01/26/18/21/matrix-3109378_1280.jpg}{pixabay.com.}"}
+
+knitr::include_graphics("./img/dados.jpg")
+```
+
+\endColumns
 
 ## Análise exploratória
 
- - O conjunto de técnicas aplicáveis está diretamente associado ao tipo das variáveis de interesse (quantitativas x qualitativas) e suas ramificações.
+\beginAHalfColumn
+
+ - O conjunto de técnicas aplicáveis está diretamente associado ao \textbf{tipo das variáveis de interesse} (quantitativas x qualitativas) e suas ramificações.
  
- - Podemos conduzir análises focadas nas variáveis uma a uma (análises univariadas).
+ - Podemos conduzir análises focadas nas variáveis uma a uma (\textbf{análises univariadas}).
  
- - Bem como conduzir análises focadas em avaliar a relação entre as variáveis (análises multivariadas).
- 
+ - Bem como conduzir análises focadas em avaliar a relação entre as variáveis (\textbf{análises multivariadas}).
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='80%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2020/08/03/10/00/graph-5459708_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/exploratoria.png")
+```
+
+\endColumns
+
 ## Análise exploratória
 
 Podemos fazer uso diversas técnicas, tais como
 
- - Medidas de posição central.
- - Medidas de posição relativa.
- - Medidas de forma.
- - Medidas de dispersão.
- - Medidas de associação.
- 
+\beginAHalfColumn
+
  - Tabelas de frequência absolutas.
  - Tabelas de frequência relativas.
  - Tabelas de frequência acumuladas.
  - Tabelas para múltiplas variáveis.
  
  - Gráficos (para análise uni e multivariada).
+
+\endColumns
+\beginAHalfColumn
+
+ - Medidas de posição central.
+ - Medidas de posição relativa.
+ - Medidas de forma.
+ - Medidas de dispersão.
+ - Medidas de associação.
+
+\endColumns
  
 # Análise descritiva univariada para variáveis qualitativas
 
 ## Análise descritiva univariada para variáveis qualitativas
 
- - Uma variável qualitativa representa um atributo que pode ser expresso por meio de rótulos ou categorias.
+ - Uma variável qualitativa representa um atributo que pode ser expresso por meio de \textbf{rótulos} ou \textbf{categorias}.
 
- - Podem ser classificadas em nominais (sem ordenação natural entre os níveis) ou ordinais (com ordenação natural entre os níveis).
+ - Podem ser classificadas em \textbf{nominais} (sem ordenação natural entre os níveis) ou \textbf{ordinais} (com ordenação natural entre os níveis).
  
- - As categorias também são chamadas de classes ou níveis.
+ - As categorias também são chamadas de \textbf{classes} ou \textbf{níveis}.
 
- - Na análise descritiva de uma variável qualitativa estamos interessados em avaliar as frequências das classes.
+ - Na análise descritiva de uma variável qualitativa estamos interessados em avaliar as \textbf{frequências} das classes.
  
 ## Tipos de frequência
 
- - Frequência absoluta: número de observações no conjunto de dados que pertence a uma determinada classe.
+ - \textbf{Frequência absoluta} ($f_a$): número de observações no conjunto de dados que pertence a uma determinada classe.
 
- - Frequência relativa: frequência de classe dividida pelo número total de observações no conjunto de dados.
+ - \textbf{Frequência relativa} ($f_r$): frequência de classe dividida pelo número total de observações no conjunto de dados.
    - Pode ser apresentada em forma de percentual, quando multiplicada por 100.
 
- - Frequência acumulada: frequência absoluta ou relativa acumulada conforme disposição das classes.
+ - \textbf{Frequência acumulada} ($F_a$ ou $F_r$): frequência absoluta ou relativa acumulada conforme disposição das classes.
    - Não faz muito sentido para variáveis qualitativas nominais.
-   
-## Exemplos
 
+## Tipos de frequência
+
+\textbf{Exemplos}
+
+\beginAHalfColumn
+
+ - Frequência absoluta e relativa dos alunos por gênero.
+    - XX do sexo masculino. 
+    - XX do sexo feminino.
+    
+    - $XX/n = 0,XX$ do sexo masculino ($XX\%$).
+    - $XX/n = 0,XX$ do sexo feminino ($XX\%$).
+
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='80%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2014/04/03/11/52/gender-312411_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/generos2.png")
+```
+
+\endColumns
+   
 ## Tabelas de frequência para uma variável qualitativa
+
+\beginAHalfColumn
 
  - Utlizando apenas os dados brutos é difícil responder questões de interesse.
  
- - Para reduzir os dados originais de forma que fique mais claro o entendimento dos mesmos são utilizadas as tabelas de frequência.
+ - Para reduzir os dados originais de forma que fique mais claro o entendimento dos mesmos são utilizadas as \textbf{tabelas de frequência}.
 
  - No caso de variáveis qualitativas consiste em listar os possíveis níveis da variável e fazer a contagem de quantas vezes cada nível aparece nos dados brutos. 
 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo = FALSE, out.width='40%', fig.align='center', fig.cap="Extraído de \\href{https://cdn.pixabay.com/photo/2016/12/11/01/28/spreadsheet-icon-1898557_1280.png}{pixabay.com.}"}
+
+knitr::include_graphics("./img/tabela.png")
+```
+
+\endColumns
+
 ## Tabelas de frequência para uma variável qualitativa
 
- - Cada linha da tabela diz respeito a um nível da variável categórica.
+ - Cada \textbf{linha} da tabela diz respeito a um \textbf{nível} da variável categórica.
  
- - As colunas podem apresentar diferentes tipos de frequência (absoluta, relativa, acumulada).
+ - As \textbf{colunas} podem apresentar diferentes tipos de \textbf{frequência} (absoluta, relativa, acumulada).
 
  - Alguns cuidados para a apresentação dos resultados dizem respeito ao tipo de variável categórica em questão: nominal ou ordinal.
 
-## Tabelas de frequência para uma variável qualitativa
+ - Os níveis de variáveis \textbf{nominais não apresentam uma ordenação natural}, portanto, na apresentação dos resultados pode ser interessante ordenar os níveis por frequência ou por ordem alfabética.
 
- - Os níveis de variáveis nominais não apresentam uma ordenação natural, portanto, na apresentação dos resultados pode ser interessante ordenar os níveis por frequência ou por ordem alfabética.
-
- - Esta estratégia não é recomendada para variáveis ordinais, pois estas apresentam uma ordenação natural e esta ordenação deve ser preferencialmente mantida na exposição dos resultados.
+ - Esta estratégia não é recomendada para variáveis \textbf{ordinais}, pois estas \textbf{apresentam uma ordenação natural} e esta ordenação deve ser preferencialmente mantida na exposição dos resultados.
  
-## Tabelas de frequência para uma variável qualitativa
+## Tabelas de frequência para uma variável qualitativa nominal
 
-EXEMPLO QUALITATIVA NOMINAL
+```{r, echo=FALSE}
 
-## Tabelas de frequência para uma variável qualitativa
+tabela1 <- dados %>%
+  group_by(nominal) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência))
 
-EXEMPLO QUALITATIVA ORDINAL
+tabela1 <- 
+  tabela1 %>% 
+  add_row(nominal = 'Total', 
+          Frequência = sum(tabela1$Frequência),
+          `Freq. Relativa` = sum(tabela1$`Freq. Relativa`))
+
+names(tabela1)[1] <- "Níveis" 
+
+knitr::kable(tabela1, 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequência para uma variável qualitativa nominal
+
+```{r, echo=FALSE}
+
+tabela1 <- dados %>%
+  group_by(nominal) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência)) %>% 
+  arrange(desc(Frequência))
+
+tabela1 <- 
+  tabela1 %>% 
+  add_row(nominal = 'Total', 
+          Frequência = sum(tabela1$Frequência),
+          `Freq. Relativa` = sum(tabela1$`Freq. Relativa`))
+
+names(tabela1)[1] <- "Níveis" 
+
+knitr::kable(tabela1, 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequência para uma variável qualitativa nominal
+
+```{r, echo=FALSE}
+
+tabela1 <- dados %>%
+  group_by(nominal) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência)) %>% 
+  mutate(Percentual = paste(`Freq. Relativa`*100, "%")) %>% 
+  arrange(desc(Frequência))
+
+tabela1 <- 
+  tabela1 %>% 
+  add_row(nominal = 'Total', 
+          Frequência = sum(tabela1$Frequência),
+          `Freq. Relativa` = sum(tabela1$`Freq. Relativa`),
+          Percentual = paste(sum(tabela1$`Freq. Relativa`)*100, "%"))
+
+names(tabela1)[1] <- "Níveis" 
+
+knitr::kable(tabela1[,c(1,2,4)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+```
+
+## Tabelas de frequência para uma variável qualitativa ordinal
+
+```{r, echo=FALSE}
+tabela2 <- dados %>%
+  group_by(ordinal) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência)) %>% 
+  #mutate(Percentual = paste(`Freq. Relativa`*100, "%")) %>% 
+  mutate(`Freq. Acumulada` = cumsum(Frequência)) %>% 
+  mutate(`Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`)) #%>% 
+  #mutate(`Percentual Acumulado` = paste(`Freq. Rel. Acumulada`*100, "%"))
+
+tabela2 <- 
+  tabela2 %>% 
+  add_row(ordinal = 'Total', 
+          Frequência = sum(tabela2$Frequência),
+          `Freq. Relativa` = sum(tabela2$`Freq. Relativa`),
+          #Percentual = paste(sum(tabela2$`Freq. Relativa`)*100, "%"),
+          `Freq. Acumulada` = sum(tabela2$Frequência),
+          `Freq. Rel. Acumulada` = sum(tabela2$`Freq. Relativa`)#,
+          #`Percentual Acumulado` = paste(sum(tabela2$`Freq. Relativa`)*100, "%")
+          )
+
+names(tabela2)[1] <- "Níveis" 
+
+knitr::kable(tabela2, 
+             caption = "Tabela de frequências para...", 
+             align ="ccccccc" )
+```
+
+## Tabelas de frequência para uma variável qualitativa ordinal
+
+```{r, echo=FALSE}
+tabela2 <- dados %>%
+  group_by(ordinal) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência)) %>% 
+  mutate(Percentual = paste(`Freq. Relativa`*100, "%")) %>% 
+  mutate(`Freq. Acumulada` = cumsum(Frequência)) %>% 
+  mutate(`Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`)) %>% 
+  mutate(`Percentual Acumulado` = paste(`Freq. Rel. Acumulada`*100, "%"))
+
+tabela2 <- 
+  tabela2 %>% 
+  add_row(ordinal = 'Total', 
+          Frequência = sum(tabela2$Frequência),
+          `Freq. Relativa` = sum(tabela2$`Freq. Relativa`),
+          Percentual = paste(sum(tabela2$`Freq. Relativa`)*100, "%"),
+          `Freq. Acumulada` = sum(tabela2$Frequência),
+          `Freq. Rel. Acumulada` = sum(tabela2$`Freq. Relativa`),
+          `Percentual Acumulado` = paste(sum(tabela2$`Freq. Relativa`)*100, "%"))
+
+names(tabela2)[1] <- "Níveis" 
+
+knitr::kable(tabela2[,c(1,2,4,5,7)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccccccc" )
+```
 
 ## Gráficos para representação de frequências de uma variável qualitativa
 
+\beginAHalfColumn
+
  - A representação por meio de tabelas é útil mas nem sempre eficiente.
  
- - Em diversos casos pode ser mais conveniente utilizar um gráfico.
+ - Em diversos casos pode ser mais conveniente utilizar um \textbf{gráfico}.
  
  - "Uma imagem vale mais que mil palavras".
 
  - Os cuidados com a ordenação dos níveis de acordo com o tipo da variável se mantém.
 
-## Gráficos para representação de frequências de uma variável qualitativa
+\endColumns
+\beginAHalfColumn
 
 Algumas possibilidades são:
 
@@ -144,74 +346,313 @@ Algumas possibilidades são:
  - Gráfico de barras horizontais.
  - Gráfico de barras empilhadas.
  - Gráfico de setores.
- - Gráfico de rosca.
- 
-## Gráfico de barras verticais ou horizontais
 
- - Utiliza os possíveis níveis das variáveis em um eixo.
- - As frequências ou porcentagens ficam no outro eixo. 
- - O tamanho da barra correspondente à frequência.
+\endColumns
+
+## Gráfico de barras
+
+ - \textbf{Gráfico de barras verticais ou horizontais.}
+    - Utiliza os possíveis \textbf{níveis} das variáveis \textbf{em um eixo}.
+    - As \textbf{frequências ou porcentagens} ficam \textbf{no outro eixo}. 
+    - O tamanho da barra correspondente à frequência ou percentual.
+ 
+ - \textbf{Gráfico de barras empilhadas}.
+    - Usa-se \textbf{uma única barra}.
+    - A barra é dividida de acordo com a \textbf{contribuição relativa} de cada nível da variável.
+    - Representa-se a frequência relativa ou o percentual.
+
  
 ## Gráfico de barras verticais
 
-EXEMPLO
+```{r, echo=FALSE, fig.cap="Gráfico de barras verticais para a variável..."}
+
+tabela1$Níveis <- as.factor(tabela1$Níveis)
+
+ggplot(data=tabela1[-nrow(tabela1),], 
+       aes(x=Níveis, 
+           y=Frequência#, 
+                       #fill = Niveis
+           )) + 
+  geom_bar(stat="identity", 
+           col=1,
+           lwd=1)+
+  ylim(c(0, 
+         (max(tabela1[-nrow(tabela1),]$Frequência)+ (max(tabela1[-nrow(tabela1),]$Frequência)*0.2))))+
+  geom_text(aes(label=Frequência), 
+            vjust=-1, 
+            color=1, 
+            size=8)+
+  ylab("Frequência") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(#legend.position = 'bottom',
+    plot.title = element_text(family = "Helvetica", 
+                              face = "bold", 
+                              size = (20),
+                              hjust = 0.5),
+    axis.title = element_text(face = "bold",
+                              size = 15),
+    #axis.text = element_blank(),
+    legend.title = element_blank(),
+    text = element_text(size=15)) 
+```
+
+## Gráfico de barras verticais
+
+```{r, echo=FALSE, fig.cap="Gráfico de barras verticais para a variável..."}
+
+ggplot(data=tabela1[-nrow(tabela1),], 
+       aes(x=reorder(Níveis, -Frequência), 
+                       y=Frequência#, 
+                       #fill = Niveis
+                       )) + 
+  geom_bar(stat="identity", 
+           col=1,
+           lwd=1)+
+  ylim(c(0, 
+         (max(tabela1[-nrow(tabela1),]$Frequência)+ (max(tabela1[-nrow(tabela1),]$Frequência)*0.2))))+
+  geom_text(aes(label=Frequência), 
+            vjust=-1, 
+            color=1, 
+            size=8)+
+  ylab("Frequência") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(#legend.position = 'bottom',
+    plot.title = element_text(family = "Helvetica", 
+                              face = "bold", 
+                              size = (20),
+                              hjust = 0.5),
+    axis.title = element_text(face = "bold",
+                              size = 15),
+    #axis.text = element_blank(),
+    legend.title = element_blank(),
+    text = element_text(size=15)) 
+```
 
 ## Gráfico de barras horizontais
 
-EXEMPLO
+```{r, echo=FALSE, fig.cap="Gráfico de barras horizontais para a variável..."}
+
+ggplot(data = tabela1[-nrow(tabela1),], 
+       aes(x = reorder(Níveis, Frequência), 
+           y = Frequência)) +
+  geom_bar(stat = 'identity',
+           col = 1,
+           lwd = 1) +  
+  ylim(c(0, 
+         (max(tabela1[-nrow(tabela1),]$Frequência)+ (max(tabela1[-nrow(tabela1),]$Frequência)*0.1))))+
+  coord_flip() +
+  geom_text(aes(label = Frequência),
+            hjust=-0.5, 
+            color=1, 
+            size=5)+
+  ylab("") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          axis.text.x=element_blank(),
+                          text = element_text(size=20))
+
+```
 
 ## Gráfico de barras empilhadas
 
- - No caso de uma barra empilhada representa-se a frequência relativa ou o percentual.
- - Existe uma única barra que representa 100%.
- - Esta barra é dividida de acordo com a contribuição relativa de cada nível da variável.
+```{r, echo=FALSE, fig.cap="Gráfico de barras empilhadas para a variável..."}
 
-## Gráfico de barras empilhadas
+ggplot(data=tabela1[-nrow(tabela1),], aes(x=1, 
+                         y=`Freq. Relativa`, 
+                         fill = Níveis
+)) + 
+  geom_col(col = 1) +
+  geom_text(aes(label = Percentual),
+            position = position_stack(vjust = 0.5),
+            size = 8) +
+  ylab("Proporção") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(#legend.position = 'bottom',
+    plot.title = element_text(family = "Helvetica", 
+                              face = "bold", 
+                              size = (20),
+                              hjust = 0.5),
+    axis.title = element_text(face = "bold",
+                              size = 15),
+    axis.text.x = element_blank(),
+    legend.title = element_blank(),
+    text = element_text(size=15))  +
+  scale_fill_brewer(palette="Paired")
 
-EXEMPLO
+
+```
 
 ## Gráfico de setores
 
- - Consiste em repartir um círculo em setores de tamanhos proporcionais às frequências relativas ou às porcentagens de cada valor.
- - Podem ser usados para representar variáveis com poucos níveis.
- - Para variáveis com muitos níveis, o gráfico tende a ficar visualmente poluído e pouco informativo.
- - Além disso, o cérebro humano tem dificuldade em relacionar frequências com áreas relativas.
+ - Consiste em \textbf{repartir um círculo} em setores de tamanhos proporcionais às \textbf{frequências relativas} ou às \textbf{porcentagens} de cada valor.
+ - Pode ser usados para representar variáveis com \textbf{poucos níveis}.
  - Apesar de muito usado e preferido em diversas áreas, deve ser evitado.
- - Uma variação do gráfico de setores é o gráfico de rosca.
+ - O cérebro humano tem dificuldade em relacionar frequências com áreas relativas.
+ - Para variáveis com muitos níveis, o gráfico tende a ficar visualmente poluído e pouco informativo.
+ - Outro problema é que níveis com frequências iguais a 0 deixam de aparecer no gráfico, diferente de um gráfico de barras. 
+
 
 ## Gráfico de setores
 
-EXEMPLO
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável..."}
+
+
+tabela1 <- tabela1[-nrow(tabela1),] %>% 
+  arrange(desc(Níveis)) %>%
+  mutate(ypos = cumsum(`Freq. Relativa`)- 0.5*`Freq. Relativa`)
+
+ggplot(tabela1, 
+       aes(x="", y=`Freq. Relativa`, fill=Níveis)) +
+  geom_bar(stat="identity", 
+           width=1,
+           col = 1,
+           lwd = 1) +
+  coord_polar("y", start=0) +
+  theme_classic() + 
+  #theme(legend.position="none") +
+  geom_text(aes(y = ypos, label = Percentual), 
+            color = 1, 
+            size = 5)+
+  ylab("") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme(legend.position = 'right',
+        plot.title = element_text(family = "Helvetica", 
+                                  face = "bold", 
+                                  size = (20),
+                                  hjust = 0.5),
+        axis.title = element_text(face = "bold",
+                                  size = 15),
+        axis.text = element_blank(),
+        legend.title = element_blank(),
+        text = element_text(size=20)) +
+  scale_fill_brewer(palette="Paired")
+```
 
 # Análise descritiva univariada para variáveis quantitativas
 
 ## Análise descritiva univariada para variáveis quantitativas
 
- - Uma variável quantitativa é uma característica que pode ser representada numericamente.
+ - Uma variável quantitativa é uma \textbf{característica} que pode ser \textbf{representada numericamente}.
  
- - Podem ser classificadas em discretas (finitos valores em um dado intervalo) ou contínuas (infinitos valores em um dado intervalo).
+ - Podem ser classificadas em \textbf{discretas} (finitos valores em um dado intervalo) ou \textbf{contínuas} (infinitos valores em um dado intervalo).
 
- - Quando estamos lidando com variáveis quantitativas discretas com poucos possíveis valores, as técnicas apresentadas para variáveis qualitativas se aplicam.
+ - Quando estamos lidando com \textbf{variáveis quantitativas discretas com poucos possíveis valores}, as técnicas apresentadas para variáveis qualitativas se aplicam.
 
 ## Tabelas de frequência
 
-EXEMPLO TABELA PARA QUANTITATIVA DISCRETA COM POUCOS NÍVEIS
+```{r, echo=FALSE}
+tabela3 <- dados %>%
+  group_by(discreta) %>%
+  summarize(Frequência = n()) %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência)) %>% 
+  mutate(Percentual = paste(`Freq. Relativa`*100, "%")) %>% 
+  mutate(`Freq. Acumulada` = cumsum(Frequência)) %>% 
+  mutate(`Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`)) %>% 
+  mutate(`Percentual Acumulado` = paste(`Freq. Rel. Acumulada`*100, "%"))
 
-## Gráficos de frequência
+tabela3$discreta <- as.character(tabela3$discreta)
 
-EXEMPLOS GRÁFICOS PARA QUANTITATIVA DISCRETA COM POUCOS NIVEIS
+tabela3 <- 
+  tabela3 %>% 
+  add_row(discreta = 'Total', 
+          Frequência = sum(tabela3$Frequência),
+          `Freq. Relativa` = sum(tabela3$`Freq. Relativa`),
+          Percentual = paste(sum(tabela3$`Freq. Relativa`)*100, "%"),
+          `Freq. Acumulada` = sum(tabela3$Frequência),
+          `Freq. Rel. Acumulada` = sum(tabela3$`Freq. Relativa`),
+          `Percentual Acumulado` = paste(sum(tabela3$`Freq. Relativa`)*100, "%"))
+
+names(tabela3)[1] <- "Valores" 
+
+knitr::kable(tabela3[,c(1,2,4,5,7)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccccccc" )
+
+```
+
+## Gráfico de barras verticais
+
+```{r, echo=FALSE, fig.cap="Gráfico de barras verticais para a variável..."}
+
+tabela3$Valores <- as.numeric(tabela3$Valores)
+
+ggplot(data=tabela3[-nrow(tabela3),], 
+       aes(x=Valores, 
+           y=Frequência#, 
+                       #fill = Niveis
+                       )) + 
+  geom_bar(stat="identity", 
+           col=1,
+           lwd=1)+
+  ylim(c(0, 
+         (max(tabela3[-nrow(tabela3),]$Frequência)+ (max(tabela3[-nrow(tabela3),]$Frequência)*0.2))))+
+  geom_text(aes(label=Frequência), 
+            vjust=-1, 
+            color=1, 
+            size=8)+
+  ylab("Frequência") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(#legend.position = 'bottom',
+    plot.title = element_text(family = "Helvetica", 
+                              face = "bold", 
+                              size = (20),
+                              hjust = 0.5),
+    axis.title = element_text(face = "bold",
+                              size = 15),
+    #axis.text = element_blank(),
+    legend.title = element_blank(),
+    text = element_text(size=15)) +
+  scale_x_continuous(breaks=tabela3[-nrow(tabela3),]$Valores)
+
+```
 
 ## Análise descritiva univariada para variáveis quantitativas
 
  - Para variáveis quantitativas contínuas ou discretas com muitos possíveis valores, precisamos de técnicas específicas.
  
- - Uma estratégia comum é o agrupamento em faixas de valores, e avaliação das frequências nestas faixas.
-
- - Cuidados devem ser tomados quanto às notações e tipos de faixas (aberto e fechado à esquerda ou direita).
+ - Uma estratégia comum é o \textbf{agrupamento em faixas de valores}, e avaliação das frequências nestas faixas.
 
  - Podem ser usadas tabelas de frequências absolutas, relativas e acumuladas para as faixas de valores.
 
- - Utilizando a razão entre frequência relativa e a amplitude das faixas de valores, geramos a densidade.
+ - Utilizando a \textbf{razão entre frequência relativa e a amplitude das faixas} de valores, geramos a \textbf{densidade}.
+
+## Análise descritiva univariada para variáveis quantitativas
+
+\textbf{Faixas de valores}
+
+\beginAHalfColumn
+ - Cuidados devem ser tomados quanto às notações e tipos de faixas (aberto e fechado à esquerda ou direita).
+
+ - Em geral definimos intervalos \textbf{abertos à esquerda} e \textbf{fechados à direita}.
+
+ - Considerando dois valores $a$ e $b$, em que $a < b$, os intervalos consideram que $a$ **não** está incluído na faixa, $b$ está.
+
+\endColumns
+\beginAHalfColumn
+ 
+ - Notações usuais:
+    - $a < y \leq b$
+    - $a \vdash b$
+    - $(a,b]$
+    
+ - $5 < y \leq 10$ ou $5 \vdash 10$ ou $[5,10)$
+   - Valores maiores que 5 até valores menores ou iguais a 10. 5 não está no intervalo.
+
+
+   
+\endColumns
 
 ## Análise descritiva univariada para variáveis quantitativas
 
@@ -221,42 +662,280 @@ EXEMPLOS GRÁFICOS PARA QUANTITATIVA DISCRETA COM POUCOS NIVEIS
 
  - Classes definidas com a mesma amplitude é o procedimento mais usual.
 
- - Existem procedimentos que podem ser usados para obter a amplitude, como Sturges.
+ - Existem procedimentos que podem ser usados para obter a amplitude, como \textbf{Sturges}.
+ 
+ - Em geral, 5 a 15 faixas são suficientes.
  
 ## Tabelas de frequência para uma variável quantitativa
 
-EXEMPLO
+```{r, echo=FALSE}
+breaks <- hist(dados$continua, plot = FALSE)$breaks
+
+classes <- cut(dados$continua, 
+               breaks = breaks, 
+               include.lowest = TRUE, 
+               right = TRUE)
+
+tabela4 <- as.data.frame(table(classes)) 
+  
+names(tabela4) <- c("Faixas", "Frequência")
+
+tabela4 <- 
+  tabela4 %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência),
+         Percentual = paste(`Freq. Relativa`*100, "%"),
+         `Freq. Acumulada` = cumsum(Frequência),
+         `Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`),
+         `Percentual Acumulado` = paste(`Freq. Rel. Acumulada`*100, "%"),
+         Amplitude = diff(breaks)[1],
+         Densidade = `Freq. Relativa`/Amplitude)
+
+knitr::kable(tabela4[,c(1,2,3,5,6)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+
+```
+
+## Tabelas de frequência para uma variável quantitativa
+
+```{r, echo=FALSE}
+breaks <- hist(dados$continua, plot = FALSE)$breaks
+
+classes <- cut(dados$continua, 
+               breaks = breaks, 
+               include.lowest = TRUE, 
+               right = TRUE)
+
+tabela4 <- as.data.frame(table(classes)) 
+  
+names(tabela4) <- c("Faixas", "Frequência")
+
+tabela4 <- 
+  tabela4 %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência),
+         Percentual = paste(`Freq. Relativa`*100, "%"),
+         `Freq. Acumulada` = cumsum(Frequência),
+         `Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`),
+         `Percentual Acumulado` = paste(`Freq. Rel. Acumulada`*100, "%"),
+         Amplitude = diff(breaks)[1],
+         Densidade = `Freq. Relativa`/Amplitude)
+
+knitr::kable(tabela4[,c(1,2,4,5,7)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+
+```
+
+## Tabelas de frequência para uma variável quantitativa
+
+```{r, echo=FALSE}
+breaks <- hist(dados$continua, plot = FALSE)$breaks
+
+classes <- cut(dados$continua, 
+               breaks = breaks, 
+               include.lowest = TRUE, 
+               right = TRUE)
+
+tabela4 <- as.data.frame(table(classes)) 
+  
+names(tabela4) <- c("Faixas", "Frequência")
+
+tabela4 <- 
+  tabela4 %>%
+  mutate(`Freq. Relativa` = Frequência/sum(Frequência),
+         Percentual = paste(`Freq. Relativa`*100, "%"),
+         `Freq. Acum.` = cumsum(Frequência),
+         `Freq. Rel. Acumulada` = cumsum(`Freq. Relativa`),
+         `Perc. Acum.` = paste(`Freq. Rel. Acumulada`*100, "%"),
+         Amplitude = diff(breaks)[1],
+         Densidade = `Freq. Relativa`/Amplitude)
+
+knitr::kable(tabela4[,c(1,2,4,5,7,8,9)], 
+             caption = "Tabela de frequências para...", 
+             align ="ccc" )
+
+```
 
 ## Gráficos para representação de frequências de uma variável quantitativa
 
+\beginAHalfColumn
+
  - Assim como no caso de variáveis qualitativas ou quantitativas discretas com poucos possíveis valores, a representação por meio de gráficos pode ser bastante benéfica para análise de variáveis quantitativas.
- 
+
+\endColumns
+\beginAHalfColumn
+
 Algumas possibilidades são
 
- - Histograma da frequência absoluta (afetado pelo número de classes).
- - Histograma com amplitude de classe variável.
- - Histograma da densidade.
- - Histograma da densidade para amplitude de classe variável.
- - Gráfico de frequências acumuladas.
+ - Histograma.
  - Gráfico de densidade empírica.
  - Box-plot
+
+\endColumns
+
+## Histograma
+
+ - Consiste em \textbf{retângulos contíguos} de base dada pelas faixas de valores definindas para uma variável.
  
-## Histograma
-
- - Consiste em retângulos contíguos de base dada pelas faixas de valores definindas para uma variável.
- - A área igual é igual à frequência da rescpectiva faixa. 
- - Em uma possível representação a altura pode representar a frequência absoluta na faixa de valores.
- - Outra possibilidade é a altura de cada retângulo representar o quociente da área pela amplitude da faixa: a densidade.
+ - Algumas possibilidades são:
+     - A área representar a frequência da rescpectiva faixa. 
+     - A altura representar a frequência absoluta na faixa.
+     - A altura representar o quociente da área pela amplitude da faixa: a densidade.
 
 ## Histograma
 
-EXEMPLO
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável..."}
+
+ggplot(dados, aes(x=continua)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = hist(dados$continua, plot = FALSE)$breaks) + 
+  xlab("x") +
+  ylab("Frequência") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15)) 
+```
+
+## Efeito do número de classes
+
+ - O número de classes pode afetar diretamente as tabelas e gráficos.
+ 
+ - Com poucas classes, os dados ficam excessivamente resumidos e as classes ficam muito heterogêneas.
+ 
+ - Com muitas classes, os dados ficam segmentados em excesso e as representações são comprometidas.
+
+## Efeito do número de classes
+
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável..."}
+
+set.seed(190996)
+
+dados <- data.frame(x = rnorm(100))
+
+g1 <- ggplot(dados, aes(x=x)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = seq(floor(min(dados$x)), ceiling(max(dados$x)), 1.5)) + 
+  xlab("") +
+  ylab("Freq.") +
+  ggtitle(paste0((length(seq(floor(min(dados$x)), ceiling(max(dados$x)), 1.5))-1), " faixas"))+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+
+
+g2 <- ggplot(dados, aes(x=x)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = seq(floor(min(dados$x)), ceiling(max(dados$x)), 1)) + 
+  xlab("") +
+  ylab("Freq.") +
+  ggtitle(paste0((length(seq(floor(min(dados$x)), ceiling(max(dados$x)), 1))-1), " faixas"))+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+
+g3 <- ggplot(dados, aes(x=x)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = seq(floor(min(dados$x)), ceiling(max(dados$x)), 0.5)) + 
+  xlab("") +
+  ylab("Freq.") +
+  ggtitle(paste0((length(seq(floor(min(dados$x)), ceiling(max(dados$x)), 0.5))-1), " faixas"))+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+g4 <- ggplot(dados, aes(x=x)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = seq(floor(min(dados$x)), ceiling(max(dados$x)), 0.1)) + 
+  xlab("") +
+  ylab("Freq.") +
+  ggtitle(paste0((length(seq(floor(min(dados$x)), ceiling(max(dados$x)), 0.1))-1), " faixas"))+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+ggpubr::ggarrange(g1,g2,g3,g4, nrow = 2, ncol = 2)
+
+
+```
+
 
 ## Gráfico de densidade empírica
 
-## Assimetria
+\beginAHalfColumn
 
-## Gráfico de frequências acumuladas
+\textbf{Intuição}
+
+ - Imagine uma sequência de histogramas de densidade em que o
+número de observações aumenta, juntamente com o número de faixas.
+
+ - No limite, teremos uma curva.
+
+ - Esta curva é chamada de gráfico de densidade empírica.
+
+ - É um gráfico "computacionalmente intensivo", depende da definição de uma função kernel e do tamanho da banda.
+ 
+ - A área sob a curva é igual a 1.
+ 
+\endColumns
+\beginAHalfColumn
+
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável...", out.width = "100%"}
+dados <- data.frame(x = rnorm(100))
+
+ggplot(dados, aes(x=x)) +
+  geom_density(col=1,
+               lwd=1,
+               fill = 1,
+               alpha = 0.6) + 
+  xlab("Variável") +
+  ylab("Densidade") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15)) 
+
+
+```
+
+\endColumns
 
 ## Box-plot
 
@@ -266,4 +945,192 @@ EXEMPLO
  
  - Retomaremos o box-plot após estudar quartis, em medidas descritivas.
 
-EXEMPLO BOX-PLOT
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável...", fig.height = 2.5}
+dados <- data.frame(x = rnorm(100))
+
+ggplot(data = dados, 
+       mapping = aes(y='1', x=x)) +
+  stat_boxplot(geom ='errorbar')+
+  geom_boxplot(alpha = 1)+
+  # stat_summary(fun.y=mean, 
+  #              geom="point", 
+  #              shape=20, 
+  #              size=3, 
+  #              color="red", 
+  #              fill="red")+ 
+  xlab("") +
+  ylab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          axis.text.y=element_blank(),
+                          text = element_text(size=15))
+
+
+```
+
+## Histograma, densidade e box-plot
+
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável..."}
+dados <- data.frame(x = rnorm(100))
+
+p1 = ggplot(dados) + 
+  geom_histogram(aes(x=x,
+                     y=..density..), 
+                 position="identity",
+                 col = 1,
+                 lwd = 1,
+                 breaks = hist(dados$x, plot = FALSE)$breaks) + 
+  geom_density(aes(x=x,
+                   y=..density..),
+               col = 4,
+               lwd = 1) + 
+  ylab("Densidade") +
+  xlab("") +
+  ggtitle("Gráfico")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15))
+
+p2 = ggplot(data = dados, 
+            mapping = aes(y=x, x='1')) +
+  stat_boxplot(geom ='errorbar')+
+  geom_boxplot(alpha = 1)+
+  # stat_summary(fun.y=mean, 
+  #              geom="point", 
+  #              shape=20, 
+  #              size=3, 
+  #              color="red", 
+  #              fill="red")+ 
+  ylab("Variável") +
+  xlab("") +
+  #ggtitle("Titulo")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          axis.text.y=element_blank(),
+                          text = element_text(size=15)) +coord_flip()
+
+ggpubr::ggarrange(p1, p2, 
+          heights = c(2, 1), 
+          align = "hv", 
+          ncol = 1, 
+          nrow = 2)
+
+```
+
+## Assimetria
+
+ - Um conjunto pode ser aproximadamente \textbf{simétrico}, \textbf{assimétrico} à esquerda ou à direita. 
+ 
+ - Tais características são facilmente diagnosticadas por meio de análise gráfica usando um histograma, gráfico de densidade ou box-plot.
+ 
+ - Futuramente veremos como diagnosticar assimetria por meio de medidas descritivas.
+
+
+```{r, echo=FALSE, fig.cap="Gráfico de setores para a variável...",fig.height=3.5, fig.width=10}
+
+simetria <- data.frame(assimetrico_direita = rbeta(1000,1,15),
+                       simetrico = rbeta(1000,100,100),
+                       assimetrico_esquerda = rbeta(1000,15,1))
+
+
+
+
+g1 <- ggplot(simetria, aes(x=assimetrico_direita)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = hist(simetria$assimetrico_direita, plot = FALSE)$breaks) + 
+  xlab("") +
+  ylab("") +
+  ggtitle("Assimetria à direita")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15),
+                          axis.text=element_blank())
+
+
+g2 <- ggplot(simetria, aes(x=simetrico)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = hist(simetria$simetrico, plot = FALSE)$breaks) + 
+  xlab("") +
+  ylab("") +
+  ggtitle("Simetria")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15),
+                          axis.text=element_blank())
+
+
+g3 <- ggplot(simetria, aes(x=assimetrico_esquerda)) +
+  geom_histogram(col=1,
+                 lwd=1,
+                 breaks = hist(simetria$assimetrico_esquerda, plot = FALSE)$breaks) + 
+  xlab("") +
+  ylab("") +
+  ggtitle("Assimetria à esquerda")+
+  theme_classic() + theme(legend.position = 'none',
+                          plot.title = element_text(family = "Helvetica", 
+                                                    face = "bold", 
+                                                    size = (20),
+                                                    hjust = 0.5),
+                          axis.title = element_text(face = "bold",
+                                                    size = 15),
+                          text = element_text(size=15),
+                          axis.text=element_blank())
+
+ggpubr::ggarrange(g1,g2,g3,nrow = 1)
+
+
+
+
+
+```
+
+## 
+
+\beginAHalfColumn
+
+\textbf{O que foi visto:}
+
+ - Introdução à análise exploratória.
+ - Análise exploratória univariada para variáveis qualitativas.
+ - Análise exploratória univariada para variáveis quantitativas.
+
+\endColumns
+\beginAHalfColumn
+
+\textbf{Próximos assuntos:}
+
+ - Resumos numéricos.
+ - Medidas de posição central.
+ - Medidas de posição relativa.
+ - Medidas de dispersão.
+
+\endColumns
+
