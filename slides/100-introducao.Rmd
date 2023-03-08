@@ -28,22 +28,28 @@ output:
 source("./config/setup.R")
 ```
 
-## Estatística
+## 
 
 ::: {.block}
-### 
+### Estatística
 Conjunto de métodos e técnicas usados para organizar, descrever, analisar e interpretar dados.
 :::
 
+\beginAHalfColumn
 
  - Compreende:
    1. Planejamento (delineamento) de estudos e coleta de dados (amostragem).
    2. Descrição, análise e interpretação dos dados.
 
+\endColumns
+\beginAHalfColumn
+
  - Permite:
    1. Extrair informações importantes para tomada de decisões.
    2. Avaliar evidências empíricas sob hipóteses de interesse.
- 
+
+\endColumns
+
 ## Conceitos fundamentais
 
  - **População**: conjunto de seres, itens ou eventos com uma característica comum. 
